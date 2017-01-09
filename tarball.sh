@@ -6,13 +6,22 @@
 # It builds a tar ball for use on Linux.
 
 
-# Be sure to start off in the correct directory.
-cd `dirname $0`
+# Synchronize source code.
+LINUXSOURCE=`dirname $0`
+cd $LINUXSOURCE
+BIBLEDITLINUX=/tmp/bibledit-linux
+echo Synchronizing relevant source code to $BIBLEDITLINUX
+mkdir -p $BIBLEDITLINUX
+rsync --archive --delete ../bibledit/lib/ $BIBLEDITLINUX
+rsync --archive . $BIBLEDITLINUX/
+echo Done
 
 
-# Synchronize the Bibledit core library to the Linux folder.
-cd ..
-rsync --archive --exclude xcode ../lib/ .
+echo Working in $BIBLEDITLINUX
+cd $BIBLEDITLINUX
+
+
+# Clean source.
 ./configure
 make distclean
 
@@ -48,13 +57,9 @@ echo 'bin_SCRIPTS = bibledit.sh' >> Makefile.am
 sed -i.bak '/./,/^$/!d' Makefile.am
 
 
-# Copy the GUI sources into place.
-cp linux/bibledit.h executable
-cp linux/bibledit.cpp executable
-cp linux/bibledit.1 .
-cp linux/bibledit.xpm .
-cp linux/bibledit.desktop .
-cp linux/bibledit.sh .
+# Move the GUI sources into place.
+mv bibledit.h executable
+mv bibledit.cpp executable
 
 
 # Remove unnecessary programs.
