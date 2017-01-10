@@ -28,7 +28,7 @@ make distclean
 
 # Update the source for the configuration.
 sed -i.bak 's/ENABLELINUX=no/ENABLELINUX=yes/g' configure.ac
-sed -i.bak 's/dnl linux //g' configure.ac
+sed -i.bak 's/# linux //g' configure.ac
 sed -i.bak 's/.*Tag8.*/AC_DEFINE([HAVE_LINUX], [1], [Enable installation on Linux])/g' configure.ac
 
 
