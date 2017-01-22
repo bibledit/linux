@@ -62,6 +62,12 @@ echo 'appicondir = $(datadir)/pixmaps' >> Makefile.am
 echo 'appicon_DATA = bibledit.xpm' >> Makefile.am
 
 
+# Install the contents data.
+echo '' >> Makefile.am
+echo 'contentsdir = $(datadir)/bibledit' >> Makefile.am
+echo 'dist_contents_DATA = README' >> Makefile.am
+
+
 # Remove consecutive blank lines.
 sed -i.bak '/./,/^$/!d' Makefile.am
 
@@ -71,7 +77,7 @@ mv bibledit.h executable
 mv bibledit.cpp executable
 
 
-# Remove unnecessary programs.
+# Remove unnecessary files.
 rm valgrind
 rm bibledit
 rm dev
