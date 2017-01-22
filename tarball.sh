@@ -40,9 +40,6 @@ sed -i.bak '/unittest/d' Makefile.am
 sed -i.bak '/generate_/d' Makefile.am
 
 
-sed -i.bak 's/bin_PROGRAMS/noinst_PROGRAMS/g' Makefile.am
-
-
 # Update what to distribute.
 sed -i.bak 's/bible bibledit/bible/g' Makefile.am
 sed -i.bak '/EXTRA_DIST/ s/$/ *.desktop *.xpm *.sh *.1/' Makefile.am
