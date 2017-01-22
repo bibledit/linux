@@ -35,7 +35,7 @@ GtkApplication *application;
 GtkWidget * window;
 static void on_signal_destroy (gpointer user_data);
 gint status;
-
+static gboolean on_key_press (GtkWidget *widget, GdkEvent *event, gpointer data);
 
 
 #endif

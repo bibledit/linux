@@ -82,6 +82,9 @@ void activate (GtkApplication *app)
   // Create a browser instance.
   WebKitWebView * webview = WEBKIT_WEB_VIEW (webkit_web_view_new ());
   
+  // Signal handlers.
+  g_signal_connect (webview, "key-press-event", G_CALLBACK (on_key_press), NULL);
+  
   // Put the browser area into the main window.
   gtk_container_add (GTK_CONTAINER (window), GTK_WIDGET (webview));
   
@@ -105,3 +108,25 @@ void on_signal_destroy (gpointer user_data)
   gtk_main_quit ();
 }
 
+
+gboolean on_key_press (GtkWidget *widget, GdkEvent *event, gpointer data)
+{
+  if (event->type == GDK_KEY_PRESS) {
+    GdkEventKey * event_key = (GdkEventKey *) event;
+    if ((event_key->keyval == GDK_KEY_z) || (event_key->keyval == GDK_KEY_Z)  ) {
+      if (event_key->state & GDK_CONTROL_MASK) {
+        const gchar *command;
+        if (event_key->state & GDK_SHIFT_MASK) {
+          command = WEBKIT_EDITING_COMMAND_REDO;
+        } else {
+          command = WEBKIT_EDITING_COMMAND_UNDO;
+        }
+        WebKitWebView * web_view = WEBKIT_WEB_VIEW (widget);
+        webkit_web_view_execute_editing_command (web_view, command);
+        return true;
+      }
+    }
+  }
+  (void) data;
+  return false;
+}
