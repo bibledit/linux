@@ -62,11 +62,6 @@ echo 'appicondir = $(datadir)/pixmaps' >> Makefile.am
 echo 'appicon_DATA = bibledit.xpm' >> Makefile.am
 
 
-# Install the startup script.
-echo '' >> Makefile.am
-echo 'bin_SCRIPTS = bibledit.sh' >> Makefile.am
-
-
 # Remove consecutive blank lines.
 sed -i.bak '/./,/^$/!d' Makefile.am
 
