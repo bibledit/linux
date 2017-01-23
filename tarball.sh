@@ -23,7 +23,7 @@ cd $BIBLEDITLINUX
 
 # Clean source.
 ./configure
-make distclean
+make distclean --jobs=24
 
 
 # Update the source for the configuration.
@@ -62,10 +62,21 @@ echo 'appicondir = $(datadir)/pixmaps' >> Makefile.am
 echo 'appicon_DATA = bibledit.xpm' >> Makefile.am
 
 
-# Install the contents data.
+# Install the package data.
+# echo 'subdir_files = \' > subfiles.mk
+# find . -type f ! -name '*.h' ! -name '*.cpp' ! -name '*.c' ! -path '*xcode*' ! -path '*.deps*' ! -path '*unittests*' -print | sed 's/^/  /;$q;s/$/ \\/' | sed 's/\.\///g' >> subfiles.mk
+# find . -type f ! -name '*.h' ! -name '*.cpp' ! -name '*.c' ! -path '*xcode*' ! -path '*.deps*' ! -path '*unittests*' ! -name '*.tgz' -print0 | tar -czvf pkgdata.tgz --null -T -
+find . -type f ! -name '*.h' ! -name '*.cpp' ! -name '*.c' ! -path '*xcode*' ! -path '*.deps*' ! -path '*unittests*' ! -name '*.tgz' -print > pkgdata.txt
 echo '' >> Makefile.am
-echo 'contentsdir = $(datadir)/bibledit' >> Makefile.am
-echo 'dist_contents_DATA = README' >> Makefile.am
+echo 'dist_pkgdata_DATA = pkgdata.txt' >> Makefile.am
+# echo 'dist_pkgdata_DATA = pkgdata.tgz' >> Makefile.am
+# echo 'include $(srcdir)/subfiles.mk' >> Makefile.am
+# echo 'dist_pkgdata_DATA = $(subdir_files)' >> Makefile.am
+# echo 'pkgdata_DATA = $(subdir_files)' >> Makefile.am
+# echo 'pkgdata_DATA = README css/editor.css' >> Makefile.am
+# echo 'contentsdir = $(datadir)/bibledit' >> Makefile.am
+# echo 'dist_contents_DATA = $(subdir_files)' >> Makefile.am
+# echo 'dist_contents_DATA = README css/editor.css' >> Makefile.am
 
 
 # Remove consecutive blank lines.
@@ -86,7 +97,7 @@ rm *.bak
 
 # Clean everything up and create distribution tarball.
 ./reconfigure
-make distclean
+make distclean --jobs=24
 ./configure
 make dist
 
