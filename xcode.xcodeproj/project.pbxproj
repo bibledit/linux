@@ -13,6 +13,7 @@
 		CA80EC141B03C31A000A2591 /* bibledit.desktop */ = {isa = PBXFileReference; lastKnownFileType = text; path = bibledit.desktop; sourceTree = "<group>"; };
 		CA80EC151B03C355000A2591 /* bibledit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bibledit.h; sourceTree = "<group>"; };
 		CA80EC181B03C39C000A2591 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		CA93470F1E37631900DAFC39 /* license.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = license.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -23,6 +24,7 @@
 				CA80EC131B03C2EC000A2591 /* bibledit.cpp */,
 				CA80EC141B03C31A000A2591 /* bibledit.desktop */,
 				CA80EC151B03C355000A2591 /* bibledit.h */,
+				CA93470F1E37631900DAFC39 /* license.txt */,
 				CA80EC181B03C39C000A2591 /* README.md */,
 				CA7C433F1B039EFC00FFADCC /* tarball.sh */,
 			);
