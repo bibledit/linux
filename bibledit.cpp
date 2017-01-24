@@ -82,7 +82,7 @@ void activate (GtkApplication *app)
   // Create a browser instance.
   WebKitWebView * webview = WEBKIT_WEB_VIEW (webkit_web_view_new ());
   
-  // Signal handlers.
+  // Signal handler.
   g_signal_connect (webview, "key-press-event", G_CALLBACK (on_key_press), NULL);
   
   // Put the browser area into the main window.
@@ -109,10 +109,13 @@ void on_signal_destroy (gpointer user_data)
 }
 
 
+// Handle key presses.
 gboolean on_key_press (GtkWidget *widget, GdkEvent *event, gpointer data)
 {
   if (event->type == GDK_KEY_PRESS) {
     GdkEventKey * event_key = (GdkEventKey *) event;
+    // The web view does not handle the keys for undo and redo of its own.
+    // Handle them here.
     if ((event_key->keyval == GDK_KEY_z) || (event_key->keyval == GDK_KEY_Z)  ) {
       if (event_key->state & GDK_CONTROL_MASK) {
         const gchar *command;
@@ -123,10 +126,12 @@ gboolean on_key_press (GtkWidget *widget, GdkEvent *event, gpointer data)
         }
         WebKitWebView * web_view = WEBKIT_WEB_VIEW (widget);
         webkit_web_view_execute_editing_command (web_view, command);
+        // Key press handled.
         return true;
       }
     }
   }
   (void) data;
+  // Key press not handled.
   return false;
 }
