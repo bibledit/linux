@@ -21,9 +21,20 @@ echo Working in $BIBLEDITLINUX
 cd $BIBLEDITLINUX
 
 
+# Move the Bibledit Linux GUI sources into place.
+mv bibledit.h executable
+mv bibledit.cpp executable
+
+
+# Remove unnecessary code and scripts.
+rm valgrind
+rm bibledit
+rm dev
+
+
 # Clean source.
 ./configure
-make distclean --jobs=24
+make distclean
 
 
 # Update the source for the configuration.
@@ -45,59 +56,18 @@ sed -i.bak 's/bible bibledit/bible/g' Makefile.am
 sed -i.bak '/EXTRA_DIST/ s/$/ *.desktop *.xpm *.1/' Makefile.am
 
 
-# Install the man pages.
+# Add the additional Makefile.mk fragment for the Linux app.
 echo '' >> Makefile.am
-echo 'man_MANS = *.1' >> Makefile.am
+cat Makefile.mk >> Makefile.am
 
 
-# Install the desktop shortcut.
-echo '' >> Makefile.am
-echo 'applicationdir = $(datadir)/applications' >> Makefile.am
-echo 'application_DATA = bibledit.desktop' >> Makefile.am
-
-
-# Install the application icon.
-echo '' >> Makefile.am
-echo 'appicondir = $(datadir)/pixmaps' >> Makefile.am
-echo 'appicon_DATA = bibledit.xpm' >> Makefile.am
-
-
-# Install the package data.
-# echo 'subdir_files = \' > subfiles.mk
-# find . -type f ! -name '*.h' ! -name '*.cpp' ! -name '*.c' ! -path '*xcode*' ! -path '*.deps*' ! -path '*unittests*' -print | sed 's/^/  /;$q;s/$/ \\/' | sed 's/\.\///g' >> subfiles.mk
-# find . -type f ! -name '*.h' ! -name '*.cpp' ! -name '*.c' ! -path '*xcode*' ! -path '*.deps*' ! -path '*unittests*' ! -name '*.tgz' -print0 | tar -czvf pkgdata.tgz --null -T -
-find . -type f ! -name '*.h' ! -name '*.cpp' ! -name '*.c' ! -path '*xcode*' ! -path '*.deps*' ! -path '*unittests*' ! -name '*.tgz' -print > pkgdata.txt
-echo '' >> Makefile.am
-echo 'dist_pkgdata_DATA = pkgdata.txt' >> Makefile.am
-# echo 'dist_pkgdata_DATA = pkgdata.tgz' >> Makefile.am
-# echo 'include $(srcdir)/subfiles.mk' >> Makefile.am
-# echo 'dist_pkgdata_DATA = $(subdir_files)' >> Makefile.am
-# echo 'pkgdata_DATA = $(subdir_files)' >> Makefile.am
-# echo 'pkgdata_DATA = README css/editor.css' >> Makefile.am
-# echo 'contentsdir = $(datadir)/bibledit' >> Makefile.am
-# echo 'dist_contents_DATA = $(subdir_files)' >> Makefile.am
-# echo 'dist_contents_DATA = README css/editor.css' >> Makefile.am
-
-
-# Remove consecutive blank lines.
+# Remove the consecutive blank lines introduced by the above edit operations.
 sed -i.bak '/./,/^$/!d' Makefile.am
 
 
-# Move the GUI sources into place.
-mv bibledit.h executable
-mv bibledit.cpp executable
-
-
-# Remove unnecessary files.
-rm valgrind
-rm bibledit
-rm dev
-rm *.bak
-
-
 # Clean everything up and create distribution tarball.
+rm *.bak
 ./reconfigure
-make distclean --jobs=24
 ./configure
 make dist
 
