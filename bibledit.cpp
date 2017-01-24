@@ -45,6 +45,10 @@ int main (int argc, char *argv[])
   // That is the package data directory.
   // Bibledit will then copy this to the webroot upon first run for a certain version number.
   bibledit_initialize_library (PACKAGE_DATA_DIR, webroot.c_str());
+  // In case the app is installed from source, through the "install.sh" script,
+  // on first run it will try to copy the package data from /usr/share/bibledit,
+  // find nothing there, and continue normally.
+  // This will work when the app is unpacked in folder ~/bibledit.
   
   bibledit_start_library ();
 
