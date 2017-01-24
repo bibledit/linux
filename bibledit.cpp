@@ -83,8 +83,12 @@ void activate (GtkApplication *app)
   gtk_window_set_position (GTK_WINDOW (window), GTK_WIN_POS_CENTER);
   gtk_window_set_application (GTK_WINDOW (window), application);
 
-  // The icon.
+  // The icon will be loaded from the current directory,
+  // or if it's not there, from /usr/share/bibledit.
   gchar * iconfile = g_build_filename ("bibledit.xpm", NULL);
+  if (!g_file_test (iconfile, G_FILE_TEST_EXISTS)) {
+    iconfile = g_build_filename (PACKAGE_DATA_DIR, "bibledit.xpm", NULL);
+  }
   gtk_window_set_default_icon_from_file (iconfile, NULL);
   g_free (iconfile);
 
