@@ -18,6 +18,7 @@
 */
 
 
+#include <config.h>
 #include <executable/bibledit.h>
 #include <libgen.h>
 #include <iostream>
@@ -31,12 +32,19 @@ int main (int argc, char *argv[])
 
   g_signal_connect (application, "activate", G_CALLBACK (activate), NULL);
 
-  // Get the executable path and base the document root on it.
-  char *linkname = (char *) malloc (256);
-  if (readlink ("/proc/self/exe", linkname, 256)) {};
-  string webroot = dirname (linkname);
-  free (linkname);
-  bibledit_initialize_library (webroot.c_str(), webroot.c_str());
+  // Derive the webroot from the $HOME environment variable.
+  string webroot;
+  const char * home = g_getenv ("HOME");
+  if (home) webroot = home;
+  if (!webroot.empty ()) webroot.append ("/");
+  webroot.append ("bibledit");
+  
+  // Read the package directory from config.h.
+  
+  // The $make install will copy the relevant files to /usr/share/bibledit.
+  // That is the package data directory.
+  // Bibledit will then copy this to the webroot upon first run for a certain version number.
+  bibledit_initialize_library (PACKAGE_DATA_DIR, webroot.c_str());
   
   bibledit_start_library ();
 
