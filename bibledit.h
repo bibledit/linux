@@ -36,6 +36,8 @@ GtkWidget * window;
 static void on_signal_destroy (gpointer user_data);
 gint status;
 static gboolean on_key_press (GtkWidget *widget, GdkEvent *event, gpointer data);
+static void on_window_size_allocate (GtkWidget *widget, GtkAllocation *allocation);
+static gboolean on_window_state_event (GtkWidget *widget, GdkEventWindowState *event);
 
 
 #endif

@@ -26,6 +26,18 @@
 #include <webkit2/webkit2.h>
 
 
+int bibledit_window_width = 0;
+int bibledit_window_height = 0;
+bool bibledit_window_maximized = false;
+bool bibledit_window_fullscreen = false;
+const char * bibledit_window_state = "WindowState";
+const char * bibledit_window_width_key = "Width";
+const char * bibledit_window_height_key = "Height";
+const char * bibledit_window_maximized_key = "Maximized";
+const char * bibledit_window_fullscreen_key = "Fullscreen";
+const char * bibledit_window_state_ini = "state.ini";
+
+
 int main (int argc, char *argv[])
 {
   application = gtk_application_new ("org.bibledit.linux", G_APPLICATION_FLAGS_NONE);
@@ -98,9 +110,6 @@ void activate (GtkApplication *app)
   // Create a browser instance.
   WebKitWebView * webview = WEBKIT_WEB_VIEW (webkit_web_view_new ());
   
-  // Signal handler.
-  g_signal_connect (webview, "key-press-event", G_CALLBACK (on_key_press), NULL);
-  
   // Put the browser area into the main window.
   gtk_container_add (GTK_CONTAINER (window), GTK_WIDGET (webview));
   
@@ -109,6 +118,28 @@ void activate (GtkApplication *app)
   
   // Ensure it will get mouse and keyboard events.
   gtk_widget_grab_focus (GTK_WIDGET (webview));
+
+  // Set window state and size.
+  const char *appid = g_application_get_application_id (g_application_get_default ());
+  char *file = g_build_filename (g_get_user_cache_dir (), appid, bibledit_window_state_ini, NULL);
+  GKeyFile *keyfile = g_key_file_new ();
+  if (g_key_file_load_from_file (keyfile, file, G_KEY_FILE_NONE, NULL)) {
+    bibledit_window_width = g_key_file_get_integer (keyfile, bibledit_window_state, bibledit_window_width_key, NULL);
+    bibledit_window_height = g_key_file_get_integer (keyfile, bibledit_window_state, bibledit_window_height_key, NULL);
+    bibledit_window_maximized = g_key_file_get_boolean (keyfile, bibledit_window_state, bibledit_window_maximized_key, NULL);
+    bibledit_window_fullscreen = g_key_file_get_boolean (keyfile, bibledit_window_state, bibledit_window_fullscreen_key, NULL);
+    gtk_window_set_default_size (GTK_WINDOW (window), bibledit_window_width, bibledit_window_height);
+    if (bibledit_window_maximized) gtk_window_maximize (GTK_WINDOW (window));
+    if (bibledit_window_fullscreen) gtk_window_fullscreen (GTK_WINDOW (window));
+  }
+  g_key_file_unref (keyfile);
+  g_free (file);
+
+  // Signal handlers.
+  g_signal_connect (window, "size-allocate", G_CALLBACK (on_window_size_allocate), NULL);
+  g_signal_connect (window, "window-state-event", G_CALLBACK (on_window_state_event), NULL);
+  g_signal_connect (window, "destroy", G_CALLBACK (on_signal_destroy), NULL);
+  g_signal_connect (webview, "key-press-event", G_CALLBACK (on_key_press), NULL);
   
   // Make sure the main window and all its contents are visible
   gtk_widget_show_all (window);
@@ -121,6 +152,27 @@ void activate (GtkApplication *app)
 void on_signal_destroy (gpointer user_data)
 {
   (void) user_data;
+
+  // Save the window states.
+  
+  GKeyFile *keyfile = g_key_file_new ();
+  
+  g_key_file_set_integer (keyfile, bibledit_window_state, bibledit_window_width_key, bibledit_window_width);
+  g_key_file_set_integer (keyfile, bibledit_window_state, bibledit_window_height_key, bibledit_window_height);
+  g_key_file_set_boolean (keyfile, bibledit_window_state, bibledit_window_maximized_key, bibledit_window_maximized);
+  g_key_file_set_boolean (keyfile, bibledit_window_state, bibledit_window_fullscreen_key, bibledit_window_fullscreen);
+  
+  const char *appid = g_application_get_application_id (g_application_get_default ());
+  char *path = g_build_filename (g_get_user_cache_dir (), appid, NULL);
+  g_mkdir_with_parents (path, 0700);
+  char *file = g_build_filename (path, bibledit_window_state_ini, NULL);
+  g_key_file_save_to_file (keyfile, file, NULL);
+  
+  g_free (file);
+  g_key_file_unref (keyfile);
+  g_free (path);
+
+  // Quit program.
   gtk_main_quit ();
 }
 
@@ -150,4 +202,22 @@ gboolean on_key_press (GtkWidget *widget, GdkEvent *event, gpointer data)
   (void) data;
   // Key press not handled.
   return false;
+}
+
+
+void on_window_size_allocate (GtkWidget *widget, GtkAllocation *allocation)
+{
+  // Save the window geometry only if the window is not maximized or fullscreen.
+  if (!(bibledit_window_maximized || bibledit_window_fullscreen)) {
+    gtk_window_get_size (GTK_WINDOW (widget), &bibledit_window_width, &bibledit_window_height);
+  }
+}
+
+
+gboolean on_window_state_event (GtkWidget *widget, GdkEventWindowState *event)
+{
+  (void) widget;
+  bibledit_window_maximized = (event->new_window_state & GDK_WINDOW_STATE_MAXIMIZED) != 0;
+  bibledit_window_fullscreen = (event->new_window_state & GDK_WINDOW_STATE_FULLSCREEN) != 0;
+  return true;
 }
