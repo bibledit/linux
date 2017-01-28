@@ -38,6 +38,8 @@ gint status;
 static gboolean on_key_press (GtkWidget *widget, GdkEvent *event, gpointer data);
 static void on_window_size_allocate (GtkWidget *widget, GtkAllocation *allocation);
 static gboolean on_window_state_event (GtkWidget *widget, GdkEventWindowState *event);
+static gboolean on_timeout (gpointer data);
+static gboolean on_configure (GtkWidget *widget, GdkEvent *event, gpointer user_data);
 
 
 #endif
