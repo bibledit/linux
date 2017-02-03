@@ -68,7 +68,7 @@ sed -i.bak '/generate_/d' Makefile.am
 
 # Update what to distribute.
 sed -i.bak 's/bible bibledit/bible/g' Makefile.am
-sed -i.bak '/EXTRA_DIST/ s/$/ *.desktop *.xpm *.1/' Makefile.am
+sed -i.bak '/EXTRA_DIST/ s/$/ *.desktop *.xpm *.png *.1/' Makefile.am
 
 
 # Add the additional Makefile.mk fragment for the Linux app.
