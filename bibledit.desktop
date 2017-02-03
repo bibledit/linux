@@ -1,7 +1,7 @@
 [Desktop Entry]
 Name=Bibledit
 Comment=Bible Editor
-Exec=bibledit.sh
+Exec=bibledit
 Icon=bibledit
 Terminal=false
 Type=Application
