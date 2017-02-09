@@ -1,5 +1,7 @@
-## Code and script to create Bibledit for Linux.
+# Code and script to create Bibledit for Linux.
 
-# Scripts
+## Scripts
 
-tarball: assembles a tarball for Bibledit Linux.
+tarball: Assembles a tarball for Bibledit Linux.
+
+debian.sh: Creates Debian packages.

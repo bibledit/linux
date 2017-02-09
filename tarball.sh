@@ -26,7 +26,7 @@ mv bibledit.h executable
 mv bibledit.cpp executable
 
 
-# Remove unnecessary code and scripts.
+# Remove certain scripts.
 rm valgrind
 rm bibledit
 rm dev
