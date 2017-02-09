@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXFileReference section */
+		CA5C3B911E4CE9B6005937FF /* changelog */ = {isa = PBXFileReference; lastKnownFileType = text; path = changelog; sourceTree = "<group>"; };
+		CA5C3B921E4CE9B6005937FF /* compat */ = {isa = PBXFileReference; lastKnownFileType = text; path = compat; sourceTree = "<group>"; };
+		CA5C3B931E4CE9B6005937FF /* control */ = {isa = PBXFileReference; lastKnownFileType = text; path = control; sourceTree = "<group>"; };
+		CA5C3B941E4CE9B6005937FF /* copyright */ = {isa = PBXFileReference; lastKnownFileType = text; path = copyright; sourceTree = "<group>"; };
+		CA5C3B951E4CE9B6005937FF /* dirs */ = {isa = PBXFileReference; lastKnownFileType = text; path = dirs; sourceTree = "<group>"; };
+		CA5C3B961E4CE9B6005937FF /* install */ = {isa = PBXFileReference; lastKnownFileType = text; path = install; sourceTree = "<group>"; };
+		CA5C3B971E4CE9B6005937FF /* README */ = {isa = PBXFileReference; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
+		CA5C3B981E4CE9B6005937FF /* rules */ = {isa = PBXFileReference; lastKnownFileType = text; path = rules; sourceTree = "<group>"; };
+		CA5C3B9A1E4CE9B6005937FF /* format */ = {isa = PBXFileReference; lastKnownFileType = text; path = format; sourceTree = "<group>"; };
+		CA5C3B9B1E4CE9B6005937FF /* debian.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = debian.sh; sourceTree = "<group>"; };
 		CA7C433F1B039EFC00FFADCC /* tarball.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = tarball.sh; sourceTree = "<group>"; };
 		CA80EC121B03C2A0000A2591 /* bibledit.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = bibledit.1; sourceTree = "<group>"; };
 		CA80EC131B03C2EC000A2591 /* bibledit.cpp */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.cpp.cpp; path = bibledit.cpp; sourceTree = "<group>"; tabWidth = 2; };
@@ -20,6 +30,30 @@
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
+		CA5C3B901E4CE9B6005937FF /* debian */ = {
+			isa = PBXGroup;
+			children = (
+				CA5C3B911E4CE9B6005937FF /* changelog */,
+				CA5C3B921E4CE9B6005937FF /* compat */,
+				CA5C3B931E4CE9B6005937FF /* control */,
+				CA5C3B941E4CE9B6005937FF /* copyright */,
+				CA5C3B951E4CE9B6005937FF /* dirs */,
+				CA5C3B961E4CE9B6005937FF /* install */,
+				CA5C3B971E4CE9B6005937FF /* README */,
+				CA5C3B981E4CE9B6005937FF /* rules */,
+				CA5C3B991E4CE9B6005937FF /* source */,
+			);
+			path = debian;
+			sourceTree = "<group>";
+		};
+		CA5C3B991E4CE9B6005937FF /* source */ = {
+			isa = PBXGroup;
+			children = (
+				CA5C3B9A1E4CE9B6005937FF /* format */,
+			);
+			path = source;
+			sourceTree = "<group>";
+		};
 		CA6867431B03997100DB9422 = {
 			isa = PBXGroup;
 			children = (
@@ -29,6 +63,8 @@
 				CA80EC151B03C355000A2591 /* bibledit.h */,
 				CAB5BA781E44FA8300ACE7C2 /* bibledit.png */,
 				CAB5BA791E44FA8300ACE7C2 /* bibledit.xpm */,
+				CA5C3B901E4CE9B6005937FF /* debian */,
+				CA5C3B9B1E4CE9B6005937FF /* debian.sh */,
 				CA93470F1E37631900DAFC39 /* license.txt */,
 				CA9347101E37637800DAFC39 /* Makefile.mk */,
 				CA80EC181B03C39C000A2591 /* README.md */,
