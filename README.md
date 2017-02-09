@@ -1,4 +1,4 @@
-# Code and script to create Bibledit for Linux.
+# Code and script to create Bibledit for Linux
 
 ## Scripts
 
