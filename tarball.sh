@@ -32,6 +32,16 @@ rm bibledit
 rm dev
 
 
+echo Remove macOS clutter.
+echo This includes the macOS extended attributes.
+echo The attributes make their way into the tarball,
+echo get unpacked within Debian,
+echo and cause lintian errors.
+find . -name .DS_Store -delete
+xattr -r -c *
+
+
+
 # Clean source.
 ./configure
 make distclean

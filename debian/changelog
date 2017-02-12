@@ -1,5 +1,5 @@
-bibledit (1.0.100) unstable; urgency=low
+bibledit (1.0.699) unstable; urgency=low
 
-  * Initial Release.
+  * Initial Debian package.
 
  -- Teus Benschop <teusjannette@gmail.com>  Thu, 9 Feb 2017 10:02:29 +0100
