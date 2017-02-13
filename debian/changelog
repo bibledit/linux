@@ -1,5 +1,11 @@
+bibledit (1.0.707) unstable; urgency=low
+
+  * new upstream version
+
+ -- Teus Benschop <teusjannette@gmail.com>  Mon, 13 Feb 2017 14:08:09 +0100
+
 bibledit (1.0.699) unstable; urgency=low
 
-  * Initial Debian package.
+  * initial Debian package
 
  -- Teus Benschop <teusjannette@gmail.com>  Thu, 9 Feb 2017 10:02:29 +0100
