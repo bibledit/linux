@@ -1,12 +1,14 @@
-#!/bin/sh
+#!/bin/bash
+
+
+# Redirect stdout ( > ) into a named pipe ( >() ) running "tee"
+exec > >(tee outputnew.txt)
+# Same for stderr.
+exec 2>&1
 
 
 source ~/scr/sid-ip
-echo The IP address of the Debian machine is $DEBIANSID
-
-
-echo Create a tarball in /tmp/bibledit-linux.
-# ./tarball.sh
+echo The IP address of the Debian machine is $DEBIANSID.
 
 
 echo Check that the Debian machine is alive.
@@ -14,31 +16,14 @@ ping -c 1 $DEBIANSID
 if [ $? -ne 0 ]; then exit; fi
 
 
-
-exit
-
-
-
-
-
-
-
-
-
-
-make dist
-if [ $? -ne 0 ]; then exit; fi
+TMPLINUX=/tmp/bibledit-linux
+echo Works with the tarball supposed to be already in $TMPLINUX.
 
 
 echo Clean the Debian builder and copy the tarball to it.
 ssh $DEBIANSID "rm -rf bibledit*"
 if [ $? -ne 0 ]; then exit; fi
-scp *.gz $DEBIANSID:.
-if [ $? -ne 0 ]; then exit; fi
-
-
-echo Clean the working tree in the repository.
-make distclean
+scp $TMPLINUX/*.gz $DEBIANSID:.
 if [ $? -ne 0 ]; then exit; fi
 
 
@@ -50,12 +35,12 @@ if [ $? -ne 0 ]; then exit; fi
 
 
 echo Do a license check.
-ssh $DEBIANSID "cd bibledit*; licensecheck --recursive --ignore debian --deb-machine *"
+ssh -tt $DEBIANSID "cd bibledit*; licensecheck --recursive --ignore debian --deb-machine *"
 if [ $? -ne 0 ]; then exit; fi
 
 
 echo Build the Debian packages.
-ssh $DEBIANSID "cd bibledit*; debuild -us -uc"
+ssh -tt $DEBIANSID "cd bibledit*; debuild -us -uc"
 if [ $? -ne 0 ]; then exit; fi
 
 
@@ -68,3 +53,5 @@ ssh -tt $DEBIANSID "cd bibledit*; sbuild"
 if [ $? -ne 0 ]; then exit; fi
 
 
+echo Showing difference with processed output.
+diff --normal outputnew.txt outputdone.txt
