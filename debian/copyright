@@ -7,6 +7,10 @@ Files: *
 Copyright: 2017 Teus Benschop <teusjannette@gmail.com> 
 License: GPL-3.0+
 
+Files: mbedtls/*
+Copyright: 2006-2015, ARM Limited
+License: Apache-2.0
+
 Files: debian/*
 Copyright: 2017 Teus Benschop <teusjannette@gmail.com>
 License: GPL-3.0+

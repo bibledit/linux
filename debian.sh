@@ -58,4 +58,4 @@ sync
 
 
 echo Showing difference with processed output.
-diff --normal outputnew.txt outputdone.txt > outputdiff.txt
+diff --normal --ignore-tab-expansion --ignore-space-change --ignore-blank-lines outputnew.txt outputdone.txt > outputdiff.txt
