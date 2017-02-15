@@ -53,5 +53,9 @@ ssh -tt $DEBIANSID "cd bibledit*; sbuild"
 if [ $? -ne 0 ]; then exit; fi
 
 
+echo Flushing output buffer.
+sync
+
+
 echo Showing difference with processed output.
-diff --normal outputnew.txt outputdone.txt
+diff --normal outputnew.txt outputdone.txt > outputdiff.txt

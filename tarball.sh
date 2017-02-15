@@ -27,7 +27,7 @@ BIBLEDITLINUX=/tmp/bibledit-linux
 echo Synchronizing relevant source code to $BIBLEDITLINUX
 mkdir -p $BIBLEDITLINUX
 rsync --archive --delete ../bibledit/lib/ $BIBLEDITLINUX
-rsync --archive . $BIBLEDITLINUX/
+rsync --archive --exclude 'output*.txt' . $BIBLEDITLINUX/
 echo Done
 
 
