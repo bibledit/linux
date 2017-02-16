@@ -47,7 +47,7 @@ License: Expat
 
 Files: utf8/[A-Z]*
 Copyright: 2017 Grigory Gorelov
-License: GPL-3+
+License: GPL-3.0+
 
 Files: pugixml/*
 Copyright: 2006-2015, Arseny Kapoulkine
@@ -87,7 +87,7 @@ License: Expat
 
 Files: filter/UriCodec.cpp
 Copyright: 2006, Jin Qing
-License: GPL-3+
+License: GPL-3.0+
 
 License: GPL-3.0+
  This program is free software; you can redistribute it and/or modify

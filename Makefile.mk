@@ -11,6 +11,7 @@ icons_DATA = bibledit.png
 
 install-data-hook:
 	rsync --archive --delete --exclude "*.h" --exclude "*.c" --exclude "*.cpp" --exclude "*.o" --exclude "*.a" --exclude "*.deps*" --exclude "*autom4te.cache*" --exclude ".dirstamp" --exclude ".DS_Store" --exclude "bibledit" --exclude "xcode*" --exclude "unittest*" $(srcdir) $(DESTDIR)$(pkgdatadir)
+	$(srcdir)/installdata.sh $(srcdir) $(DESTDIR) $(pkgdatadir)
 
 uninstall-local:
 	rm -rf $(DESTDIR)$(pkgdatadir)/*

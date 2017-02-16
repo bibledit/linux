@@ -1,11 +1,11 @@
 The IP address of the Debian machine is 192.168.2.108.
 Check that the Debian machine is alive.
 PING 192.168.2.108 (192.168.2.108): 56 data bytes
-64 bytes from 192.168.2.108: icmp_seq=0 ttl=64 time=0.504 ms
+64 bytes from 192.168.2.108: icmp_seq=0 ttl=64 time=0.733 ms
 
 --- 192.168.2.108 ping statistics ---
 1 packets transmitted, 1 packets received, 0.0% packet loss
-round-trip min/avg/max/stddev = 0.504/0.504/0.504/0.000 ms
+round-trip min/avg/max/stddev = 0.733/0.733/0.733/0.000 ms
 Works with the tarball supposed to be already in /tmp/bibledit-linux.
 Clean the Debian builder and copy the tarball to it.
 Unpack and remove the tarball in Debian.
@@ -437,6 +437,7 @@ Files: access/bible.cpp
  index/index.h
  index/listing.cpp
  index/listing.h
+ installdata.sh
  ipc/focus.cpp
  ipc/focus.h
  ipc/notes.cpp
@@ -1076,20 +1077,21 @@ Copyright: 2010, Hong Jiang
 License: Expat
  FIXME
 
+Files: notifit/LICENSE.md
+ notifit/README.md
+ notifit/notifit.css
+ notifit/notifit.js
+ notifit/notifit.min.js
+Copyright: 2013, naoxink
+License: Expat
+ FIXME
+
 Files: sqlite/shell.c
  sqlite/sqlite3.c
  sqlite/sqlite3.h
  sqlite/sqlite3ext.h
 Copyright: (©) 2000-2017 D. Richard Hipp.
 License: CC0
- FIXME
-
-Files: notifit/LICENSE.md
- notifit/README.md
- notifit/notifit.css
- notifit/notifit.min.js
-Copyright: 2013, naoxink
-License: Expat
  FIXME
 
 Files: utf8/Exception.cpp
@@ -1150,9 +1152,15 @@ Copyright: ed.
 License: CC0
  FIXME
 
-Files: nicedit/nicedit.js
+Files: nicedit/nicedit.min.js
 Copyright: 2007-2008, Brian Kirchoff
   2007-2008, Brian Kirchoff (http:nicedit.com)
+  message
+License: Expat
+ FIXME
+
+Files: nicedit/nicedit.js
+Copyright: 2007-2008, Brian Kirchoff
   message
 License: Expat
  FIXME
@@ -1835,6 +1843,11 @@ make[2]: Entering directory '/home/teus/bibledit-1.0.710'
 make  install-data-hook
 make[3]: Entering directory '/home/teus/bibledit-1.0.710'
 rsync --archive --delete --exclude "*.h" --exclude "*.c" --exclude "*.cpp" --exclude "*.o" --exclude "*.a" --exclude "*.deps*" --exclude "*autom4te.cache*" --exclude ".dirstamp" --exclude ".DS_Store" --exclude "bibledit" --exclude "xcode*" --exclude "unittest*" . /home/teus/bibledit-1.0.710/debian/bibledit/usr/share/bibledit
+./installdata.sh . /home/teus/bibledit-1.0.710/debian/bibledit /usr/share/bibledit
+hi
+.
+/home/teus/bibledit-1.0.710/debian/bibledit
+/usr/share/bibledit
 make[3]: Leaving directory '/home/teus/bibledit-1.0.710'
 make[2]: Leaving directory '/home/teus/bibledit-1.0.710'
 make[1]: Leaving directory '/home/teus/bibledit-1.0.710'
@@ -1859,7 +1872,7 @@ make[1]: Leaving directory '/home/teus/bibledit-1.0.710'
    dh_perl
    dh_link
    dh_strip_nondeterminism
-	Using 1487254114 as canonical time
+	Using 1487263924 as canonical time
 	Normalizing debian/bibledit/usr/share/bibledit/bibledit.png
 	Normalizing debian/bibledit/usr/share/bibledit/webbible/lens.png
 	Normalizing debian/bibledit/usr/share/bibledit/pix/check.png
@@ -1898,17 +1911,17 @@ make[1]: Leaving directory '/home/teus/bibledit-1.0.710'
    dh_shlibdeps
 	install -d debian/bibledit/DEBIAN
 	dpkg-shlibdeps -Tdebian/bibledit.substvars debian/bibledit/usr/bin/bibledit
-dpkg-shlibdeps: warning: package could avoid a useless dependency if debian/bibledit/usr/bin/bibledit was not linked against libcairo.so.2 (it uses none of the library's symbols)
-dpkg-shlibdeps: warning: package could avoid a useless dependency if debian/bibledit/usr/bin/bibledit was not linked against libjavascriptcoregtk-4.0.so.18 (it uses none of the library's symbols)
-dpkg-shlibdeps: warning: package could avoid a useless dependency if debian/bibledit/usr/bin/bibledit was not linked against libcrypto.so.1.1 (it uses none of the library's symbols)
-dpkg-shlibdeps: warning: package could avoid a useless dependency if debian/bibledit/usr/bin/bibledit was not linked against libatk-1.0.so.0 (it uses none of the library's symbols)
-dpkg-shlibdeps: warning: package could avoid a useless dependency if debian/bibledit/usr/bin/bibledit was not linked against libssl.so.1.1 (it uses none of the library's symbols)
-dpkg-shlibdeps: warning: package could avoid a useless dependency if debian/bibledit/usr/bin/bibledit was not linked against libsoup-2.4.so.1 (it uses none of the library's symbols)
-dpkg-shlibdeps: warning: package could avoid a useless dependency if debian/bibledit/usr/bin/bibledit was not linked against libcairo-gobject.so.2 (it uses none of the library's symbols)
 dpkg-shlibdeps: warning: package could avoid a useless dependency if debian/bibledit/usr/bin/bibledit was not linked against libcurl.so.4 (it uses none of the library's symbols)
 dpkg-shlibdeps: warning: package could avoid a useless dependency if debian/bibledit/usr/bin/bibledit was not linked against libpango-1.0.so.0 (it uses none of the library's symbols)
+dpkg-shlibdeps: warning: package could avoid a useless dependency if debian/bibledit/usr/bin/bibledit was not linked against libjavascriptcoregtk-4.0.so.18 (it uses none of the library's symbols)
 dpkg-shlibdeps: warning: package could avoid a useless dependency if debian/bibledit/usr/bin/bibledit was not linked against libgdk-3.so.0 (it uses none of the library's symbols)
+dpkg-shlibdeps: warning: package could avoid a useless dependency if debian/bibledit/usr/bin/bibledit was not linked against libatk-1.0.so.0 (it uses none of the library's symbols)
+dpkg-shlibdeps: warning: package could avoid a useless dependency if debian/bibledit/usr/bin/bibledit was not linked against libsoup-2.4.so.1 (it uses none of the library's symbols)
+dpkg-shlibdeps: warning: package could avoid a useless dependency if debian/bibledit/usr/bin/bibledit was not linked against libssl.so.1.1 (it uses none of the library's symbols)
 dpkg-shlibdeps: warning: package could avoid a useless dependency if debian/bibledit/usr/bin/bibledit was not linked against libpangocairo-1.0.so.0 (it uses none of the library's symbols)
+dpkg-shlibdeps: warning: package could avoid a useless dependency if debian/bibledit/usr/bin/bibledit was not linked against libcairo-gobject.so.2 (it uses none of the library's symbols)
+dpkg-shlibdeps: warning: package could avoid a useless dependency if debian/bibledit/usr/bin/bibledit was not linked against libcrypto.so.1.1 (it uses none of the library's symbols)
+dpkg-shlibdeps: warning: package could avoid a useless dependency if debian/bibledit/usr/bin/bibledit was not linked against libcairo.so.2 (it uses none of the library's symbols)
 dpkg-shlibdeps: warning: package could avoid a useless dependency if debian/bibledit/usr/bin/bibledit was not linked against libgdk_pixbuf-2.0.so.0 (it uses none of the library's symbols)
    dh_installdeb
 	printf '#!/bin/sh
@@ -1950,3 +1963,4 @@ dpkg-deb: building package 'bibledit' in '../bibledit_1.0.710_amd64.deb'.
 dpkg-genchanges: info: including full source code in upload
  dpkg-source --after-build bibledit-1.0.710
 dpkg-buildpackage: info: full upload; Debian-native package (full source is included)
+Now running lintian...
