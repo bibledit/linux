@@ -56,10 +56,11 @@ mv bibledit.h executable
 mv bibledit.cpp executable
 
 
-# Remove certain scripts.
+# Remove some scripts and tests.
 rm valgrind
 rm bibledit
 rm dev
+rm -rf unittests
 
 
 echo Remove macOS clutter.

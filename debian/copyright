@@ -7,13 +7,34 @@ Files: *
 Copyright: 2017 Teus Benschop <teusjannette@gmail.com> 
 License: GPL-3.0+
 
+Files: debian/*
+Copyright: 2017 Teus Benschop <teusjannette@gmail.com>
+License: GPL-3.0+
+
 Files: mbedtls/*
 Copyright: 2006-2015, ARM Limited
 License: Apache-2.0
 
-Files: debian/*
-Copyright: 2017 Teus Benschop <teusjannette@gmail.com>
-License: GPL-3.0+
+Files: rangy13/*
+Copyright: 2014-2015, Tim Down
+License: Expat
+
+Files: dtl/*
+Copyright: 2015, Tatsuhiko Kubo <cubicdaiya@gmail.com>
+License: BSD-3-clause
+
+Files: parsewebdata/*
+Copyright: 2012, Cyril Margorin, Imperx Inc. and other contributors
+License: Expat
+
+Files: jsonxx/*
+Copyright: 2010, Hong Jiang
+License: Expat
+
+Files: utf8/*
+Copyright: 2006, Nemanja Trifunovic
+License: BSL
+
 
 License: GPL-3.0+
  This program is free software; you can redistribute it and/or modify

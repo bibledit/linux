@@ -21,6 +21,10 @@
 echo Updates the repositories that create Ubuntu packages.
 
 
+# Bibledit support status:
+# Precise 12.04: No support: package libwebkit2gtk-4.0-dev cannot be found
+
+
 TMPLINUX=/tmp/bibledit-linux
 echo Works with the tarball supposed to be already in $TMPLINUX.
 
@@ -34,9 +38,23 @@ echo Unpack tarball into the repository.
 tar --strip-components=1 -C $LAUNCHPADLINUX -xzf $TMPLINUX/bibledit*tar.gz
 
 
-echo Commit to Launchpad.
+echo Change directory to repository.
 pushd $LAUNCHPADLINUX
+
+
+export LANG="C"
+export LC_ALL="C"
+
+
+echo Remove clutter.
+find . -name .DS_Store -delete
+
+
+echo Commit to Launchpad.
 bzr add .
 bzr commit -m "new upstream version"
 bzr push
+
+
+echo Change directory back to origin.
 popd
