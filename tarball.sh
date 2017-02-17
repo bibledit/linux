@@ -78,7 +78,7 @@ make distclean
 
 
 # Create file with the directories and files to install in the package data directory.
-find . | cut -c 2- | sed '/^$/d' | sed '/.git/d' | sed '/.DS_Store/d' | sed '/.Po/d' | sed '/.cpp$/d' | sed '/.c$/d' | sed '/.h$/d' | sed '/.hpp$/d' | sed '/autom4te/d' | sed '/.xcodeproj/d' > installdata.txt
+find . | cut -c 2- | sed '/^$/d' | sed '/\.git/d' | sed '/\.DS_Store/d' | sed '/\.Po/d' | sed '/\.cpp$/d' | sed '/\.c$/d' | sed '/\.h$/d' | sed '/\.hpp$/d' | sed '/autom4te/d' | sed '/\.xcodeproj/d' > installdata.txt
 
 
 # Require $ rsync Todo may go out once new installation is in effect.
