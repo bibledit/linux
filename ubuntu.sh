@@ -50,6 +50,9 @@ export LC_ALL="C"
 
 echo Change directory to repository.
 pushd $LAUNCHPADUBUNTU
+echo Update dependencies: Trusty has libwebkit2gtk-3.0-dev
+sed -i.bak 's/libmbedtls-dev//g' debian/control
+rm debian/control.bak
 echo Remove clutter.
 find . -name .DS_Store -delete
 echo Commit to Launchpad.
@@ -64,6 +67,7 @@ echo Change directory to repository.
 pushd $LAUNCHPADTRUSTY
 echo Update dependencies: Trusty has libwebkit2gtk-3.0-dev
 sed -i.bak 's/libwebkit2gtk-4.0-dev/libwebkit2gtk-3.0-dev/g' debian/control
+sed -i.bak 's/libmbedtls-dev//g' debian/control
 rm debian/control.bak
 echo Remove clutter.
 find . -name .DS_Store -delete

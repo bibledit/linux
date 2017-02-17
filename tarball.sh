@@ -81,13 +81,6 @@ make distclean
 find . | cut -c 2- | sed '/^$/d' | sed '/\.git/d' | sed '/\.DS_Store/d' | sed '/\.Po/d' | sed '/\.cpp$/d' | sed '/\.c$/d' | sed '/\.h$/d' | sed '/\.hpp$/d' | sed '/autom4te/d' | sed '/\.xcodeproj/d' > installdata.txt
 
 
-# Require $ rsync Todo may go out once new installation is in effect.
-sed -i.bak 's/.*Tag1.*/AC_PATH_PROG(RSYNC_PATH, rsync, no)/g' configure.ac
-sed -i.bak 's/.*Tag2.*/if test x$RSYNC_PATH = xno; then/g' configure.ac
-sed -i.bak 's/.*Tag3.*/  AC_MSG_ERROR(Program "rsync" is needed. Install this first.)/g' configure.ac
-sed -i.bak 's/.*Tag4.*/fi/g' configure.ac
-
-
 # Enable the Linux app for in config.h.
 sed -i.bak 's/ENABLELINUX=no/ENABLELINUX=yes/g' configure.ac
 sed -i.bak 's/# linux //g' configure.ac
