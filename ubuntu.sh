@@ -22,7 +22,7 @@ echo Updates the repositories that create Ubuntu packages.
 
 
 # Bibledit support status:
-# Precise 12.04: No support: package libwebkit2gtk-4.0-dev cannot be found
+# Precise 12.04: No support: package libwebkit2gtk-3.0-dev and libwebkit2gtk-4.0-dev not available.
 
 
 TMPLINUX=/tmp/bibledit-linux
@@ -34,14 +34,8 @@ echo Clean repositoriy at $LAUNCHPADUBUNTU.
 rm -rf $LAUNCHPADUBUNTU/*
 
 
-LAUNCHPADTRUSTY=../launchpad/trusty
-echo Clean repositoriy at $LAUNCHPADTRUSTY.
-rm -rf $LAUNCHPADTRUSTY/*
-
-
-echo Unpack tarball into the repositories.
+echo Unpack tarball into the repository.
 tar --strip-components=1 -C $LAUNCHPADUBUNTU -xzf $TMPLINUX/bibledit*tar.gz
-tar --strip-components=1 -C $LAUNCHPADTRUSTY -xzf $TMPLINUX/bibledit*tar.gz
 
 
 export LANG="C"
@@ -50,7 +44,7 @@ export LC_ALL="C"
 
 echo Change directory to repository.
 pushd $LAUNCHPADUBUNTU
-echo Update dependencies: Trusty has libwebkit2gtk-3.0-dev
+echo Update dependencies: Use embedded mbedtls.
 sed -i.bak 's/libmbedtls-dev//g' debian/control
 rm debian/control.bak
 echo Remove clutter.
@@ -63,14 +57,20 @@ echo Change directory back to origin.
 popd
 
 
+LAUNCHPADTRUSTY=../launchpad/trusty
+echo Clean repositoriy at $LAUNCHPADTRUSTY.
+rm -rf $LAUNCHPADTRUSTY/*
+
+
+echo Copy general Ubuntu data to Trusty.
+cp -r $LAUNCHPADUBUNTU/* $LAUNCHPADTRUSTY
+
+
 echo Change directory to repository.
 pushd $LAUNCHPADTRUSTY
-echo Update dependencies: Trusty has libwebkit2gtk-3.0-dev
+echo Update dependencies: Trusty has libwebkit2gtk-3.0-dev.
 sed -i.bak 's/libwebkit2gtk-4.0-dev/libwebkit2gtk-3.0-dev/g' debian/control
-sed -i.bak 's/libmbedtls-dev//g' debian/control
 rm debian/control.bak
-echo Remove clutter.
-find . -name .DS_Store -delete
 echo Commit to Launchpad.
 bzr add .
 bzr commit -m "new upstream version"
