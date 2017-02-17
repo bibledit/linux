@@ -29,32 +29,47 @@ TMPLINUX=/tmp/bibledit-linux
 echo Works with the tarball supposed to be already in $TMPLINUX.
 
 
-LAUNCHPADLINUX=../launchpad/linux
-echo Clean repository at LAUNCHPADLINUX.
-rm -rf $LAUNCHPADLINUX/*
+LAUNCHPADUBUNTU=../launchpad/ubuntu
+echo Clean repositoriy at $LAUNCHPADUBUNTU.
+rm -rf $LAUNCHPADUBUNTU/*
 
 
-echo Unpack tarball into the repository.
-tar --strip-components=1 -C $LAUNCHPADLINUX -xzf $TMPLINUX/bibledit*tar.gz
+LAUNCHPADTRUSTY=../launchpad/trusty
+echo Clean repositoriy at $LAUNCHPADTRUSTY.
+rm -rf $LAUNCHPADTRUSTY/*
 
 
-echo Change directory to repository.
-pushd $LAUNCHPADLINUX
+echo Unpack tarball into the repositories.
+tar --strip-components=1 -C $LAUNCHPADUBUNTU -xzf $TMPLINUX/bibledit*tar.gz
+tar --strip-components=1 -C $LAUNCHPADTRUSTY -xzf $TMPLINUX/bibledit*tar.gz
 
 
 export LANG="C"
 export LC_ALL="C"
 
 
+echo Change directory to repository.
+pushd $LAUNCHPADUBUNTU
 echo Remove clutter.
 find . -name .DS_Store -delete
-
-
 echo Commit to Launchpad.
 bzr add .
 bzr commit -m "new upstream version"
 bzr push
+echo Change directory back to origin.
+popd
 
 
+echo Change directory to repository.
+pushd $LAUNCHPADTRUSTY
+echo Update dependencies: Trusty has libwebkit2gtk-3.0-dev
+sed -i.bak 's/libwebkit2gtk-4.0-dev/libwebkit2gtk-3.0-dev/g' debian/control
+rm debian/control.bak
+echo Remove clutter.
+find . -name .DS_Store -delete
+echo Commit to Launchpad.
+bzr add .
+bzr commit -m "new upstream version"
+bzr push
 echo Change directory back to origin.
 popd
