@@ -18,7 +18,7 @@
 
 
 # Redirect stdout ( > ) into a named pipe ( >() ) running "tee"
-exec > >(tee outputnew.txt)
+exec > >(tee debiannew.txt)
 # Same for stderr.
 exec 2>&1
 
@@ -63,6 +63,8 @@ if [ $? -ne 0 ]; then exit; fi
 echo Reconfiguring the source.
 ssh -tt $DEBIANSID "cd bibledit*; ./reconfigure"
 if [ $? -ne 0 ]; then exit; fi
+ssh -tt $DEBIANSID "cd bibledit*; rm -rf autom4te.cache"
+if [ $? -ne 0 ]; then exit; fi
 
 
 echo Do a license check.
@@ -89,4 +91,4 @@ sync
 
 
 echo Showing difference with processed output.
-diff --normal --ignore-tab-expansion --ignore-space-change --ignore-blank-lines outputnew.txt outputdone.txt > outputdiff.txt
+diff --normal --ignore-tab-expansion --ignore-space-change --ignore-blank-lines debiannew.txt debiandone.txt > debiandiff.txt

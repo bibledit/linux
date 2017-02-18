@@ -49,7 +49,7 @@ rm valgrind
 rm bibledit
 rm dev
 rm -rf unittests
-rm output*.txt
+rm debian*.txt
 find . -name .DS_Store -delete
 rm -rf .git
 find . -name "*.Po" -delete
