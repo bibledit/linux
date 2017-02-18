@@ -1,11 +1,11 @@
 The IP address of the Debian machine is 192.168.2.108.
 Check that the Debian machine is alive.
 PING 192.168.2.108 (192.168.2.108): 56 data bytes
-64 bytes from 192.168.2.108: icmp_seq=0 ttl=64 time=0.350 ms
+64 bytes from 192.168.2.108: icmp_seq=0 ttl=64 time=0.529 ms
 
 --- 192.168.2.108 ping statistics ---
 1 packets transmitted, 1 packets received, 0.0% packet loss
-round-trip min/avg/max/stddev = 0.350/0.350/0.350/0.000 ms
+round-trip min/avg/max/stddev = 0.529/0.529/0.529/0.000 ms
 Works with the tarball supposed to be already in /tmp/bibledit-linux.
 Clean the Debian builder and copy the tarball to it.
 Unpack and remove the tarball in Debian.
@@ -1838,7 +1838,6 @@ cp /configure.ac /home/teus/bibledit-5.0.101/debian/bibledit/usr/share/bibledit/
 cp /consistency/index.html /home/teus/bibledit-5.0.101/debian/bibledit/usr/share/bibledit/consistency/index.html
 cp /consistency/index.js /home/teus/bibledit-5.0.101/debian/bibledit/usr/share/bibledit/consistency/index.js
 cp /consultations/gitflag /home/teus/bibledit-5.0.101/debian/bibledit/usr/share/bibledit/consultations/gitflag
-cp /COPYING /home/teus/bibledit-5.0.101/debian/bibledit/usr/share/bibledit/COPYING
 cp /css/editor.css /home/teus/bibledit-5.0.101/debian/bibledit/usr/share/bibledit/css/editor.css
 cp /css/mouse.css /home/teus/bibledit-5.0.101/debian/bibledit/usr/share/bibledit/css/mouse.css
 cp /css/stylesheet.css /home/teus/bibledit-5.0.101/debian/bibledit/usr/share/bibledit/css/stylesheet.css
@@ -1959,8 +1958,6 @@ cp /demo/93-2JNeng-web.usfm /home/teus/bibledit-5.0.101/debian/bibledit/usr/shar
 cp /demo/94-3JNeng-web.usfm /home/teus/bibledit-5.0.101/debian/bibledit/usr/share/bibledit/demo/94-3JNeng-web.usfm
 cp /demo/95-JUDeng-web.usfm /home/teus/bibledit-5.0.101/debian/bibledit/usr/share/bibledit/demo/95-JUDeng-web.usfm
 cp /demo/96-REVeng-web.usfm /home/teus/bibledit-5.0.101/debian/bibledit/usr/share/bibledit/demo/96-REVeng-web.usfm
-cp /demo/COPYING /home/teus/bibledit-5.0.101/debian/bibledit/usr/share/bibledit/demo/COPYING
-cp: cannot stat './/demo/COPYING': No such file or directory
 cp /demo/copyright.sh /home/teus/bibledit-5.0.101/debian/bibledit/usr/share/bibledit/demo/copyright.sh
 cp /demo/readme.txt /home/teus/bibledit-5.0.101/debian/bibledit/usr/share/bibledit/demo/readme.txt
 cp /depcomp /home/teus/bibledit-5.0.101/debian/bibledit/usr/share/bibledit/depcomp
@@ -1974,8 +1971,6 @@ cp /dialog/list.html /home/teus/bibledit-5.0.101/debian/bibledit/usr/share/bible
 cp /dialog/text.html /home/teus/bibledit-5.0.101/debian/bibledit/usr/share/bibledit/dialog/text.html
 cp /dialog/upload.html /home/teus/bibledit-5.0.101/debian/bibledit/usr/share/bibledit/dialog/upload.html
 cp /dialog/yes.html /home/teus/bibledit-5.0.101/debian/bibledit/usr/share/bibledit/dialog/yes.html
-cp /dtl/COPYING /home/teus/bibledit-5.0.101/debian/bibledit/usr/share/bibledit/dtl/COPYING
-cp: cannot stat './/dtl/COPYING': No such file or directory
 cp /dyncss/create_css.txt /home/teus/bibledit-5.0.101/debian/bibledit/usr/share/bibledit/dyncss/create_css.txt
 cp /edit/embed.js /home/teus/bibledit-5.0.101/debian/bibledit/usr/share/bibledit/edit/embed.js
 cp /edit/index.html /home/teus/bibledit-5.0.101/debian/bibledit/usr/share/bibledit/edit/index.html
@@ -2118,8 +2113,6 @@ cp /navigation/nav.js /home/teus/bibledit-5.0.101/debian/bibledit/usr/share/bibl
 cp /navigation/passage.js /home/teus/bibledit-5.0.101/debian/bibledit/usr/share/bibledit/navigation/passage.js
 cp /navigation/shortcuts.js /home/teus/bibledit-5.0.101/debian/bibledit/usr/share/bibledit/navigation/shortcuts.js
 cp /NEWS /home/teus/bibledit-5.0.101/debian/bibledit/usr/share/bibledit/NEWS
-cp /nicedit/COPYING /home/teus/bibledit-5.0.101/debian/bibledit/usr/share/bibledit/nicedit/COPYING
-cp: cannot stat './/nicedit/COPYING': No such file or directory
 cp /nicedit/nicedit.js /home/teus/bibledit-5.0.101/debian/bibledit/usr/share/bibledit/nicedit/nicedit.js
 cp /nicedit/nicedit.min.js /home/teus/bibledit-5.0.101/debian/bibledit/usr/share/bibledit/nicedit/nicedit.min.js
 cp /nicedit/nicEditorIcons.gif /home/teus/bibledit-5.0.101/debian/bibledit/usr/share/bibledit/nicedit/nicEditorIcons.gif
@@ -2158,8 +2151,6 @@ cp /notifit/tests.html /home/teus/bibledit-5.0.101/debian/bibledit/usr/share/bib
 cp /odf/README /home/teus/bibledit-5.0.101/debian/bibledit/usr/share/bibledit/odf/README
 cp /odf/template.odt /home/teus/bibledit-5.0.101/debian/bibledit/usr/share/bibledit/odf/template.odt
 cp /paratext/index.html /home/teus/bibledit-5.0.101/debian/bibledit/usr/share/bibledit/paratext/index.html
-cp /parsewebdata/COPYING /home/teus/bibledit-5.0.101/debian/bibledit/usr/share/bibledit/parsewebdata/COPYING
-cp: cannot stat './/parsewebdata/COPYING': No such file or directory
 cp /personalize/index.html /home/teus/bibledit-5.0.101/debian/bibledit/usr/share/bibledit/personalize/index.html
 cp /personalize/index.js /home/teus/bibledit-5.0.101/debian/bibledit/usr/share/bibledit/personalize/index.js
 cp /pix/bible.svg /home/teus/bibledit-5.0.101/debian/bibledit/usr/share/bibledit/pix/bible.svg
@@ -2555,18 +2546,18 @@ make[1]: Leaving directory '/home/teus/bibledit-5.0.101'
    dh_shlibdeps
 	install -d debian/bibledit/DEBIAN
 	dpkg-shlibdeps -Tdebian/bibledit.substvars debian/bibledit/usr/bin/bibledit
-dpkg-shlibdeps: warning: package could avoid a useless dependency if debian/bibledit/usr/bin/bibledit was not linked against libcairo-gobject.so.2 (it uses none of the library's symbols)
 dpkg-shlibdeps: warning: package could avoid a useless dependency if debian/bibledit/usr/bin/bibledit was not linked against libcairo.so.2 (it uses none of the library's symbols)
-dpkg-shlibdeps: warning: package could avoid a useless dependency if debian/bibledit/usr/bin/bibledit was not linked against libgdk-3.so.0 (it uses none of the library's symbols)
 dpkg-shlibdeps: warning: package could avoid a useless dependency if debian/bibledit/usr/bin/bibledit was not linked against libcurl.so.4 (it uses none of the library's symbols)
+dpkg-shlibdeps: warning: package could avoid a useless dependency if debian/bibledit/usr/bin/bibledit was not linked against libgdk_pixbuf-2.0.so.0 (it uses none of the library's symbols)
+dpkg-shlibdeps: warning: package could avoid a useless dependency if debian/bibledit/usr/bin/bibledit was not linked against libssl.so.1.1 (it uses none of the library's symbols)
+dpkg-shlibdeps: warning: package could avoid a useless dependency if debian/bibledit/usr/bin/bibledit was not linked against libpango-1.0.so.0 (it uses none of the library's symbols)
+dpkg-shlibdeps: warning: package could avoid a useless dependency if debian/bibledit/usr/bin/bibledit was not linked against libjavascriptcoregtk-4.0.so.18 (it uses none of the library's symbols)
+dpkg-shlibdeps: warning: package could avoid a useless dependency if debian/bibledit/usr/bin/bibledit was not linked against libcrypto.so.1.1 (it uses none of the library's symbols)
 dpkg-shlibdeps: warning: package could avoid a useless dependency if debian/bibledit/usr/bin/bibledit was not linked against libatk-1.0.so.0 (it uses none of the library's symbols)
 dpkg-shlibdeps: warning: package could avoid a useless dependency if debian/bibledit/usr/bin/bibledit was not linked against libsoup-2.4.so.1 (it uses none of the library's symbols)
-dpkg-shlibdeps: warning: package could avoid a useless dependency if debian/bibledit/usr/bin/bibledit was not linked against libgdk_pixbuf-2.0.so.0 (it uses none of the library's symbols)
+dpkg-shlibdeps: warning: package could avoid a useless dependency if debian/bibledit/usr/bin/bibledit was not linked against libcairo-gobject.so.2 (it uses none of the library's symbols)
+dpkg-shlibdeps: warning: package could avoid a useless dependency if debian/bibledit/usr/bin/bibledit was not linked against libgdk-3.so.0 (it uses none of the library's symbols)
 dpkg-shlibdeps: warning: package could avoid a useless dependency if debian/bibledit/usr/bin/bibledit was not linked against libpangocairo-1.0.so.0 (it uses none of the library's symbols)
-dpkg-shlibdeps: warning: package could avoid a useless dependency if debian/bibledit/usr/bin/bibledit was not linked against libcrypto.so.1.1 (it uses none of the library's symbols)
-dpkg-shlibdeps: warning: package could avoid a useless dependency if debian/bibledit/usr/bin/bibledit was not linked against libssl.so.1.1 (it uses none of the library's symbols)
-dpkg-shlibdeps: warning: package could avoid a useless dependency if debian/bibledit/usr/bin/bibledit was not linked against libjavascriptcoregtk-4.0.so.18 (it uses none of the library's symbols)
-dpkg-shlibdeps: warning: package could avoid a useless dependency if debian/bibledit/usr/bin/bibledit was not linked against libpango-1.0.so.0 (it uses none of the library's symbols)
    dh_installdeb
 	printf '#!/bin/sh
 set -e
@@ -2608,7 +2599,6 @@ dpkg-genchanges: info: including full source code in upload
  dpkg-source --after-build bibledit-5.0.101
 dpkg-buildpackage: info: full upload; Debian-native package (full source is included)
 Now running lintian...
-W: bibledit: extra-license-file usr/share/bibledit/COPYING
 Finished running lintian.
 Connection to 192.168.2.108 closed.
 Remove the generated build artifacts.
@@ -2918,7 +2908,7 @@ make[1]: Leaving directory '/home/teus/bibledit-5.0.101'
 [0msbuild (Debian sbuild) 0.73.0 (23 Dec 2016) on sid
 [0m[0m
 [0m[0m+==============================================================================+
-[0m[0m| bibledit 5.0.101 (amd64)                     Sat, 18 Feb 2017 15:20:30 +0000 |
+[0m[0m| bibledit 5.0.101 (amd64)                     Sat, 18 Feb 2017 16:37:36 +0000 |
 [0m[0m+==============================================================================+
 [0m[0m
 [0m[0mPackage: bibledit
@@ -2930,7 +2920,7 @@ make[1]: Leaving directory '/home/teus/bibledit-5.0.101'
 [0m[0mBuild Architecture: amd64
 [0m[0mBuild Type: any
 [0m[0m
-[0m[32mI: NOTICE: Log filtering will replace 'var/run/schroot/mount/unstable-amd64-sbuild-7a47465a-d522-48cf-968f-16355a9ae37e' with '<<CHROOT>>'
+[0m[32mI: NOTICE: Log filtering will replace 'var/run/schroot/mount/unstable-amd64-sbuild-9ebf224f-3c39-4970-a9d0-fd38325d4fbe' with '<<CHROOT>>'
 [0m[0m
 [0m[0m+------------------------------------------------------------------------------+
 [0m[0m| Update chroot                                                                |
@@ -2968,8 +2958,8 @@ make[1]: Leaving directory '/home/teus/bibledit-5.0.101'
 [0m[0mGet:30 http://cdn-fastly.deb.debian.org/debian unstable/main Sources 2017-02-18-0825.26.pdiff [1940 B]
 [0m[0mGet:31 http://cdn-fastly.deb.debian.org/debian unstable/main Sources 2017-02-18-1426.14.pdiff [7011 B]
 [0m[0mGet:32 http://cdn-fastly.deb.debian.org/debian unstable/main amd64 Packages 2017-02-11-2022.35.pdiff [5759 B]
-[0m[0mGet:33 http://cdn-fastly.deb.debian.org/debian unstable/main amd64 Packages 2017-02-12-0223.09.pdiff [6019 B]
 [0m[0mGet:31 http://cdn-fastly.deb.debian.org/debian unstable/main Sources 2017-02-18-1426.14.pdiff [7011 B]
+[0m[0mGet:33 http://cdn-fastly.deb.debian.org/debian unstable/main amd64 Packages 2017-02-12-0223.09.pdiff [6019 B]
 [0m[0mGet:34 http://cdn-fastly.deb.debian.org/debian unstable/main amd64 Packages 2017-02-12-0825.13.pdiff [995 B]
 [0m[0mGet:35 http://cdn-fastly.deb.debian.org/debian unstable/main amd64 Packages 2017-02-12-1425.22.pdiff [8434 B]
 [0m[0mGet:36 http://cdn-fastly.deb.debian.org/debian unstable/main amd64 Packages 2017-02-12-2025.56.pdiff [8431 B]
@@ -2997,7 +2987,7 @@ make[1]: Leaving directory '/home/teus/bibledit-5.0.101'
 [0m[0mGet:58 http://cdn-fastly.deb.debian.org/debian unstable/main amd64 Packages 2017-02-18-0825.26.pdiff [3834 B]
 [0m[0mGet:59 http://cdn-fastly.deb.debian.org/debian unstable/main amd64 Packages 2017-02-18-1426.14.pdiff [19.7 kB]
 [0m[0mGet:59 http://cdn-fastly.deb.debian.org/debian unstable/main amd64 Packages 2017-02-18-1426.14.pdiff [19.7 kB]
-[0m[0mFetched 641 kB in 2s (236 kB/s)
+[0m[0mFetched 641 kB in 2s (249 kB/s)
 [0m[0mReading package lists...
 [0m[0mReading package lists...
 [0m[0mBuilding dependency tree...
@@ -3042,7 +3032,7 @@ make[1]: Leaving directory '/home/teus/bibledit-5.0.101'
 [0m[0mGet:29 http://cdn-fastly.deb.debian.org/debian unstable/main amd64 ccache amd64 3.3.4-1 [136 kB]
 [0m[0mGet:30 http://cdn-fastly.deb.debian.org/debian unstable/main amd64 linux-libc-dev amd64 4.9.10-1 [1223 kB]
 [0m[0mdebconf: delaying package configuration, since apt-utils is not installed
-[0m[0mFetched 34.1 MB in 9s (3544 kB/s)
+[0m[0mFetched 34.1 MB in 9s (3546 kB/s)
 [0m[0m(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 11634 files and directories currently installed.)
 [0m[0mPreparing to unpack .../sysvinit-utils_2.88dsf-59.9_amd64.deb ...
 [0m[0mUnpacking sysvinit-utils (2.88dsf-59.9) over (2.88dsf-59.8) ...
@@ -3157,8 +3147,8 @@ make[1]: Leaving directory '/home/teus/bibledit-5.0.101'
 [0m[0m-------------
 [0m[0m
 [0m[0m/home/teus/bibledit_5.0.101.dsc exists in /home/teus; copying to chroot
-[0m[32mI: NOTICE: Log filtering will replace 'build/bibledit-M2GNuA/bibledit-5.0.101' with '<<PKGBUILDDIR>>'
-[0m[32mI: NOTICE: Log filtering will replace 'build/bibledit-M2GNuA' with '<<BUILDDIR>>'
+[0m[32mI: NOTICE: Log filtering will replace 'build/bibledit-71N9Xg/bibledit-5.0.101' with '<<PKGBUILDDIR>>'
+[0m[32mI: NOTICE: Log filtering will replace 'build/bibledit-71N9Xg' with '<<BUILDDIR>>'
 [0m[0m
 [0m[0m+------------------------------------------------------------------------------+
 [0m[0m| Install build-essential                                                      |
@@ -3170,16 +3160,16 @@ make[1]: Leaving directory '/home/teus/bibledit-5.0.101'
 [0m[0m
 [0m[0mMerged Build-Depends: build-essential, fakeroot
 [0m[0mFiltered Build-Depends: build-essential, fakeroot
-[0m[0mdpkg-deb: building package 'sbuild-build-depends-core-dummy' in '/<<BUILDDIR>>/resolver-ZK70mw/apt_archive/sbuild-build-depends-core-dummy.deb'.
+[0m[0mdpkg-deb: building package 'sbuild-build-depends-core-dummy' in '/<<BUILDDIR>>/resolver-PT1pDQ/apt_archive/sbuild-build-depends-core-dummy.deb'.
 [0m[0mdpkg-scanpackages: warning: Packages in archive but missing from override file:
 [0m[0mdpkg-scanpackages: warning:   sbuild-build-depends-core-dummy
 [0m[0mdpkg-scanpackages: info: Wrote 1 entries to output Packages file.
-[0m[0mIgn:1 copy:/<<BUILDDIR>>/resolver-ZK70mw/apt_archive ./ InRelease
-[0m[0mGet:2 copy:/<<BUILDDIR>>/resolver-ZK70mw/apt_archive ./ Release [957 B]
-[0m[0mIgn:3 copy:/<<BUILDDIR>>/resolver-ZK70mw/apt_archive ./ Release.gpg
-[0m[0mGet:4 copy:/<<BUILDDIR>>/resolver-ZK70mw/apt_archive ./ Sources [349 B]
-[0m[0mGet:5 copy:/<<BUILDDIR>>/resolver-ZK70mw/apt_archive ./ Packages [432 B]
-[0m[0mFetched 1738 B in 0s (0 B/s)
+[0m[0mIgn:1 copy:/<<BUILDDIR>>/resolver-PT1pDQ/apt_archive ./ InRelease
+[0m[0mGet:2 copy:/<<BUILDDIR>>/resolver-PT1pDQ/apt_archive ./ Release [957 B]
+[0m[0mIgn:3 copy:/<<BUILDDIR>>/resolver-PT1pDQ/apt_archive ./ Release.gpg
+[0m[0mGet:4 copy:/<<BUILDDIR>>/resolver-PT1pDQ/apt_archive ./ Sources [349 B]
+[0m[0mGet:5 copy:/<<BUILDDIR>>/resolver-PT1pDQ/apt_archive ./ Packages [430 B]
+[0m[0mFetched 1736 B in 0s (153 kB/s)
 [0m[0mReading package lists...
 [0m[0mReading package lists...
 [0m[0m
@@ -3195,7 +3185,7 @@ make[1]: Leaving directory '/home/teus/bibledit-5.0.101'
 [0m[0m0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
 [0m[0mNeed to get 784 B of archives.
 [0m[0mAfter this operation, 0 B of additional disk space will be used.
-[0m[0mGet:1 copy:/<<BUILDDIR>>/resolver-ZK70mw/apt_archive ./ sbuild-build-depends-core-dummy 0.invalid.0 [784 B]
+[0m[0mGet:1 copy:/<<BUILDDIR>>/resolver-PT1pDQ/apt_archive ./ sbuild-build-depends-core-dummy 0.invalid.0 [784 B]
 [0m[0mdebconf: delaying package configuration, since apt-utils is not installed
 [0m[0mFetched 784 B in 0s (0 B/s)
 [0m[0mSelecting previously unselected package sbuild-build-depends-core-dummy.
@@ -3220,16 +3210,16 @@ make[1]: Leaving directory '/home/teus/bibledit-5.0.101'
 [0m[0m
 [0m[0mMerged Build-Depends: debhelper (>= 9), autotools-dev, patchutils (>= 0.2.25), pkg-config, libgtk-3-dev, rcs, dh-autoreconf, libwebkit2gtk-4.0-dev, autoconf, autoconf-archive, make (>= 3), dpkg-dev (>= 1.10), libcurl4-openssl-dev, libssl-dev, libatspi2.0-dev, zip, unzip, libmbedtls-dev
 [0m[0mFiltered Build-Depends: debhelper (>= 9), autotools-dev, patchutils (>= 0.2.25), pkg-config, libgtk-3-dev, rcs, dh-autoreconf, libwebkit2gtk-4.0-dev, autoconf, autoconf-archive, make (>= 3), dpkg-dev (>= 1.10), libcurl4-openssl-dev, libssl-dev, libatspi2.0-dev, zip, unzip, libmbedtls-dev
-[0m[0mdpkg-deb: building package 'sbuild-build-depends-bibledit-dummy' in '/<<BUILDDIR>>/resolver-ZK70mw/apt_archive/sbuild-build-depends-bibledit-dummy.deb'.
+[0m[0mdpkg-deb: building package 'sbuild-build-depends-bibledit-dummy' in '/<<BUILDDIR>>/resolver-PT1pDQ/apt_archive/sbuild-build-depends-bibledit-dummy.deb'.
 [0m[0mdpkg-scanpackages: warning: Packages in archive but missing from override file:
 [0m[0mdpkg-scanpackages: warning:   sbuild-build-depends-bibledit-dummy sbuild-build-depends-core-dummy
 [0m[0mdpkg-scanpackages: info: Wrote 2 entries to output Packages file.
-[0m[0mIgn:1 copy:/<<BUILDDIR>>/resolver-ZK70mw/apt_archive ./ InRelease
-[0m[0mGet:2 copy:/<<BUILDDIR>>/resolver-ZK70mw/apt_archive ./ Release [963 B]
-[0m[0mIgn:3 copy:/<<BUILDDIR>>/resolver-ZK70mw/apt_archive ./ Release.gpg
-[0m[0mGet:4 copy:/<<BUILDDIR>>/resolver-ZK70mw/apt_archive ./ Sources [616 B]
-[0m[0mGet:5 copy:/<<BUILDDIR>>/resolver-ZK70mw/apt_archive ./ Packages [697 B]
-[0m[0mFetched 2276 B in 0s (0 B/s)
+[0m[0mIgn:1 copy:/<<BUILDDIR>>/resolver-PT1pDQ/apt_archive ./ InRelease
+[0m[0mGet:2 copy:/<<BUILDDIR>>/resolver-PT1pDQ/apt_archive ./ Release [963 B]
+[0m[0mIgn:3 copy:/<<BUILDDIR>>/resolver-PT1pDQ/apt_archive ./ Release.gpg
+[0m[0mGet:4 copy:/<<BUILDDIR>>/resolver-PT1pDQ/apt_archive ./ Sources [616 B]
+[0m[0mGet:5 copy:/<<BUILDDIR>>/resolver-PT1pDQ/apt_archive ./ Packages [697 B]
+[0m[0mFetched 2276 B in 0s (200 kB/s)
 [0m[0mReading package lists...
 [0m[0mReading package lists...
 [0m[0m
@@ -3391,7 +3381,7 @@ make[1]: Leaving directory '/home/teus/bibledit-5.0.101'
 [0m[0m0 upgraded, 304 newly installed, 0 to remove and 0 not upgraded.
 [0m[0mNeed to get 137 MB of archives.
 [0m[0mAfter this operation, 524 MB of additional disk space will be used.
-[0m[0mGet:1 copy:/<<BUILDDIR>>/resolver-ZK70mw/apt_archive ./ sbuild-build-depends-bibledit-dummy 0.invalid.0 [918 B]
+[0m[0mGet:1 copy:/<<BUILDDIR>>/resolver-PT1pDQ/apt_archive ./ sbuild-build-depends-bibledit-dummy 0.invalid.0 [918 B]
 [0m[0mGet:2 http://cdn-fastly.deb.debian.org/debian unstable/main amd64 groff-base amd64 1.22.3-9 [1160 kB]
 [0m[0mGet:3 http://cdn-fastly.deb.debian.org/debian unstable/main amd64 libbsd0 amd64 0.8.3-1 [83.0 kB]
 [0m[0mGet:4 http://cdn-fastly.deb.debian.org/debian unstable/main amd64 bsdmainutils amd64 9.0.12 [185 kB]
@@ -3696,7 +3686,7 @@ make[1]: Leaving directory '/home/teus/bibledit-5.0.101'
 [0m[0mGet:303 http://cdn-fastly.deb.debian.org/debian unstable/main amd64 libjavascriptcoregtk-4.0-dev amd64 2.14.5-1 [82.3 kB]
 [0m[0mGet:304 http://cdn-fastly.deb.debian.org/debian unstable/main amd64 libwebkit2gtk-4.0-dev amd64 2.14.5-1 [231 kB]
 [0m[0mdebconf: delaying package configuration, since apt-utils is not installed
-[0m[0mFetched 137 MB in 37s (3699 kB/s)
+[0m[0mFetched 137 MB in 37s (3706 kB/s)
 [0m[0mSelecting previously unselected package groff-base.
 [0m[0m(Reading database ... 11634 files and directories currently installed.)
 [0m[0mPreparing to unpack .../00-groff-base_1.22.3-9_amd64.deb ...
@@ -4996,7 +4986,7 @@ make[1]: Leaving directory '/home/teus/bibledit-5.0.101'
 [0m[0mSCHROOT_COMMAND=env
 [0m[0mSCHROOT_GID=1000
 [0m[0mSCHROOT_GROUP=teus
-[0m[0mSCHROOT_SESSION_ID=unstable-amd64-sbuild-7a47465a-d522-48cf-968f-16355a9ae37e
+[0m[0mSCHROOT_SESSION_ID=unstable-amd64-sbuild-9ebf224f-3c39-4970-a9d0-fd38325d4fbe
 [0m[0mSCHROOT_UID=1000
 [0m[0mSCHROOT_USER=teus
 [0m[0mSHELL=/bin/sh
@@ -5654,7 +5644,6 @@ make[1]: Leaving directory '/home/teus/bibledit-5.0.101'
 [0m[0mcp /consistency/index.html /<<PKGBUILDDIR>>/debian/bibledit/usr/share/bibledit/consistency/index.html
 [0m[0mcp /consistency/index.js /<<PKGBUILDDIR>>/debian/bibledit/usr/share/bibledit/consistency/index.js
 [0m[0mcp /consultations/gitflag /<<PKGBUILDDIR>>/debian/bibledit/usr/share/bibledit/consultations/gitflag
-[0m[0mcp /COPYING /<<PKGBUILDDIR>>/debian/bibledit/usr/share/bibledit/COPYING
 [0m[0mcp /css/editor.css /<<PKGBUILDDIR>>/debian/bibledit/usr/share/bibledit/css/editor.css
 [0m[0mcp /css/mouse.css /<<PKGBUILDDIR>>/debian/bibledit/usr/share/bibledit/css/mouse.css
 [0m[0mcp /css/stylesheet.css /<<PKGBUILDDIR>>/debian/bibledit/usr/share/bibledit/css/stylesheet.css
@@ -5775,8 +5764,6 @@ make[1]: Leaving directory '/home/teus/bibledit-5.0.101'
 [0m[0mcp /demo/94-3JNeng-web.usfm /<<PKGBUILDDIR>>/debian/bibledit/usr/share/bibledit/demo/94-3JNeng-web.usfm
 [0m[0mcp /demo/95-JUDeng-web.usfm /<<PKGBUILDDIR>>/debian/bibledit/usr/share/bibledit/demo/95-JUDeng-web.usfm
 [0m[0mcp /demo/96-REVeng-web.usfm /<<PKGBUILDDIR>>/debian/bibledit/usr/share/bibledit/demo/96-REVeng-web.usfm
-[0m[0mcp /demo/COPYING /<<PKGBUILDDIR>>/debian/bibledit/usr/share/bibledit/demo/COPYING
-[0m[0mcp: cannot stat './/demo/COPYING': No such file or directory
 [0m[0mcp /demo/copyright.sh /<<PKGBUILDDIR>>/debian/bibledit/usr/share/bibledit/demo/copyright.sh
 [0m[0mcp /demo/readme.txt /<<PKGBUILDDIR>>/debian/bibledit/usr/share/bibledit/demo/readme.txt
 [0m[0mcp /depcomp /<<PKGBUILDDIR>>/debian/bibledit/usr/share/bibledit/depcomp
@@ -5790,8 +5777,6 @@ make[1]: Leaving directory '/home/teus/bibledit-5.0.101'
 [0m[0mcp /dialog/text.html /<<PKGBUILDDIR>>/debian/bibledit/usr/share/bibledit/dialog/text.html
 [0m[0mcp /dialog/upload.html /<<PKGBUILDDIR>>/debian/bibledit/usr/share/bibledit/dialog/upload.html
 [0m[0mcp /dialog/yes.html /<<PKGBUILDDIR>>/debian/bibledit/usr/share/bibledit/dialog/yes.html
-[0m[0mcp /dtl/COPYING /<<PKGBUILDDIR>>/debian/bibledit/usr/share/bibledit/dtl/COPYING
-[0m[0mcp: cannot stat './/dtl/COPYING': No such file or directory
 [0m[0mcp /dyncss/create_css.txt /<<PKGBUILDDIR>>/debian/bibledit/usr/share/bibledit/dyncss/create_css.txt
 [0m[0mcp /edit/embed.js /<<PKGBUILDDIR>>/debian/bibledit/usr/share/bibledit/edit/embed.js
 [0m[0mcp /edit/index.html /<<PKGBUILDDIR>>/debian/bibledit/usr/share/bibledit/edit/index.html
@@ -5934,8 +5919,6 @@ make[1]: Leaving directory '/home/teus/bibledit-5.0.101'
 [0m[0mcp /navigation/passage.js /<<PKGBUILDDIR>>/debian/bibledit/usr/share/bibledit/navigation/passage.js
 [0m[0mcp /navigation/shortcuts.js /<<PKGBUILDDIR>>/debian/bibledit/usr/share/bibledit/navigation/shortcuts.js
 [0m[0mcp /NEWS /<<PKGBUILDDIR>>/debian/bibledit/usr/share/bibledit/NEWS
-[0m[0mcp /nicedit/COPYING /<<PKGBUILDDIR>>/debian/bibledit/usr/share/bibledit/nicedit/COPYING
-[0m[0mcp: cannot stat './/nicedit/COPYING': No such file or directory
 [0m[0mcp /nicedit/nicedit.js /<<PKGBUILDDIR>>/debian/bibledit/usr/share/bibledit/nicedit/nicedit.js
 [0m[0mcp /nicedit/nicedit.min.js /<<PKGBUILDDIR>>/debian/bibledit/usr/share/bibledit/nicedit/nicedit.min.js
 [0m[0mcp /nicedit/nicEditorIcons.gif /<<PKGBUILDDIR>>/debian/bibledit/usr/share/bibledit/nicedit/nicEditorIcons.gif
@@ -5974,8 +5957,6 @@ make[1]: Leaving directory '/home/teus/bibledit-5.0.101'
 [0m[0mcp /odf/README /<<PKGBUILDDIR>>/debian/bibledit/usr/share/bibledit/odf/README
 [0m[0mcp /odf/template.odt /<<PKGBUILDDIR>>/debian/bibledit/usr/share/bibledit/odf/template.odt
 [0m[0mcp /paratext/index.html /<<PKGBUILDDIR>>/debian/bibledit/usr/share/bibledit/paratext/index.html
-[0m[0mcp /parsewebdata/COPYING /<<PKGBUILDDIR>>/debian/bibledit/usr/share/bibledit/parsewebdata/COPYING
-[0m[0mcp: cannot stat './/parsewebdata/COPYING': No such file or directory
 [0m[0mcp /personalize/index.html /<<PKGBUILDDIR>>/debian/bibledit/usr/share/bibledit/personalize/index.html
 [0m[0mcp /personalize/index.js /<<PKGBUILDDIR>>/debian/bibledit/usr/share/bibledit/personalize/index.js
 [0m[0mcp /pix/bible.svg /<<PKGBUILDDIR>>/debian/bibledit/usr/share/bibledit/pix/bible.svg
@@ -6371,17 +6352,17 @@ make[1]: Leaving directory '/home/teus/bibledit-5.0.101'
 [0m[0m   dh_shlibdeps -a
 [0m[0m	install -d debian/bibledit/DEBIAN
 [0m[0m	dpkg-shlibdeps -Tdebian/bibledit.substvars debian/bibledit/usr/bin/bibledit
-[0m[0mdpkg-shlibdeps: warning: package could avoid a useless dependency if debian/bibledit/usr/bin/bibledit was not linked against libjavascriptcoregtk-4.0.so.18 (it uses none of the library's symbols)
+[0m[0mdpkg-shlibdeps: warning: package could avoid a useless dependency if debian/bibledit/usr/bin/bibledit was not linked against libpangocairo-1.0.so.0 (it uses none of the library's symbols)
+[0m[0mdpkg-shlibdeps: warning: package could avoid a useless dependency if debian/bibledit/usr/bin/bibledit was not linked against libgdk_pixbuf-2.0.so.0 (it uses none of the library's symbols)
+[0m[0mdpkg-shlibdeps: warning: package could avoid a useless dependency if debian/bibledit/usr/bin/bibledit was not linked against libssl.so.1.1 (it uses none of the library's symbols)
+[0m[0mdpkg-shlibdeps: warning: package could avoid a useless dependency if debian/bibledit/usr/bin/bibledit was not linked against libcairo.so.2 (it uses none of the library's symbols)
+[0m[0mdpkg-shlibdeps: warning: package could avoid a useless dependency if debian/bibledit/usr/bin/bibledit was not linked against libsoup-2.4.so.1 (it uses none of the library's symbols)
+[0m[0mdpkg-shlibdeps: warning: package could avoid a useless dependency if debian/bibledit/usr/bin/bibledit was not linked against libcrypto.so.1.1 (it uses none of the library's symbols)
+[0m[0mdpkg-shlibdeps: warning: package could avoid a useless dependency if debian/bibledit/usr/bin/bibledit was not linked against libcurl.so.4 (it uses none of the library's symbols)
 [0m[0mdpkg-shlibdeps: warning: package could avoid a useless dependency if debian/bibledit/usr/bin/bibledit was not linked against libatk-1.0.so.0 (it uses none of the library's symbols)
 [0m[0mdpkg-shlibdeps: warning: package could avoid a useless dependency if debian/bibledit/usr/bin/bibledit was not linked against libgdk-3.so.0 (it uses none of the library's symbols)
-[0m[0mdpkg-shlibdeps: warning: package could avoid a useless dependency if debian/bibledit/usr/bin/bibledit was not linked against libpangocairo-1.0.so.0 (it uses none of the library's symbols)
-[0m[0mdpkg-shlibdeps: warning: package could avoid a useless dependency if debian/bibledit/usr/bin/bibledit was not linked against libcurl.so.4 (it uses none of the library's symbols)
-[0m[0mdpkg-shlibdeps: warning: package could avoid a useless dependency if debian/bibledit/usr/bin/bibledit was not linked against libgdk_pixbuf-2.0.so.0 (it uses none of the library's symbols)
-[0m[0mdpkg-shlibdeps: warning: package could avoid a useless dependency if debian/bibledit/usr/bin/bibledit was not linked against libsoup-2.4.so.1 (it uses none of the library's symbols)
 [0m[0mdpkg-shlibdeps: warning: package could avoid a useless dependency if debian/bibledit/usr/bin/bibledit was not linked against libcairo-gobject.so.2 (it uses none of the library's symbols)
-[0m[0mdpkg-shlibdeps: warning: package could avoid a useless dependency if debian/bibledit/usr/bin/bibledit was not linked against libcairo.so.2 (it uses none of the library's symbols)
-[0m[0mdpkg-shlibdeps: warning: package could avoid a useless dependency if debian/bibledit/usr/bin/bibledit was not linked against libssl.so.1.1 (it uses none of the library's symbols)
-[0m[0mdpkg-shlibdeps: warning: package could avoid a useless dependency if debian/bibledit/usr/bin/bibledit was not linked against libcrypto.so.1.1 (it uses none of the library's symbols)
+[0m[0mdpkg-shlibdeps: warning: package could avoid a useless dependency if debian/bibledit/usr/bin/bibledit was not linked against libjavascriptcoregtk-4.0.so.18 (it uses none of the library's symbols)
 [0m[0mdpkg-shlibdeps: warning: package could avoid a useless dependency if debian/bibledit/usr/bin/bibledit was not linked against libpango-1.0.so.0 (it uses none of the library's symbols)
 [0m[0m   dh_installdeb -a
 [0m[0m	printf '#!/bin/sh
@@ -6424,7 +6405,7 @@ make[1]: Leaving directory '/home/teus/bibledit-5.0.101'
 [0m[0m dpkg-source --after-build bibledit-5.0.101
 [0m[0mdpkg-buildpackage: info: binary-only upload (no source included)
 [0m[0m--------------------------------------------------------------------------------
-[0m[0mBuild finished at 2017-02-18T15:35:44Z
+[0m[0mBuild finished at 2017-02-18T16:52:48Z
 [0m[0m
 [0m[0mFinished
 [0m[0m--------
@@ -6462,16 +6443,16 @@ make[1]: Leaving directory '/home/teus/bibledit-5.0.101'
 [0m[0m   * new upstream version
 [0m[0mChecksums-Sha1:
 [0m[0m 50b64935b0e60d28a51bffe11112fee2124261bd 21583800 bibledit-dbgsym_5.0.101_amd64.deb
-[0m[0m 2febab8b5aa0783968df99a1a62b309c6155f71a 12732 bibledit_5.0.101_amd64.buildinfo
-[0m[0m 9985801ee49fbf242a00e6a8aebc1815eba4c3f3 37526710 bibledit_5.0.101_amd64.deb
+[0m[0m 1eaaaed7b174f37069db48133356674ebc5cef01 12732 bibledit_5.0.101_amd64.buildinfo
+[0m[0m 92d738515b9f22d3a06e04ea13574d08f7c74b05 37518132 bibledit_5.0.101_amd64.deb
 [0m[0mChecksums-Sha256:
 [0m[0m a59e4e650aecf6342df1d6994fbd8cbfee433c765c13a593efbcdc39bc129ee4 21583800 bibledit-dbgsym_5.0.101_amd64.deb
-[0m[0m f28202915456eed3b3574e8397b6a3c04e80817bcf4ae44ba2253eb4eaea33b0 12732 bibledit_5.0.101_amd64.buildinfo
-[0m[0m f2a39e6aa80f76e9b13ef23db1c9db8a13398b32a28a1fea9f0948f50dc1a740 37526710 bibledit_5.0.101_amd64.deb
+[0m[0m a0105bb6a24e79894204e448c6fb1bf78312174f45c42ae153d3a404942dc130 12732 bibledit_5.0.101_amd64.buildinfo
+[0m[0m 5ada0cfaf99135f52af787a30dbaf5d535ce982f34ca4c7401c7da4e2325f37c 37518132 bibledit_5.0.101_amd64.deb
 [0m[0mFiles:
 [0m[0m 4ffbf9520867d0eb8c6eb57fc0305b1f 21583800 debug extra bibledit-dbgsym_5.0.101_amd64.deb
-[0m[0m e009421c547c0df7b61535f7d08a4666 12732 editors extra bibledit_5.0.101_amd64.buildinfo
-[0m[0m c5216e1efb24d39391f68d0f09757ad4 37526710 editors extra bibledit_5.0.101_amd64.deb
+[0m[0m f720825afd87413190c9221d632b6824 12732 editors extra bibledit_5.0.101_amd64.buildinfo
+[0m[0m a9721724ac587b8b3f78a6c81db7fdea 37518132 editors extra bibledit_5.0.101_amd64.deb
 [0m[0m
 [0m[0m+------------------------------------------------------------------------------+
 [0m[0m| Buildinfo                                                                    |
@@ -6484,16 +6465,16 @@ make[1]: Leaving directory '/home/teus/bibledit-5.0.101'
 [0m[0mVersion: 5.0.101
 [0m[0mChecksums-Md5:
 [0m[0m 4ffbf9520867d0eb8c6eb57fc0305b1f 21583800 bibledit-dbgsym_5.0.101_amd64.deb
-[0m[0m c5216e1efb24d39391f68d0f09757ad4 37526710 bibledit_5.0.101_amd64.deb
+[0m[0m a9721724ac587b8b3f78a6c81db7fdea 37518132 bibledit_5.0.101_amd64.deb
 [0m[0mChecksums-Sha1:
 [0m[0m 50b64935b0e60d28a51bffe11112fee2124261bd 21583800 bibledit-dbgsym_5.0.101_amd64.deb
-[0m[0m 9985801ee49fbf242a00e6a8aebc1815eba4c3f3 37526710 bibledit_5.0.101_amd64.deb
+[0m[0m 92d738515b9f22d3a06e04ea13574d08f7c74b05 37518132 bibledit_5.0.101_amd64.deb
 [0m[0mChecksums-Sha256:
 [0m[0m a59e4e650aecf6342df1d6994fbd8cbfee433c765c13a593efbcdc39bc129ee4 21583800 bibledit-dbgsym_5.0.101_amd64.deb
-[0m[0m f2a39e6aa80f76e9b13ef23db1c9db8a13398b32a28a1fea9f0948f50dc1a740 37526710 bibledit_5.0.101_amd64.deb
+[0m[0m 5ada0cfaf99135f52af787a30dbaf5d535ce982f34ca4c7401c7da4e2325f37c 37518132 bibledit_5.0.101_amd64.deb
 [0m[0mBuild-Origin: Debian
 [0m[0mBuild-Architecture: amd64
-[0m[0mBuild-Date: Sat, 18 Feb 2017 15:35:43 +0000
+[0m[0mBuild-Date: Sat, 18 Feb 2017 16:52:47 +0000
 [0m[0mBuild-Path: /<<PKGBUILDDIR>>
 [0m[0mInstalled-Build-Depends:
 [0m[0m adwaita-icon-theme (= 3.22.0-1),
@@ -6960,16 +6941,16 @@ make[1]: Leaving directory '/home/teus/bibledit-5.0.101'
 [0m[0m--------------------------
 [0m[0m
 [0m[0m new debian package, version 2.0.
-[0m[0m size 37526710 bytes: control archive=19857 bytes.
+[0m[0m size 37518132 bytes: control archive=19823 bytes.
 [0m[0m     869 bytes,    16 lines      control              
-[0m[0m   53385 bytes,   704 lines      md5sums              
+[0m[0m   53324 bytes,   703 lines      md5sums              
 [0m[0m     189 bytes,     7 lines   *  postinst             #!/bin/sh
 [0m[0m     189 bytes,     7 lines   *  postrm               #!/bin/sh
 [0m[0m Package: bibledit
 [0m[0m Version: 5.0.101
 [0m[0m Architecture: amd64
 [0m[0m Maintainer: Teus Benschop <teusjannette@gmail.com>
-[0m[0m Installed-Size: 177652
+[0m[0m Installed-Size: 177617
 [0m[0m Depends: libatk1.0-0 (>= 1.12.4), libc6 (>= 2.14), libcairo-gobject2 (>= 1.10.0), libcairo2 (>= 1.2.4), libcurl3 (>= 7.16.2), libgcc1 (>= 1:3.0), libgdk-pixbuf2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.39.4), libgtk-3-0 (>= 3.0.0), libjavascriptcoregtk-4.0-18, libmbedcrypto0 (>= 2.0), libmbedtls10 (>= 2.0), libmbedx509-0 (>= 2.0), libpango-1.0-0 (>= 1.14.0), libpangocairo-1.0-0 (>= 1.14.0), libsoup2.4-1 (>= 2.4.0), libssl1.1 (>= 1.1.0), libstdc++6 (>= 6), libwebkit2gtk-4.0-37 (>= 2.5.3), make (>= 3)
 [0m[0m Section: editors
 [0m[0m Priority: extra
@@ -6991,7 +6972,6 @@ make[1]: Leaving directory '/home/teus/bibledit-5.0.101'
 [0m[0m-rw-r--r-- root/root       175 2017-02-18 12:37 ./usr/share/applications/bibledit.desktop
 [0m[0mdrwxr-xr-x root/root         0 2017-02-18 12:37 ./usr/share/bibledit/
 [0m[0m-rw-r--r-- root/root         0 2017-02-18 12:37 ./usr/share/bibledit/AUTHORS
-[0m[0m-rw-r--r-- root/root     35147 2017-02-18 12:37 ./usr/share/bibledit/COPYING
 [0m[0m-rw-r--r-- root/root         0 2017-02-18 12:37 ./usr/share/bibledit/ChangeLog
 [0m[0m-rw-r--r-- root/root      3974 2017-02-18 12:37 ./usr/share/bibledit/DEVELOP
 [0m[0m-rw-r--r-- root/root     15752 2017-02-18 12:37 ./usr/share/bibledit/INSTALL
@@ -7331,7 +7311,7 @@ make[1]: Leaving directory '/home/teus/bibledit-5.0.101'
 [0m[0m-rw-r--r-- root/root       127 2017-02-18 12:37 ./usr/share/bibledit/index/listing.html
 [0m[0m-rwxr-xr-x root/root     15155 2017-02-18 12:37 ./usr/share/bibledit/install-sh
 [0m[0m-rwxr-xr-x root/root      1026 2017-02-18 12:37 ./usr/share/bibledit/installdata.sh
-[0m[0m-rw-r--r-- root/root     18388 2017-02-18 12:37 ./usr/share/bibledit/installdata.txt
+[0m[0m-rw-r--r-- root/root     18313 2017-02-18 12:37 ./usr/share/bibledit/installdata.txt
 [0m[0mdrwxr-xr-x root/root         0 2017-02-18 12:37 ./usr/share/bibledit/ipc/
 [0m[0mdrwxr-xr-x root/root         0 2017-02-18 12:37 ./usr/share/bibledit/jobs/
 [0m[0m-rw-r--r-- root/root       233 2017-02-18 12:37 ./usr/share/bibledit/jobs/index.html
@@ -7770,7 +7750,7 @@ make[1]: Leaving directory '/home/teus/bibledit-5.0.101'
 [0m[0mdrwxr-xr-x root/root         0 2017-02-18 12:37 ./usr/share/bibledit/sync/
 [0m[0mdrwxr-xr-x root/root         0 2017-02-18 12:37 ./usr/share/bibledit/system/
 [0m[0m-rw-r--r-- root/root      1324 2017-02-18 12:37 ./usr/share/bibledit/system/index.html
-[0m[0m-rwxr-xr-x root/root      3605 2017-02-18 12:37 ./usr/share/bibledit/tarball.sh
+[0m[0m-rwxr-xr-x root/root      4057 2017-02-18 12:37 ./usr/share/bibledit/tarball.sh
 [0m[0mdrwxr-xr-x root/root         0 2017-02-18 12:37 ./usr/share/bibledit/tasks/
 [0m[0mdrwxr-xr-x root/root         0 2017-02-18 12:37 ./usr/share/bibledit/text/
 [0m[0mdrwxr-xr-x root/root         0 2017-02-18 12:37 ./usr/share/bibledit/timer/
@@ -7853,22 +7833,22 @@ make[1]: Leaving directory '/home/teus/bibledit-5.0.101'
 [0m[0m
 [0m[0mBuild Architecture: amd64
 [0m[0mBuild Type: any
-[0m[0mBuild-Space: 954076
-[0m[0mBuild-Time: 759
+[0m[0mBuild-Space: 954036
+[0m[0mBuild-Time: 757
 [0m[0mDistribution: unstable
 [0m[0mHost Architecture: amd64
 [0m[0mInstall-Time: 107
 [0m[0mJob: /home/teus/bibledit_5.0.101.dsc
 [0m[0mMachine Architecture: amd64
 [0m[0mPackage: bibledit
-[0m[0mPackage-Time: 914
+[0m[0mPackage-Time: 912
 [0m[0mSource-Version: 5.0.101
-[0m[0mSpace: 954076
+[0m[0mSpace: 954036
 [0m[32mStatus: successful
 [0m[0mVersion: 5.0.101
 [0m[0m--------------------------------------------------------------------------------
-[0m[0mFinished at 2017-02-18T15:35:44Z
-[0m[0mBuild needed 00:15:14, 954076k disk space
+[0m[0mFinished at 2017-02-18T16:52:48Z
+[0m[0mBuild needed 00:15:12, 954036k disk space
 [0mConnection to 192.168.2.108 closed.
 Flushing output buffer.
 Showing difference with processed output.
