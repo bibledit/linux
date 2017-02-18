@@ -71,9 +71,22 @@ make distclean
 
 
 # Create file with the directories and files to install in the package data directory.
+# Remove the first character of it.
+find . | cut -c 2- > installdata.txt
 # Remove blank lines.
+sed -i.bak '/^$/d' installdata.txt
 # Do not install source files.
-find . | cut -c 2- | sed '/^$/d' | sed '/\.cpp$/d' | sed '/\.c$/d' | sed '/\.h$/d' | sed '/\.hpp$/d' > installdata.txt
+sed -i.bak '/\.cpp$/d' installdata.txt
+sed -i.bak '/\.c$/d' installdata.txt
+sed -i.bak '/\.h$/d' installdata.txt
+sed -i.bak '/\.hpp$/d' installdata.txt
+# Do not install license files.
+# This fixes the lintian warning:
+# W: bibledit: extra-license-file usr/share/bibledit/COPYING
+# What happens that running ./reconfigure creates COPYING.
+# That causes the lintian warning.
+# So even if present, it should not be installed.
+sed -i.bak '/COPYING/d' installdata.txt
 
 
 # Enable the Linux app for in config.h.
