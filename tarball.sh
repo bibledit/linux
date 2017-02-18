@@ -22,20 +22,6 @@
 # It builds a tarball for use on Linux.
 
 
-# Update debian/changelog
-VERSION=`grep PACKAGE_VERSION ../bibledit/lib/config.h | sed 's/#define PACKAGE_VERSION //' | sed 's/"//g'`
-rm -f changelog
-echo "bibledit ($VERSION) unstable; urgency=low" >> changelog
-echo >> changelog
-echo "  * new upstream version" >> changelog
-echo >> changelog
-echo -n " -- Teus Benschop <teusjannette@gmail.com>  " >> changelog
-date -R >> changelog
-echo >> changelog
-cat debian/changelog >> changelog
-mv changelog debian/changelog
-
-
 # Synchronize source code.
 LINUXSOURCE=`dirname $0`
 cd $LINUXSOURCE

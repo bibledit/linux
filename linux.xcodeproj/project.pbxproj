@@ -8,6 +8,7 @@
 
 /* Begin PBXFileReference section */
 		CA26345B1E4CF9C3005551AB /* COPYING */ = {isa = PBXFileReference; lastKnownFileType = text; path = COPYING; sourceTree = "<group>"; };
+		CA4759DD1E5853D100EEA175 /* debianchangelog.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = debianchangelog.sh; sourceTree = "<group>"; };
 		CA5C3B911E4CE9B6005937FF /* changelog */ = {isa = PBXFileReference; lastKnownFileType = text; path = changelog; sourceTree = "<group>"; };
 		CA5C3B921E4CE9B6005937FF /* compat */ = {isa = PBXFileReference; lastKnownFileType = text; path = compat; sourceTree = "<group>"; };
 		CA5C3B931E4CE9B6005937FF /* control */ = {isa = PBXFileReference; lastKnownFileType = text; path = control; sourceTree = "<group>"; };
@@ -68,6 +69,7 @@
 				CA26345B1E4CF9C3005551AB /* COPYING */,
 				CA5C3B901E4CE9B6005937FF /* debian */,
 				CA5C3B9B1E4CE9B6005937FF /* debian.sh */,
+				CA4759DD1E5853D100EEA175 /* debianchangelog.sh */,
 				CA7374761E55F91F0022AEDF /* installdata.sh */,
 				CA9347101E37637800DAFC39 /* Makefile.mk */,
 				CA80EC181B03C39C000A2591 /* README.md */,
