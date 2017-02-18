@@ -50,7 +50,7 @@ ssh $DEBIANSID "rm bibledit*gz"
 if [ $? -ne 0 ]; then exit; fi
 
 
-echo Tailor the source for Debian.
+echo Link with the system-provided mbed TLS library.
 # A fix for lintian error "embedded-library usr/bin/bibledit: mbedtls"
 # is to remove mbedtls from the list of sources to compile
 # and to add -lmbedtls to the linker flags instead.
@@ -64,6 +64,20 @@ echo Reconfiguring the source.
 ssh -tt $DEBIANSID "cd bibledit*; ./reconfigure"
 if [ $? -ne 0 ]; then exit; fi
 ssh -tt $DEBIANSID "cd bibledit*; rm -rf autom4te.cache"
+if [ $? -ne 0 ]; then exit; fi
+
+
+echo Remove extra license files.
+# Fix the lintian warnings "extra-license-file".
+ssh -tt $DEBIANSID "find . -name COPYING -delete"
+if [ $? -ne 0 ]; then exit; fi
+ssh -tt $DEBIANSID "find . -name LICENSE -delete"
+if [ $? -ne 0 ]; then exit; fi
+
+
+echo Remove extra font files.
+# Fix the lintian warning "duplicate-font-file".
+ssh -tt $DEBIANSID "cd bibledit*; rm fonts/SILEOT.ttf"
 if [ $? -ne 0 ]; then exit; fi
 
 
