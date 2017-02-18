@@ -41,9 +41,11 @@ LINUXSOURCE=`dirname $0`
 cd $LINUXSOURCE
 BIBLEDITLINUX=/tmp/bibledit-linux
 echo Synchronizing relevant source code to $BIBLEDITLINUX
+rm -rf $BIBLEDITLINUX/*
+rm -rf $BIBLEDITLINUX/.* 2> /dev/null
 mkdir -p $BIBLEDITLINUX
-rsync --archive --delete ../bibledit/lib/ $BIBLEDITLINUX
-rsync --archive --exclude 'output*.txt' . $BIBLEDITLINUX/
+rsync --archive ../bibledit/lib/ $BIBLEDITLINUX
+rsync --archive . $BIBLEDITLINUX/
 echo Done
 
 
@@ -56,19 +58,24 @@ mv bibledit.h executable
 mv bibledit.cpp executable
 
 
-# Remove some scripts and tests.
+# Remove unwanted files.
 rm valgrind
 rm bibledit
 rm dev
 rm -rf unittests
-
-
-echo Remove macOS clutter.
-echo This includes the macOS extended attributes.
-echo The attributes make their way into the tarball,
-echo get unpacked within Debian,
-echo and cause lintian errors.
+rm output*.txt
 find . -name .DS_Store -delete
+rm -rf .git
+find . -name "*.Po" -delete
+rm -rf autom4te.cache
+rm -rf *.xcodeproj
+rm -rf xcode
+
+
+echo Remove macOS extended attributes.
+echo The attributes would make their way into the tarball,
+echo get unpacked within Debian,
+echo and would cause lintian errors.
 xattr -r -c *
 
 
@@ -78,7 +85,9 @@ make distclean
 
 
 # Create file with the directories and files to install in the package data directory.
-find . | cut -c 2- | sed '/^$/d' | sed '/\.git/d' | sed '/\.DS_Store/d' | sed '/\.Po/d' | sed '/\.cpp$/d' | sed '/\.c$/d' | sed '/\.h$/d' | sed '/\.hpp$/d' | sed '/autom4te/d' | sed '/\.xcodeproj/d' > installdata.txt
+# Remove blank lines.
+# Do not install source files.
+find . | cut -c 2- | sed '/^$/d' | sed '/\.cpp$/d' | sed '/\.c$/d' | sed '/\.h$/d' | sed '/\.hpp$/d' > installdata.txt
 
 
 # Enable the Linux app for in config.h.
@@ -105,7 +114,7 @@ sed -i.bak '/generate_/d' Makefile.am
 
 # Update what to distribute.
 sed -i.bak 's/bible bibledit/bible/g' Makefile.am
-sed -i.bak '/EXTRA_DIST/ s/$/ *.desktop *.xpm *.png *.1/' Makefile.am
+sed -i.bak '/EXTRA_DIST/ s/$/ *.desktop *.xpm *.png bibledit.1/' Makefile.am
 
 
 # Add the additional Makefile.mk fragment for the Linux app.
@@ -121,5 +130,5 @@ sed -i.bak '/./,/^$/!d' Makefile.am
 rm *.bak
 ./reconfigure
 ./configure
-make dist
+make dist --jobs=24
 
