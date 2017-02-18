@@ -17,15 +17,7 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
 
-echo Updating the debian/changelog.
-VERSION=`grep PACKAGE_VERSION ../bibledit/lib/config.h | sed 's/#define PACKAGE_VERSION //' | sed 's/"//g'`
-rm -f changelog
-echo "bibledit ($VERSION) unstable; urgency=low" >> changelog
-echo >> changelog
-echo "  * new upstream version" >> changelog
-echo >> changelog
-echo -n " -- Teus Benschop <teusjannette@gmail.com>  " >> changelog
-date -R >> changelog
-echo >> changelog
-cat debian/changelog >> changelog
-mv changelog debian/changelog
+# A fix for lintian error "embedded-library usr/bin/bibledit: mbedtls"
+# is to remove mbedtls from the list of sources to compile
+# and to add -lmbedtls to the linker flags instead.
+sed -i.bak '/mbedtls/d' Makefile.am

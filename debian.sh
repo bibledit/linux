@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Copyright (©) 2003-2016 Teus Benschop.
+# Copyright (©) 2003-2017 Teus Benschop.
 
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -47,6 +47,11 @@ echo Unpack and remove the tarball in Debian.
 ssh $DEBIANSID "tar xf bibledit*gz"
 if [ $? -ne 0 ]; then exit; fi
 ssh $DEBIANSID "rm bibledit*gz"
+if [ $? -ne 0 ]; then exit; fi
+
+
+echo Tailor the source for Debian.
+ssh -tt $DEBIANSID "cd bibledit*; ./debiantailor.sh"
 if [ $? -ne 0 ]; then exit; fi
 
 
