@@ -51,7 +51,17 @@ if [ $? -ne 0 ]; then exit; fi
 
 
 echo Tailor the source for Debian.
-ssh -tt $DEBIANSID "cd bibledit*; ./debiantailor.sh"
+# A fix for lintian error "embedded-library usr/bin/bibledit: mbedtls"
+# is to remove mbedtls from the list of sources to compile
+# and to add -lmbedtls to the linker flags instead.
+ssh -tt $DEBIANSID "cd bibledit*; sed -i.bak '/mbedtls\//d' Makefile.am"
+if [ $? -ne 0 ]; then exit; fi
+ssh -tt $DEBIANSID "cd bibledit*; sed -i.bak 's/# debian//g' Makefile.am"
+if [ $? -ne 0 ]; then exit; fi
+
+
+echo Reconfiguring the source.
+ssh -tt $DEBIANSID "cd bibledit*; ./reconfigure"
 if [ $? -ne 0 ]; then exit; fi
 
 
