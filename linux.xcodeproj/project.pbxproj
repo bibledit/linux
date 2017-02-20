@@ -27,6 +27,7 @@
 		CA80EC141B03C31A000A2591 /* bibledit.desktop */ = {isa = PBXFileReference; lastKnownFileType = text; path = bibledit.desktop; sourceTree = "<group>"; };
 		CA80EC151B03C355000A2591 /* bibledit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = bibledit.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		CA80EC181B03C39C000A2591 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		CA82A25D1E5B115900BB9274 /* debianupload.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = debianupload.sh; sourceTree = "<group>"; };
 		CA9347101E37637800DAFC39 /* Makefile.mk */ = {isa = PBXFileReference; lastKnownFileType = text; path = Makefile.mk; sourceTree = "<group>"; };
 		CAB5BA781E44FA8300ACE7C2 /* bibledit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bibledit.png; sourceTree = "<group>"; };
 		CAB5BA791E44FA8300ACE7C2 /* bibledit.xpm */ = {isa = PBXFileReference; lastKnownFileType = text; path = bibledit.xpm; sourceTree = "<group>"; };
@@ -70,6 +71,7 @@
 				CA5C3B901E4CE9B6005937FF /* debian */,
 				CA5C3B9B1E4CE9B6005937FF /* debian.sh */,
 				CA4759DD1E5853D100EEA175 /* debianchangelog.sh */,
+				CA82A25D1E5B115900BB9274 /* debianupload.sh */,
 				CA7374761E55F91F0022AEDF /* installdata.sh */,
 				CA9347101E37637800DAFC39 /* Makefile.mk */,
 				CA80EC181B03C39C000A2591 /* README.md */,

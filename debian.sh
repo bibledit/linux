@@ -105,3 +105,4 @@ ssh -tt $DEBIANSID "cd bibledit*; sbuild"
 if [ $? -ne 0 ]; then exit; fi
 
 
+echo Run script debianupload to build and upload source package.
