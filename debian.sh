@@ -18,7 +18,7 @@
 
 
 # Redirect stdout ( > ) into a named pipe ( >() ) running "tee"
-exec > >(tee debiannew.txt)
+exec > >(tee ~/Desktop/debian.txt)
 # Same for stderr.
 exec 2>&1
 
@@ -92,7 +92,7 @@ if [ $? -ne 0 ]; then exit; fi
 
 
 echo Do a pedantic lintian check.
-ssh -tt $DEBIANSID "lintian --pedantic"
+ssh -tt $DEBIANSID "lintian --pedantic bibledit*changes"
 if [ $? -ne 0 ]; then exit; fi
 
 
@@ -105,9 +105,3 @@ ssh -tt $DEBIANSID "cd bibledit*; sbuild"
 if [ $? -ne 0 ]; then exit; fi
 
 
-echo Flushing output buffer.
-sync
-
-
-echo Showing difference with processed output.
-diff --normal --ignore-tab-expansion --ignore-space-change --ignore-blank-lines debiannew.txt debiandone.txt > debiandiff.txt
