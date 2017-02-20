@@ -91,6 +91,11 @@ ssh -tt $DEBIANSID "cd bibledit*; debuild -us -uc"
 if [ $? -ne 0 ]; then exit; fi
 
 
+echo Do a pedantic lintian check.
+ssh -tt $DEBIANSID "lintian --pedantic"
+if [ $? -ne 0 ]; then exit; fi
+
+
 echo Remove the generated build artifacts.
 ssh $DEBIANSID "rm bibledit*"
 
