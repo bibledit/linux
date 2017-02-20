@@ -29,7 +29,7 @@ Copyright: 2013, salesforce.com
  2014, Jason Chen
 License: BSD-3-clause
 
-Files: utf8/[a-z]*
+Files: utf8/*
 Copyright: 2006, Nemanja Trifunovic
 License: BSL
 
@@ -44,10 +44,6 @@ License: CC0
 Files: notifit/*
 Copyright: 2013, naoxink
 License: Expat
-
-Files: utf8/[A-Z]*
-Copyright: 2017 Grigory Gorelov
-License: GPL-3.0+
 
 Files: pugixml/*
 Copyright: 2006-2015, Arseny Kapoulkine
