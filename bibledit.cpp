@@ -56,6 +56,12 @@ int main (int argc, char *argv[])
   if (!webroot.empty ()) webroot.append ("/");
   webroot.append ("bibledit");
   
+  // On older versions of the WebKit library like 2.4 and 2.6, the newer visual editors don't work.
+  // On WebKit versions 2.14 and higher, they work.
+  if ((webkit_get_major_version () <= 2) && (webkit_get_minor_version () < 14)) {
+    bibledit_use_deprecated_editors ();
+  }
+  
   // Read the package directory from config.h.
   
   // The $make install will copy the relevant files to /usr/share/bibledit.
