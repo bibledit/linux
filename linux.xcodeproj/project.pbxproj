@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXFileReference section */
+		CA1339081E5B1D8E00EBAE28 /* lintian-overrides */ = {isa = PBXFileReference; lastKnownFileType = text; path = "lintian-overrides"; sourceTree = "<group>"; };
 		CA26345B1E4CF9C3005551AB /* COPYING */ = {isa = PBXFileReference; lastKnownFileType = text; path = COPYING; sourceTree = "<group>"; };
 		CA4759DD1E5853D100EEA175 /* debianchangelog.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; lineEnding = 0; path = debianchangelog.sh; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.sh; };
 		CA5C3B911E4CE9B6005937FF /* changelog */ = {isa = PBXFileReference; lastKnownFileType = text; path = changelog; sourceTree = "<group>"; };
@@ -54,6 +55,7 @@
 			isa = PBXGroup;
 			children = (
 				CA5C3B9A1E4CE9B6005937FF /* format */,
+				CA1339081E5B1D8E00EBAE28 /* lintian-overrides */,
 			);
 			path = source;
 			sourceTree = "<group>";

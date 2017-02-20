@@ -1,0 +1,6 @@
+# The prebuilt Java object YetToYes2.jar is included
+# because building it from source requires Android build-tools and API.
+# It is not worth the big effort to build it for Debian.
+# To just include the prebuilt object is a practical solution.
+bibledit source: source-contains-prebuilt-java-object
+
