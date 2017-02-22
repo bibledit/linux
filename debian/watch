@@ -1,2 +1,3 @@
 version=4
 http://bibledit.org/linux/bibledit-(.*)\.tar\.gz
+http://bibledit.org/linux/beta/bibledit-(.*)\.tar\.gz
