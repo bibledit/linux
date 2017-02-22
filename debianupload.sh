@@ -26,12 +26,12 @@ ping -c 1 $DEBIANSID
 if [ $? -ne 0 ]; then exit; fi
 
 
-echo Removing any previous build artifacts.
-ssh $DEBIANSID "rm bibledit*" 2>/dev/null
+# echo Removing any previous build artifacts.
+# ssh $DEBIANSID "rm bibledit*" 2>/dev/null
 
 
 echo Build the Debian source package.
-ssh -tt $DEBIANSID "cd bibledit*; debuild -S -sa"
+ssh -tt $DEBIANSID "cd bibledit*[0-9]; debuild -S -sa"
 if [ $? -ne 0 ]; then exit; fi
 
 
