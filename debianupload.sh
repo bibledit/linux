@@ -38,3 +38,7 @@ if [ $? -ne 0 ]; then exit; fi
 echo Upload the Debian source package.
 ssh -tt $DEBIANSID "dput mentors *source.changes"
 if [ $? -ne 0 ]; then exit; fi
+
+
+echo Sign the watched archive:
+echo $ gpg --armor --detach-sign archive.tar.gz

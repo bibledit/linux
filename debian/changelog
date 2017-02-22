@@ -10,7 +10,7 @@ bibledit (5.0.105-1) unstable; urgency=low
   * removed debian/m4_ax_cxx_compile_stdcxx_11.m4: no longer needed
   * removed debian/patches/*: no longer needed
   * debian/rules: added override_dh_installchangelogs
-  * debian/watch: points to new location of tarball
+  * debian/watch: points to new location of tarball and checks signature
 
  -- Teus Benschop <teusjannette@gmail.com>  Wed, 22 Feb 2017 09:58:55 +0100
 
