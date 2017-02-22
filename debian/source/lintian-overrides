@@ -12,9 +12,3 @@ bibledit source: source-contains-prebuilt-java-object
 # This way they are more sure to have well-tested and reliable minified objects.
 bibledit source: source-contains-prebuilt-javascript-object
 
-# The lintian warning about a watch file in this native package is overriden.
-# This is because this watch file will indicate whether to create a new Debian native version.
-# The Debian native version is derived from the tarball that the watchfile watches.
-# So it is important to have this watchfile.
-# That is why it is overridden here.
-bibledit source: debian-watch-file-in-native-package

@@ -1,11 +1,316 @@
-bibledit (5.0.101) unstable; urgency=low
+bibledit (5.0.105-1) unstable; urgency=low
 
   * new upstream version
+  * removed debian/bibledit-gtk*: no longer provides bibledit-gtk
+  * debian/control: updated Build-Depends, Section, Priority, Standards-Version
+  * debian/control: updated Vcs-Git, Vcs-Browser
+  * debian/control: no longer provies bibledit-gtk, bibledit-gtk-data
+  * debian/control: updated Description
+  * debian/copyright: updated license notices
+  * removed debian/m4_ax_cxx_compile_stdcxx_11.m4: no longer needed
+  * removed debian/patches/*: no longer needed
+  * debian/rules: added override_dh_installchangelogs
+  * debian/watch: points to new location of tarball
 
- -- Teus Benschop <teusjannette@gmail.com>  Sat, 18 Feb 2017 13:37:35 +0100
+ -- Teus Benschop <teusjannette@gmail.com>  Wed, 22 Feb 2017 09:58:55 +0100
 
-bibledit (5.0.000) unstable; urgency=low
+bibledit-gtk (4.9-1) unstable; urgency=medium
 
-  * initial Debian package
+  * new upstream version
+  * debian/copyright: machine readable coppyright
+  * remove debian/bibledit-shutdown.1 which is now upstream
+  * remove debian/manpages
+  * debian/control: Fix Vcs-Git and Vcs-Browser
+      use Breaks instead of Conflicts
+  * add patch for AX_CXX_COMPILE_STDCXX_11
+  * debian/bibledit-gtk.links: man file renamed
+  * 
 
- -- Teus Benschop <teusjannette@gmail.com>  Thu, 9 Feb 2017 10:02:29 +0100
+ -- Daniel Glassey <wdg@debian.org>  Tue, 15 Sep 2015 21:27:28 +0100
+
+bibledit-gtk (4.8-4) unstable; urgency=low
+
+  * Re-upload since -3 was rejected for an expired GPG key
+  * Closes: #790200, #797568
+
+ -- Roberto C. Sanchez <roberto@debian.org>  Fri, 04 Sep 2015 14:29:20 -0400
+
+bibledit-gtk (4.8-3) unstable; urgency=medium
+
+  * debian/control, rules: use dh_autoreconf
+  * Upload to unstable, Closes: #790200
+  * No need to remove as not blocking gtkhtml3 removal nowwq, Closes: #797568
+
+ -- Daniel Glassey <wdg@debian.org>  Tue, 01 Sep 2015 07:17:18 +0100
+
+bibledit-gtk (4.8-2) unstable; urgency=medium
+
+  * Remove gtkhtml build dep
+
+ -- Daniel Glassey <wdg@debian.org>  Mon, 31 Aug 2015 11:54:42 +0100
+
+bibledit-gtk (4.8-1) experimental; urgency=medium
+
+  * The too late for jessie build for experimental
+  * New upstream release
+  * debian/control:
+      debhelper required version updated to 9
+      Standards version: 3.9.6
+        Remove Dm-Upload-Allowed
+  * debian/compat: 9
+
+ -- Daniel Glassey <wdg@debian.org>  Wed, 05 Nov 2014 14:20:00 +0000
+
+bibledit-gtk (4.6-1) unstable; urgency=low
+
+  * New upstream version 4.6, closes: #665510
+  * debian/control: 
+    - Standards-Version: 3.9.3
+    - debhelper required version updated from 6.0.0 to 7.0.0.
+    - teusjannette@gmail.com moved from Maintainers to Uploaders.
+    - Maintainer: Added: pkg-crosswire-devel@lists.alioth.debian.org.
+
+ -- Teus Benschop <teusjannette@gmail.com>  Mon, 09 Apr 2012 14:58:41 +0200
+
+bibledit-gtk (4.5-3) unstable; urgency=low
+
+  * debian/control: 
+    - Updated Build-Depends: libwebkitgtk-dev | libwebkit-dev.
+    - Removed Build-Depends: dh-autoreconf.
+  * debian/rules: 
+    - Removed --with autoreconf.
+  * Reason for all of this: That it builds on older Debian and Ubuntu versions.
+
+ -- Teus Benschop <teusjannette@gmail.com>  Mon, 26 Dec 2011 12:09:59 +0100
+
+bibledit-gtk (4.5-2) unstable; urgency=low
+
+  * debian/control: Lowered: debhelper version from 7.0.50 to 6.0.0.
+    Reason: It then builds on Ubuntu lucid / maverick / hardy.
+
+ -- Teus Benschop <teusjannette@gmail.com>  Tue, 20 Dec 2011 12:31:51 +0100
+
+bibledit-gtk (4.5-1) unstable; urgency=low
+
+  * New upstream version 4.5.
+  * debian/control: Dropped: Duplicates in: Section: gnome.
+
+ -- Teus Benschop <teusjannette@gmail.com>  Mon, 19 Dec 2011 20:23:37 +0100
+
+bibledit-gtk (4.4-3) unstable; urgency=low
+
+  * debian/control:
+    - Dropped: Suggests: bibletime
+    - Dropped: Provides: scripturechecks
+    - Dropped: Conflicts: scripturechecks
+    - Section: changed from oldlibs to gnome (Debian override policy)
+  * chmod -x usfm/Makefile.am (Lintian warning executable-not-elf-or-script)
+
+ -- Teus Benschop <teusjannette@gmail.com>  Thu, 01 Dec 2011 08:30:26 +0100
+
+bibledit-gtk (4.4-2) unstable; urgency=low
+
+  * debian/rules:
+    - Drop override_dh_fixperms, closes: #650351
+
+ -- Teus Benschop <teusjannette@gmail.com>  Tue, 29 Nov 2011 08:48:27 +0100
+
+bibledit-gtk (4.4-1) unstable; urgency=low
+
+  * New upstream version 4.4
+  * debian/control: 
+    - Add Build-Depends: libwebkitgtk-dev, closes: #635403
+    - Drop Build-depends on libcurl4-gnutls-dev, 
+      iputils-ping | ping (no longer needed)
+    - Drop Depends on iputils-ping | ping (no longer needed)
+    - Correction Vcs-Browser, change from /xiphos/ to /bibledit/
+    - Added myself to Maintainers field.
+  * Mention of /lib/init/rw in documentation is no blocker, 
+    patch sent upstream, closes: #633046
+  * debian/patches/spelling-mistake.patch was removed: fixed upstream
+  * debian/patches/series: reference to spelling-mistake.patch was removed  
+  * debian/copyright: 
+    - Files xetex/ptx2pdf/*; License: MIT
+
+ -- Teus Benschop <teusjannette@gmail.com>  Sat, 26 Nov 2011 09:33:42 +0100
+
+bibledit-gtk (4.2-1) unstable; urgency=low
+
+  * New upstream release 4.2
+  * debian/rules:
+    - Add use of autoreconf to regenerate autoconf files.
+    - Use simplified dh approach, no more cdbs
+    - Remove executable bit from usfm/Makefile.am (for lintian)
+  * debian/control: 
+    - Add Build-Depends: autoconf (so we can use autoreconf)
+    - Drop Build-depends on cdbs, add dh-autoconf
+    - Bump Build-depends debhelper to debhelper (>= 7.0.50~)
+      for use of dh overrides.
+    - Add transitional packages for both binary packages, 
+      because of the upstream name change from to bibledit-gtk
+  * Add Build and runtime dependency on curl
+  * Bump Standards-Version to 3.9.2
+  * debian/bibledit.install: 
+    - Add usr/share/pixmaps so menu icons work.
+  * Add debian/source/format to set package format.
+
+ -- Jonathan Marsden <jmarsden@fastmail.fm>  Thu, 19 May 2011 23:54:44 -0700
+
+bibledit (4.0-1) unstable; urgency=low
+
+  [ Jonathan Marsden ]
+  * New upstream version 4.0
+  * debian/patches/*: Remove 03_fix-64bit-compile.patch (fixed upstream).
+  * debian/control:
+    - Added Build-Depends: openssh-client
+
+  [ Dmitrijs Ledkovs ]
+  * debian/control:
+    - Bumped standards version to 3.8.4, no changes required
+    - Added myself to uploaders
+    - Added Vcs fields
+    - Removed duplicate quilt build-dep
+  * debian/patches: add spelling-mistake.patch
+  * debian/README.Source: small note that we are using quilt
+  * debian/bibledit.links: Symlinking manpages bibleditgui.1 -> bibledit.1
+  * debian/patches: converted patch to just manpage (not touching Makefile.am)
+
+ -- Dmitrijs Ledkovs <dmitrij.ledkov@ubuntu.com>  Mon, 22 Mar 2010 01:46:56 +0000
+
+bibledit (3.8-1) unstable; urgency=low
+
+  * New upstream version 3.8.
+  * debian/patches/03_fix-64bit-compile.patch: Fixes upstream
+      bug #27056: Bibledit 3.8 does not compile on amd64.
+
+ -- Jonathan Marsden <jmarsden@fastmail.fm>  Sat, 18 Jul 2009 12:10:54 -0700
+
+bibledit (3.7.42-2) unstable; urgency=low
+
+  * New upstream version.
+  * debian/control: 
+    - Add Conflicts: bibledit (<<3.7) to bibledit-data.
+      Closes (LP: #370978).
+    - Add Build-Depends: on libwebkit-dev.
+    - Bump Standards-Version to 3.8.2 (no changes neeeded).
+  * debian/patches/*: 
+    - Remove 01_desktop_file.patch (now included upstream).
+    - Add 02_bibledit-shutdown-manpage.patch
+
+ -- Jonathan Marsden <jmarsden@fastmail.fm>  Sat, 27 Jun 2009 14:44:01 -0700
+
+bibledit (3.7-1) unstable; urgency=low
+
+  * New upstream version.
+  * debian/control:
+    - Remove Conflicts: scripturechecks from bibledit-data (Closes: #524194).
+    - Remove unnecessary Section: headers.
+    - Remove unnecessary bibledit-data dependencies.
+    - Lengthen bibletime-data description.
+    - Depends iputils-ping | ping, not just ping.
+    - Bump Standards-Version to 3.8.1 (no changes needed).
+    - Soften Recommends: bibletime to Suggests:.
+  * debian/patches: 
+    - Remove 01_manpage_section.patch, included upstream.
+    - Add 01_desktop_file.patch correcting .desktop file.
+  * debian/copyright: Fix typo in licence file location description.
+  * debian/*.1: Remove man pages, now included upstream.
+  * debian/manpages: Install upstream manpages.
+
+ -- Jonathan Marsden <jmarsden@fastmail.fm>  Tue, 21 Apr 2009 04:54:04 -0700
+
+bibledit (3.6-1) unstable; urgency=low
+
+  * New upstream release.
+  * Use normal CDBS, not tarball-in-tarball.
+  * Remove patch for gcc 4.3, no longer needed.
+  * Remove debian/dirs file, not needed.
+  * Update debian/copyright with new download location.
+  * Remove LGPL from debian/copyright, all code is GPLv3 now.
+  * Add debian/watch file.
+  * debian/control: Add Build-Deps on:
+    - rcs
+    - libenchant-dev
+    - libgtkhtml3.14-dev
+    - git-core
+    - libcurl4-gnutls-dev
+    - libgtksourceview2.0-dev
+  * debian/control: 
+    - Set Maintainer: to Debian Crosswire Packaging Team.
+    - Added Uploaders: line.
+  * Add man pages from upstream git for subsidiary binaries.
+  * Edit all manpages to have current date and BT version in .TH line.
+  * Rename all added manpages from *.8 to *.1
+  * Add debian/manpages.
+  * Remove debian/bibledit.1, now patched under man/.
+  * debian/patches/01_manpage_section.patch:
+    - Change man/Makefile.am to put manpage in section 1.
+    - Create man/bibledit.1 from old man/bibledit.8
+    - Set section number in man/bibledit.1 to 1
+    - Add date and bibledit version into man/bibledit.1
+  * debian/rules: Add clean rule to remove autom4te.cache temp dir.
+  * Separate out /usr/share/bibledit into its own arch-independent package:
+    - debian/bibledit-data.install: create file.
+    - debian/bibledit.install: create file.
+    - debian/compat: Increase to 7 so dh_install looks in debian/tmp.
+    - debian/control: 
+      + Add info about new binary package bibledit-data.
+      + Build-Depend: on debhelper >= 7 and wrap Build-Depends line.
+
+ -- Jonathan Marsden <jmarsden@fastmail.fm>  Sat, 14 Feb 2009 15:23:15 -0800
+
+bibledit (2.2-2.1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Fix FTBFS with GCC 4.3 (Closes: #417124).
+
+ -- Luk Claes <luk@debian.org>  Sat, 08 Mar 2008 16:06:25 +0000
+
+bibledit (2.2-2) unstable; urgency=low
+
+  * debian/control: Provides scripturechecks for easier upgrade
+  * Dependency on ping, Closes: #401917
+
+ -- Daniel Glassey <wdg@debian.org>  Wed,  6 Dec 2006 22:35:16 +0000
+
+bibledit (2.2-1) unstable; urgency=low
+
+  * New upstream release
+  * debian/control: standards version 3.7.2 (no changes)
+  * scripturechecks is bundled so don't depend on old package (going to
+       request removal of scriturechecks)
+    so --disable-bundled configure option isn't needed anymore
+
+ -- Daniel Glassey <wdg@debian.org>  Fri,  1 Dec 2006 09:34:58 +0000
+
+bibledit (1.9-1) unstable; urgency=low
+
+  * New upstream version
+
+ -- Daniel Glassey <wdg@debian.org>  Fri, 11 Aug 2006 10:28:14 +0100
+
+bibledit (1.6-2) unstable; urgency=low
+
+  * build depend on psmisc, also depend on it - for killall, Closes: #365252
+       Thanks to Kurt Roeckx for spotting this
+
+ -- Daniel Glassey <wdg@debian.org>  Fri, 28 Apr 2006 23:41:55 +0100
+
+bibledit (1.6-1) unstable; urgency=low
+
+  * New upstream release
+  * debian/copyright: mention that scripturechecks source is LGPL
+  * complete ITP, closes: #329815
+
+ -- Daniel Glassey <wdg@debian.org>  Wed, 12 Apr 2006 16:28:06 +0100
+
+bibledit (1.5.16-1) unstable; urgency=low
+
+  * Initial release
+  * complete ITP, closes: #329815
+      source now includes scripturechecks source but keeping the
+      builds independent so scripturechecks can be updated
+      separately
+
+ -- Daniel Glassey <wdg@debian.org>  Thu, 30 Mar 2006 09:08:46 +0100
+
