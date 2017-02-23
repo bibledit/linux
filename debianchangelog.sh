@@ -18,7 +18,7 @@
 
 
 echo Updating the debian/changelog.
-VERSION=`grep PACKAGE_VERSION ../bibledit/lib/config.h | sed 's/#define PACKAGE_VERSION //' | sed 's/"//g'`
+VERSION=`grep PACKAGE_VERSION ../cloud/config.h | sed 's/#define PACKAGE_VERSION //' | sed 's/"//g'`
 rm -f changelog
 echo "bibledit ($VERSION-1) unstable; urgency=low" >> changelog
 echo >> changelog

@@ -30,7 +30,7 @@ echo Synchronizing relevant source code to $BIBLEDITLINUX
 rm -rf $BIBLEDITLINUX/*
 rm -rf $BIBLEDITLINUX/.* 2> /dev/null
 mkdir -p $BIBLEDITLINUX
-rsync --archive ../bibledit/lib/ $BIBLEDITLINUX
+rsync --archive ../cloud/ $BIBLEDITLINUX
 rsync --archive . $BIBLEDITLINUX/
 echo Done
 
