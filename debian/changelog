@@ -3,7 +3,6 @@ bibledit (5.0.105-1) unstable; urgency=low
   * new upstream version
   * removed debian/bibledit-gtk*: no longer provides bibledit-gtk
   * debian/control: updated Build-Depends, Section, Priority, Standards-Version
-  * debian/control: updated Vcs-Git, Vcs-Browser
   * debian/control: no longer provies bibledit-gtk, bibledit-gtk-data
   * debian/control: updated Description
   * debian/copyright: updated license notices
