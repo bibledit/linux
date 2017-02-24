@@ -41,4 +41,4 @@ if [ $? -ne 0 ]; then exit; fi
 
 
 echo Sign the watched archive:
-echo $ gpg --armor --detach-sign archive.tar.gz
+echo $ gpg2 --armor --detach-sign archive.tar.gz
