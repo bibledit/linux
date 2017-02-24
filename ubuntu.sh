@@ -25,12 +25,13 @@ echo Updates the repositories that create Ubuntu packages.
 # Precise 12.04: No support: package libwebkit2gtk-3.0-dev and libwebkit2gtk-4.0-dev not available.
 
 
+./tarball.sh
 TMPLINUX=/tmp/bibledit-linux
-echo Works with the tarball supposed to be already in $TMPLINUX.
+echo Works with the tarball supposed to be there in $TMPLINUX.
 
 
 LAUNCHPADUBUNTU=../launchpad/ubuntu
-echo Clean repositoriy at $LAUNCHPADUBUNTU.
+echo Clean repository at $LAUNCHPADUBUNTU.
 rm -rf $LAUNCHPADUBUNTU/*
 
 
