@@ -134,7 +134,8 @@ if [ $? -ne 0 ]; then exit; fi
 
 echo Do a pedantic lintian check.
 ssh -tt $DEBIANSID "lintian --pedantic bibledit*changes"
-if [ $? -ne 0 ]; then exit; fi
+# No checking of exit code because when lintian finds an error,
+# even if the error is overriddden, it exits with 1.
 
 
 # echo Remove the generated build artifacts.
