@@ -159,6 +159,14 @@ sed -i.bak 's/bible bibledit/bible/g' Makefile.am
 if [ $? -ne 0 ]; then exit; fi
 sed -i.bak '/EXTRA_DIST/ s/$/ *.desktop *.xpm *.png bibledit.1/' Makefile.am
 if [ $? -ne 0 ]; then exit; fi
+# Do not link with cURL and OpenSSL.
+# Both are not used.
+# As a result, a Debian package finds itself having unsatisfied dependencies.
+# Removing the flags fixes that.
+sed -i.bak '/CURL/d' Makefile.am
+if [ $? -ne 0 ]; then exit; fi
+sed -i.bak '/OPENSSL/d' Makefile.am
+if [ $? -ne 0 ]; then exit; fi
 # Add the additional Makefile.mk fragment for the Linux app.
 echo '' >> Makefile.am
 cat Makefile.mk >> Makefile.am
