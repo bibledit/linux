@@ -58,7 +58,7 @@ popd
 
 
 LAUNCHPADTRUSTY=../launchpad/trusty
-echo Clean repositoriy at $LAUNCHPADTRUSTY.
+echo Clean repository at $LAUNCHPADTRUSTY.
 rm -rf $LAUNCHPADTRUSTY/*
 
 
