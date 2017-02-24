@@ -1,4 +1,4 @@
-bibledit (5.0.105-1) unstable; urgency=low
+bibledit (5.0.107-1) unstable; urgency=low
 
   * new upstream version
   * removed debian/bibledit-gtk*: no longer provides bibledit-gtk
@@ -11,7 +11,7 @@ bibledit (5.0.105-1) unstable; urgency=low
   * debian/rules: added override_dh_installchangelogs
   * debian/watch: points to new location of tarball and checks signature
 
- -- Teus Benschop <teusjannette@gmail.com>  Wed, 22 Feb 2017 09:58:55 +0100
+ -- Teus Benschop <teusjannette@gmail.com>  Fri, 24 Feb 2017 05:18:07 +0100
 
 bibledit-gtk (4.9-1) unstable; urgency=medium
 
