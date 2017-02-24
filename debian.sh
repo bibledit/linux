@@ -32,8 +32,9 @@ ping -c 1 $DEBIANSID
 if [ $? -ne 0 ]; then exit; fi
 
 
+./tarball.sh
 TMPLINUX=/tmp/bibledit-linux
-echo It supposes a tarball to be already in $TMPLINUX.
+echo It supposes a tarball to be there in $TMPLINUX.
 
 
 TMPDEBIAN=/tmp/bibledit-debian
@@ -48,7 +49,7 @@ cd bibledit*
 if [ $? -ne 0 ]; then exit; fi
 
 
-# The script unpacks the existing Bibledit Linux tarball,
+# The script unpacks the Bibledit Linux tarball,
 # modifies it, and repacks it into a Debian tarball.
 # The reason for doing so is that the Debian builder would otherwise notice
 # differences between the supplied tarball and the modified source.
@@ -59,12 +60,12 @@ if [ $? -ne 0 ]; then exit; fi
 echo Link with the system-provided mbed TLS library.
 # Fix for lintian error "embedded-library usr/bin/bibledit: mbedtls":
 # * Remove mbedtls from the list of sources to compile.
-# * Add -lmbedtls to the linker flags instead.
-sed -i.bak '/mbedtls\//d' Makefile.am
-if [ $? -ne 0 ]; then exit; fi
-sed -i.bak 's/# debian//g' Makefile.am
-if [ $? -ne 0 ]; then exit; fi
-rm *.bak
+# * Add -lmbedtls and friends to the linker flags.
+# sed -i.bak '/mbedtls\//d' Makefile.am
+# if [ $? -ne 0 ]; then exit; fi
+# sed -i.bak 's/# debian//g' Makefile.am
+# if [ $? -ne 0 ]; then exit; fi
+# rm *.bak
 
 
 echo Reconfiguring the source.
