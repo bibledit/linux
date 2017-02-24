@@ -10,6 +10,7 @@ bibledit (5.0.107-1) unstable; urgency=low
   * removed debian/patches/*: no longer needed
   * debian/rules: added override_dh_installchangelogs
   * debian/watch: points to new location of tarball and checks signature
+  * debian/source/lintian-overrides: updated (with reasons given there)
 
  -- Teus Benschop <teusjannette@gmail.com>  Fri, 24 Feb 2017 05:18:07 +0100
 
