@@ -236,6 +236,15 @@ gboolean on_key_press (GtkWidget *widget, GdkEvent *event, gpointer data)
         return true;
       }
     }
+    // Handle Ctrl-P for printing.
+    if ((event_key->keyval == GDK_KEY_p) || (event_key->keyval == GDK_KEY_P)  ) {
+      if (event_key->state & GDK_CONTROL_MASK) {
+        WebKitWebView * web_view = WEBKIT_WEB_VIEW (widget);
+        WebKitPrintOperation * print_operation = webkit_print_operation_new (web_view);
+        webkit_print_operation_run_dialog (print_operation, GTK_WINDOW (window));
+        return true;
+      }
+    }
   }
   (void) data;
   // Key press not handled.
