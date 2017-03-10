@@ -239,6 +239,13 @@ gboolean on_key_press (GtkWidget *widget, GdkEvent *event, gpointer data)
         return true;
       }
     }
+    // Handle Ctrl-F for searching.
+    if ((event_key->keyval == GDK_KEY_f) || (event_key->keyval == GDK_KEY_F)) {
+      if (event_key->state & GDK_CONTROL_MASK) {
+        webkit_search (widget);
+        return true;
+      }
+    }
   }
   (void) data;
   // Key press not handled.
@@ -328,7 +335,52 @@ static void on_download_finished (WebKitDownload *download, gpointer user_data)
   string command = "xdg-open \"";
   command.append (destination);
   command.append ("\"");
-  system (command.c_str ());
-  // Suppress unused parameter compiler warning.
+  int result = system (command.c_str ());
+  // Suppress unused parameter compiler warnings.
+  (void) result;
   (void) user_data;
+}
+
+
+void webkit_search (GtkWidget *widget)
+{
+  GtkDialogFlags flags = GtkDialogFlags (GTK_DIALOG_MODAL | GTK_DIALOG_DESTROY_WITH_PARENT);
+  GtkWidget * dialog = gtk_dialog_new_with_buttons ("Search", GTK_WINDOW (window), flags,
+                                                    "_OK", GTK_RESPONSE_OK,
+                                                    "_Cancel", GTK_RESPONSE_CANCEL,
+                                                    NULL);
+  gtk_window_set_position(GTK_WINDOW(dialog), GTK_WIN_POS_CENTER_ON_PARENT);
+  gtk_window_set_modal(GTK_WINDOW(dialog), TRUE);
+  
+  GtkWidget * dialog_vbox = gtk_dialog_get_content_area (GTK_DIALOG(dialog));
+  
+  GtkWidget * entry = gtk_entry_new();
+  gtk_widget_show(entry);
+  gtk_box_pack_start(GTK_BOX(dialog_vbox), entry, TRUE, TRUE, 4);
+  gtk_entry_set_activates_default(GTK_ENTRY(entry), TRUE);
+  gtk_widget_grab_focus(entry);
+  
+  GtkWidget * okbutton = gtk_dialog_get_widget_for_response(GTK_DIALOG (dialog), GTK_RESPONSE_OK);
+  gtk_widget_grab_default(okbutton);
+  
+  gint result = gtk_dialog_run (GTK_DIALOG (dialog));
+
+  if (result == GTK_RESPONSE_OK) {
+    WebKitWebView * web_view = WEBKIT_WEB_VIEW (widget);
+    WebKitFindController * find_controller = webkit_web_view_get_find_controller (web_view);
+    // Finish possible previous search.
+    webkit_find_controller_search_finish (find_controller);
+    // The text to search for.
+    string search_text = gtk_entry_get_text(GTK_ENTRY(entry));
+    if (search_text.empty ()) {
+      // Remove all highlights and unselect text by doing this:
+      // Search for a word that does not normally occur.
+      search_text = "un_search";
+    }
+    // Search for the text and highlight all hits.
+    WebKitFindOptions find_options = WebKitFindOptions (WEBKIT_FIND_OPTIONS_CASE_INSENSITIVE | WEBKIT_FIND_OPTIONS_WRAP_AROUND);
+    webkit_find_controller_search (find_controller, search_text.c_str(), find_options, G_MAXUINT);
+  }
+  
+  gtk_widget_destroy (dialog);
 }

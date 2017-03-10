@@ -40,6 +40,7 @@ static void on_window_size_allocate (GtkWidget *widget, GtkAllocation *allocatio
 static gboolean on_window_state_event (GtkWidget *widget, GdkEventWindowState *event);
 static gboolean on_timeout (gpointer data);
 static gboolean on_configure (GtkWidget *widget, GdkEvent *event, gpointer user_data);
+void webkit_search (GtkWidget *widget);
 
 
 #endif
