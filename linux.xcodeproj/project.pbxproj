@@ -21,6 +21,7 @@
 		CA5C3B981E4CE9B6005937FF /* rules */ = {isa = PBXFileReference; lastKnownFileType = text; path = rules; sourceTree = "<group>"; };
 		CA5C3B9A1E4CE9B6005937FF /* format */ = {isa = PBXFileReference; lastKnownFileType = text; path = format; sourceTree = "<group>"; };
 		CA5C3B9B1E4CE9B6005937FF /* debian.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; lineEnding = 0; path = debian.sh; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.sh; };
+		CA6070EB1E72D817003232A2 /* ubuntu-beta.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "ubuntu-beta.sh"; sourceTree = "<group>"; };
 		CA60E9DF1E51EAD5009A699D /* ubuntu.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; lineEnding = 0; path = ubuntu.sh; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.sh; };
 		CA7374761E55F91F0022AEDF /* installdata.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; lineEnding = 0; path = installdata.sh; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.sh; };
 		CA7C433F1B039EFC00FFADCC /* tarball.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; lineEnding = 0; path = tarball.sh; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.sh; };
@@ -82,6 +83,7 @@
 				CA80EC181B03C39C000A2591 /* README.md */,
 				CAA003B91E5FFB690034A7B6 /* shared.sh */,
 				CA7C433F1B039EFC00FFADCC /* tarball.sh */,
+				CA6070EB1E72D817003232A2 /* ubuntu-beta.sh */,
 				CA60E9DF1E51EAD5009A699D /* ubuntu.sh */,
 			);
 			sourceTree = "<group>";
