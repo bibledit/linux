@@ -25,7 +25,7 @@ echo Updates the repository that creates Ubuntu beta packages.
 TMPLINUX=/tmp/bibledit-linux
 
 
-LAUNCHPADUBUNTU=../launchpad/ubuntu
+LAUNCHPADUBUNTU=../launchpad/ubuntu-beta
 rm -rf $LAUNCHPADUBUNTU/*
 
 
