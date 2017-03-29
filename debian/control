@@ -7,7 +7,7 @@ Uploaders: Jonathan Marsden <jmarsden@fastmail.fm>,
  Dmitrijs Ledkovs <dmitrij.ledkov@ubuntu.com>,
  Teus Benschop <teusjannette@gmail.com>,
  Roberto C. Sánchez <roberto@debian.org>
-Build-Depends: debhelper (>= 9), autotools-dev, patchutils (>= 0.2.25), pkg-config, libgtk-3-dev, rcs, dh-autoreconf, libwebkit2gtk-4.0-dev, autoconf, autoconf-archive, build-essential, libcurl4-openssl-dev, libssl-dev, libatspi2.0-dev, zip, unzip, libmbedtls-dev, libmimetic-dev
+Build-Depends: debhelper (>= 9), autotools-dev, patchutils (>= 0.2.25), pkg-config, libgtk-3-dev, rcs, dh-autoreconf, libwebkit2gtk-4.0-dev, autoconf, autoconf-archive, libcurl4-openssl-dev, libssl-dev, libatspi2.0-dev, zip, unzip, libmbedtls-dev, libmimetic-dev
 Standards-Version: 3.9.8
 Homepage: http://bibledit.org/
 Vcs-Git: git://anonscm.debian.org/pkg-crosswire/bibledit-gtk.git
