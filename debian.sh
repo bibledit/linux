@@ -57,7 +57,7 @@ if [ $? -ne 0 ]; then exit; fi
 # Another reason is that in this way it does not need to generate patches in the 'debian' folder.
 
 
-echo Link with the system-provided mbed TLS library.
+# echo Link with the system-provided mbed TLS library.
 # Fix for lintian error "embedded-library usr/bin/bibledit: mbedtls":
 # * Remove mbedtls from the list of sources to compile.
 # * Add -lmbedtls and friends to the linker flags.
@@ -66,6 +66,10 @@ echo Link with the system-provided mbed TLS library.
 # sed -i.bak 's/# debian//g' Makefile.am
 # if [ $? -ne 0 ]; then exit; fi
 # rm *.bak
+
+
+# If the debian/README* or README.Debian files contain no useful content,
+# they should be updated with something useful or be removed.
 
 
 echo Reconfiguring the source.
