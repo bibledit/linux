@@ -17,7 +17,6 @@
 		CA5C3B941E4CE9B6005937FF /* copyright */ = {isa = PBXFileReference; lastKnownFileType = text; path = copyright; sourceTree = "<group>"; };
 		CA5C3B951E4CE9B6005937FF /* dirs */ = {isa = PBXFileReference; lastKnownFileType = text; path = dirs; sourceTree = "<group>"; };
 		CA5C3B961E4CE9B6005937FF /* install */ = {isa = PBXFileReference; lastKnownFileType = text; path = install; sourceTree = "<group>"; };
-		CA5C3B971E4CE9B6005937FF /* README */ = {isa = PBXFileReference; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
 		CA5C3B981E4CE9B6005937FF /* rules */ = {isa = PBXFileReference; lastKnownFileType = text; path = rules; sourceTree = "<group>"; };
 		CA5C3B9A1E4CE9B6005937FF /* format */ = {isa = PBXFileReference; lastKnownFileType = text; path = format; sourceTree = "<group>"; };
 		CA5C3B9B1E4CE9B6005937FF /* debian.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; lineEnding = 0; path = debian.sh; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.sh; };
@@ -47,7 +46,6 @@
 				CA5C3B941E4CE9B6005937FF /* copyright */,
 				CA5C3B951E4CE9B6005937FF /* dirs */,
 				CA5C3B961E4CE9B6005937FF /* install */,
-				CA5C3B971E4CE9B6005937FF /* README */,
 				CA5C3B981E4CE9B6005937FF /* rules */,
 				CA5C3B991E4CE9B6005937FF /* source */,
 				CA1339091E5B294700EBAE28 /* watch */,
