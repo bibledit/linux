@@ -69,7 +69,7 @@ if [ $? -ne 0 ]; then exit; fi
 
 
 # If the debian/README* or README.Debian files contain no useful content,
-# they should be updated with something useful or be removed.
+# they should be updated with something useful, or else be removed.
 
 
 echo Reconfiguring the source.
@@ -137,13 +137,9 @@ if [ $? -ne 0 ]; then exit; fi
 
 
 echo Do a pedantic lintian check.
-ssh -tt $DEBIANSID "lintian --pedantic bibledit*changes"
+ssh -tt $DEBIANSID "lintian --display-info --pedantic bibledit*changes"
 # No checking of exit code because when lintian finds an error,
 # even if the error is overriddden, it exits with 1.
-
-
-# echo Remove the generated build artifacts.
-# ssh $DEBIANSID "rm bibledit*"
 
 
 echo Build the Debian package in a chroot.
