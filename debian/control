@@ -9,7 +9,7 @@ Uploaders: Jonathan Marsden <jmarsden@fastmail.fm>,
  Roberto C. Sánchez <roberto@debian.org>
 Build-Depends: debhelper (>= 9), autotools-dev, patchutils (>= 0.2.25), pkg-config, libgtk-3-dev, rcs, dh-autoreconf, libwebkit2gtk-4.0-dev, autoconf, autoconf-archive, libcurl4-openssl-dev, libssl-dev, libatspi2.0-dev, zip, unzip, libmbedtls-dev, libmimetic-dev
 Standards-Version: 3.9.8
-Homepage: http://bibledit.org/
+Homepage: http://bibledit.org
 Vcs-Git: git://anonscm.debian.org/pkg-crosswire/bibledit-gtk.git
 Vcs-Browser: https://anonscm.debian.org/cgit/pkg-crosswire/bibledit-gtk.git/
 
@@ -23,3 +23,9 @@ Description: Bible editor
  Proofread Bibles.
  Publish Bibles.
  Synchronize your data through Bibledit Cloud.
+
+Package: bibledit-data
+Architecture: all
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Data for bibledit, a Bible editor
+

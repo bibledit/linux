@@ -22,6 +22,8 @@
 		CA5C3B9B1E4CE9B6005937FF /* debian.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; lineEnding = 0; path = debian.sh; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.sh; };
 		CA6070EB1E72D817003232A2 /* ubuntu-beta.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "ubuntu-beta.sh"; sourceTree = "<group>"; };
 		CA60E9DF1E51EAD5009A699D /* ubuntu.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; lineEnding = 0; path = ubuntu.sh; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.sh; };
+		CA62268B1E8D81310077A766 /* bibledit-data.install */ = {isa = PBXFileReference; lastKnownFileType = text; path = "bibledit-data.install"; sourceTree = "<group>"; };
+		CA62268C1E8D81310077A766 /* bibledit.install */ = {isa = PBXFileReference; lastKnownFileType = text; path = bibledit.install; sourceTree = "<group>"; };
 		CA7374761E55F91F0022AEDF /* installdata.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; lineEnding = 0; path = installdata.sh; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.sh; };
 		CA7C433F1B039EFC00FFADCC /* tarball.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; lineEnding = 0; path = tarball.sh; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.sh; };
 		CA80EC121B03C2A0000A2591 /* bibledit.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = bibledit.1; sourceTree = "<group>"; };
@@ -41,6 +43,8 @@
 		CA5C3B901E4CE9B6005937FF /* debian */ = {
 			isa = PBXGroup;
 			children = (
+				CA62268B1E8D81310077A766 /* bibledit-data.install */,
+				CA62268C1E8D81310077A766 /* bibledit.install */,
 				CA9214CB1E8D1AAC008C8466 /* bibledit.lintian-overrides */,
 				CA5C3B911E4CE9B6005937FF /* changelog */,
 				CA5C3B921E4CE9B6005937FF /* compat */,
