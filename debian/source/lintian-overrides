@@ -19,4 +19,3 @@ bibledit source: source-contains-prebuilt-javascript-object
 # By the way, isn't it called "mbed" TLS, obviously intended to be "embedded"?
 # So Bibledit is doing that right now, it "embeds" mbed TLS.
 # bibledit source: embedded-library
-bibledit: embedded-library usr/bin/bibledit: mbedtls
