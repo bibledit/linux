@@ -13,6 +13,7 @@ bibledit (5.0.139-1) unstable; urgency=low
   * debian/source/lintian-overrides: updated (with reasons given there)
   * removed debian/README*: no longer provides useful information
   * debian/bibledit.lintian-overrides: lintian overrides for the bibledit binary
+  * debian/changelog: remove empty older entry
 
  -- Teus Benschop <teusjannette@gmail.com>  Thu, 30 Mar 2017 07:49:19 +0200
 
@@ -26,7 +27,6 @@ bibledit-gtk (4.9-1) unstable; urgency=medium
       use Breaks instead of Conflicts
   * add patch for AX_CXX_COMPILE_STDCXX_11
   * debian/bibledit-gtk.links: man file renamed
-  *
 
  -- Daniel Glassey <wdg@debian.org>  Tue, 15 Sep 2015 21:27:28 +0100
 
