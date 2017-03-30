@@ -1,4 +1,4 @@
-bibledit (5.0.138-1) unstable; urgency=low
+bibledit (5.0.139-1) unstable; urgency=low
 
   * new upstream version
   * removed debian/bibledit-gtk*: no longer provides bibledit-gtk
@@ -12,8 +12,9 @@ bibledit (5.0.138-1) unstable; urgency=low
   * debian/watch: points to new location of tarball and checks signature
   * debian/source/lintian-overrides: updated (with reasons given there)
   * removed debian/README*: no longer provides useful information
+  * debian/bibledit.lintian-overrides: lintian overrides for the bibledit binary
 
- -- Teus Benschop <teusjannette@gmail.com>  Wed, 29 Mar 2017 12:28:38 +0200
+ -- Teus Benschop <teusjannette@gmail.com>  Thu, 30 Mar 2017 07:49:19 +0200
 
 bibledit-gtk (4.9-1) unstable; urgency=medium
 
