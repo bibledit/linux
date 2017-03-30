@@ -12,10 +12,5 @@ bibledit source: source-contains-prebuilt-java-object
 # This way they are more sure to have well-tested and reliable minified objects.
 bibledit source: source-contains-prebuilt-javascript-object
 
-# For just now the mbed TLS library is included.
-# When using the system-provided libmbedtls, there currently is a segmentation fault.
-# Pending investigation of this fault, temporarily include mbed TLS.
-# Here is the link to the issue: https://github.com/bibledit/bibledit/issues/499
-# By the way, isn't it called "mbed" TLS, obviously intended to be "embedded"?
-# So Bibledit is doing that right now, it "embeds" mbed TLS.
-# bibledit source: embedded-library
+# Override pedantic lintian messages.
+bibledit source: vcs-field-uses-insecure-uri
