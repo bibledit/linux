@@ -9,5 +9,5 @@
 bibledit-data: missing-dep-for-interpreter make => make | build-essential | dpkg-dev (usr/share/bibledit/debian/rules)
 
 # Override pedantic lintian messages.
-bibledit: font-in-non-font-package
-bibledit: package-contains-empty-directory
+bibledit-data: font-in-non-font-package
+bibledit-data: package-contains-empty-directory
