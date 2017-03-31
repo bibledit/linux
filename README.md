@@ -10,6 +10,8 @@ debian.sh: Creates Debian packages.
 
 debianupload.sh: Uploads Debian package to mentors.debian.net.
 
+debiangit.sh: Updates the git repository.
+
 ubuntu.sh: Creates code for Ubuntu packages.
 
 ubuntu-beta.sh: Creates code for Ubuntu beta packages.
