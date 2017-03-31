@@ -20,5 +20,3 @@ bibledit: missing-dep-for-interpreter make => make | build-essential | dpkg-dev 
 bibledit: hardening-no-fortify-functions
 bibledit: spelling-error-in-binary usr/bin/bibledit ment meant
 bibledit: hardening-no-bindnow usr/bin/bibledit
-bibledit: font-in-non-font-package
-bibledit: package-contains-empty-directory

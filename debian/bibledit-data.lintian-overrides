@@ -1,0 +1,13 @@
+# The tool "lintian-overrider" makes it trivial
+# to find the way of overriding a lintian message.
+# $ lintian *.changes | ./lintian-utils/bin/lintian-overrider
+
+# Lintian issues an eror about a missing "make".
+# It finds "make" called in file debian/rules.
+# However Bibledit does not use this interpreter directly.
+# Therefore it can be overridden.
+bibledit-data: missing-dep-for-interpreter make => make | build-essential | dpkg-dev (usr/share/bibledit/debian/rules)
+
+# Override pedantic lintian messages.
+bibledit: font-in-non-font-package
+bibledit: package-contains-empty-directory

@@ -28,4 +28,10 @@ Package: bibledit-data
 Architecture: all
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: Data for bibledit, a Bible editor
+ A tool for the Bible translator.
+ Translate Bibles.
+ Edit Bibles.
+ Proofread Bibles.
+ Publish Bibles.
+ Synchronize your data through Bibledit Cloud.
 

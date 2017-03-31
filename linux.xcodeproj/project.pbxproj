@@ -20,6 +20,7 @@
 		CA5C3B981E4CE9B6005937FF /* rules */ = {isa = PBXFileReference; lastKnownFileType = text; path = rules; sourceTree = "<group>"; };
 		CA5C3B9A1E4CE9B6005937FF /* format */ = {isa = PBXFileReference; lastKnownFileType = text; path = format; sourceTree = "<group>"; };
 		CA5C3B9B1E4CE9B6005937FF /* debian.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; lineEnding = 0; path = debian.sh; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.sh; };
+		CA605E9E1E8E1F8C003CF956 /* bibledit-data.lintian-overrides */ = {isa = PBXFileReference; lastKnownFileType = text; path = "bibledit-data.lintian-overrides"; sourceTree = "<group>"; };
 		CA6070EB1E72D817003232A2 /* ubuntu-beta.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "ubuntu-beta.sh"; sourceTree = "<group>"; };
 		CA60E9DF1E51EAD5009A699D /* ubuntu.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; lineEnding = 0; path = ubuntu.sh; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.sh; };
 		CA62268B1E8D81310077A766 /* bibledit-data.install */ = {isa = PBXFileReference; lastKnownFileType = text; path = "bibledit-data.install"; sourceTree = "<group>"; };
@@ -44,6 +45,7 @@
 			isa = PBXGroup;
 			children = (
 				CA62268B1E8D81310077A766 /* bibledit-data.install */,
+				CA605E9E1E8E1F8C003CF956 /* bibledit-data.lintian-overrides */,
 				CA62268C1E8D81310077A766 /* bibledit.install */,
 				CA9214CB1E8D1AAC008C8466 /* bibledit.lintian-overrides */,
 				CA5C3B911E4CE9B6005937FF /* changelog */,
