@@ -13,6 +13,7 @@ bibledit (5.0.140-1) unstable; urgency=low
   * debian/source/lintian-overrides: updated (with reasons given there)
   * removed debian/README*: no longer provides useful information
   * debian/bibledit.lintian-overrides: lintian overrides for the bibledit binary
+  * debian/bibledit-data.lintian-overrides: lintian overrides for the bibledit data
   * debian/changelog: remove empty older entry
 
  -- Teus Benschop <teusjannette@gmail.com>  Thu, 30 Mar 2017 07:49:19 +0200
