@@ -36,7 +36,7 @@
 		CA9214CB1E8D1AAC008C8466 /* bibledit.lintian-overrides */ = {isa = PBXFileReference; lastKnownFileType = text; path = "bibledit.lintian-overrides"; sourceTree = "<group>"; };
 		CA9347101E37637800DAFC39 /* Makefile.mk */ = {isa = PBXFileReference; lastKnownFileType = text; path = Makefile.mk; sourceTree = "<group>"; };
 		CAA003B91E5FFB690034A7B6 /* shared.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = shared.sh; sourceTree = "<group>"; };
-		CAA4DBAC1E8E7698003CE358 /* debiangit.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = debiangit.sh; sourceTree = "<group>"; };
+		CAA4DBAC1E8E7698003CE358 /* debianpush.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = debianpush.sh; sourceTree = "<group>"; };
 		CAB5BA781E44FA8300ACE7C2 /* bibledit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bibledit.png; sourceTree = "<group>"; };
 		CAB5BA791E44FA8300ACE7C2 /* bibledit.xpm */ = {isa = PBXFileReference; lastKnownFileType = text; path = bibledit.xpm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -84,7 +84,7 @@
 				CA5C3B901E4CE9B6005937FF /* debian */,
 				CA5C3B9B1E4CE9B6005937FF /* debian.sh */,
 				CA4759DD1E5853D100EEA175 /* debianchangelog.sh */,
-				CAA4DBAC1E8E7698003CE358 /* debiangit.sh */,
+				CAA4DBAC1E8E7698003CE358 /* debianpush.sh */,
 				CA82A25D1E5B115900BB9274 /* debianupload.sh */,
 				CA7374761E55F91F0022AEDF /* installdata.sh */,
 				CA9347101E37637800DAFC39 /* Makefile.mk */,

@@ -26,23 +26,11 @@ ping -c 1 $DEBIANSID
 if [ $? -ne 0 ]; then exit; fi
 
 
-echo Copying debian repository from macOS to sid.
-rsync --archive -v --delete ../debian $DEBIANSID:.
+echo Synchronizing debian repository from sid to macOS.
+cp -r ../debian /tmp
+rm -rf ../debian
+rsync --archive -v $DEBIANSID:debian ..
 if [ $? -ne 0 ]; then exit; fi
 
 
-echo Remove untracked files from the working tree.
-ssh -tt $DEBIANSID "cd debian; git clean -f"
-if [ $? -ne 0 ]; then exit; fi
-
-
-echo Import upstream tarball and use pristine-tar.
-ssh -tt $DEBIANSID "cd debian; gbp import-dsc --create-missing-branches --pristine-tar ../bibledit_*.dsc"
-if [ $? -ne 0 ]; then exit; fi
-
-
-echo Build package from git.
-ssh -tt $DEBIANSID "cd debian; gbp buildpackage"
-if [ $? -ne 0 ]; then exit; fi
-
-
+echo Run $ git push --tags to update the remote repository.

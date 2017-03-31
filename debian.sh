@@ -32,6 +32,12 @@ ping -c 1 $DEBIANSID
 if [ $? -ne 0 ]; then exit; fi
 
 
+LINUXSOURCE=`dirname $0`
+cd $LINUXSOURCE
+LINUXSOURCE=`pwd`
+echo Using source at $LINUXSOURCE
+
+
 ./tarball.sh
 TMPLINUX=/tmp/bibledit-linux
 echo It supposes a tarball to be there in $TMPLINUX.
@@ -107,6 +113,11 @@ tar czf $TARDIR.tar.gz $TARDIR
 if [ $? -ne 0 ]; then exit; fi
 
 
+echo Copy the Debian tarball to the Desktop.
+scp $TMPDEBIAN/*.gz ~/Desktop
+if [ $? -ne 0 ]; then exit; fi
+
+
 echo Clean the Debian builder and copy the tarball to it.
 ssh $DEBIANSID "rm -rf bibledit*"
 if [ $? -ne 0 ]; then exit; fi
@@ -147,4 +158,24 @@ ssh -tt $DEBIANSID "cd bibledit*[0-9]; sbuild"
 if [ $? -ne 0 ]; then exit; fi
 
 
-echo Run script debianupload to build and upload source package.
+echo Change directory back to $LINUXSOURCE
+cd $LINUXSOURCE
+
+
+echo Copying debian repository from macOS to sid.
+rsync --archive -v --delete ../debian $DEBIANSID:.
+if [ $? -ne 0 ]; then exit; fi
+
+
+echo Remove untracked files from the working tree.
+ssh -tt $DEBIANSID "cd debian; git clean -f"
+if [ $? -ne 0 ]; then exit; fi
+
+
+echo Import upstream tarball and use pristine-tar.
+ssh -tt $DEBIANSID "cd debian; gbp import-dsc --create-missing-branches --pristine-tar ../bibledit_*.dsc"
+if [ $? -ne 0 ]; then exit; fi
+
+
+echo Run ./debianupload.sh to build and upload source package to mentors.
+echo Run ./debianpush.sh to push the changes to the remote debian repository.
