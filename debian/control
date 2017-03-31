@@ -29,4 +29,5 @@ Architecture: all
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: Data for Bibledit
  Contains pictures, icons, lexicons, scripts.
-
+ This is normally not installed manually.
+ The Bibledit package will install it automatically.

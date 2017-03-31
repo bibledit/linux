@@ -10,12 +10,6 @@
 # So Bibledit is doing that right now, it "embeds" mbed TLS.
 bibledit: embedded-library usr/bin/bibledit: mbedtls
 
-# Lintian issues an eror about a missing "make".
-# It finds "make" called in file debian/rules.
-# However Bibledit does not use this interpreter directly.
-# Therefore it can be overridden.
-bibledit: missing-dep-for-interpreter make => make | build-essential | dpkg-dev (usr/share/bibledit/debian/rules)
-
 # Override pedantic lintian messages.
 bibledit: hardening-no-fortify-functions
 bibledit: spelling-error-in-binary usr/bin/bibledit ment meant
