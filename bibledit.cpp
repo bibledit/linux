@@ -22,6 +22,7 @@
 #include <executable/bibledit.h>
 #include <libgen.h>
 #include <iostream>
+#include <thread>
 #include "library/bibledit.h"
 #include <webkit2/webkit2.h>
 
@@ -75,6 +76,8 @@ int main (int argc, char *argv[])
   
   bibledit_start_library ();
 
+  new thread (timer_thread);
+  
   status = g_application_run (G_APPLICATION (application), argc, argv);
 
   g_object_unref (application);
@@ -383,4 +386,17 @@ void webkit_search (GtkWidget *widget)
   }
   
   gtk_widget_destroy (dialog);
+}
+
+
+// Start an external URL through the default system browser.
+void timer_thread ()
+{
+  while (true) {
+    this_thread::sleep_for (chrono::seconds (1));
+    string url = bibledit_get_external_url ();
+    if (!url.empty ()) {
+      g_app_info_launch_default_for_uri (url.c_str (), NULL, NULL);
+    }
+  }
 }
