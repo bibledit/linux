@@ -154,7 +154,10 @@ ssh -tt $DEBIANSID "lintian --display-info --pedantic --no-tag-display-limit --i
 
 
 echo Build the Debian package in a chroot.
-ssh -tt $DEBIANSID "cd bibledit*[0-9]; sbuild"
+# Builds for upload to unstable.
+# ssh -tt $DEBIANSID "cd bibledit*[0-9]; sbuild"
+# Builds for upload to experimental.
+ssh -tt $DEBIANSID "cd bibledit*[0-9]; sbuild -d experimental -c unstable-amd64-sbuild"
 if [ $? -ne 0 ]; then exit; fi
 
 
