@@ -1,9 +1,10 @@
-bibledit (5.0.140-1) unstable; urgency=low
+bibledit (5.0.144-1) experimental; urgency=low
 
   * new upstream version
   * removed debian/bibledit-gtk*: no longer provides bibledit-gtk
   * debian/control: updated Build-Depends, Section, Priority, Standards-Version
-  * debian/control: no longer provies bibledit-gtk, bibledit-gtk-data
+  * debian/control: bibledit-gtk: transitional dummy package to bibledit
+  * debian/control: bibledit-gtk-data: transitional package to bibledit-data
   * debian/control: updated Description
   * debian/copyright: updated license notices
   * removed debian/m4_ax_cxx_compile_stdcxx_11.m4: no longer needed
@@ -12,11 +13,11 @@ bibledit (5.0.140-1) unstable; urgency=low
   * debian/watch: points to new location of tarball and checks signature
   * debian/source/lintian-overrides: updated (with reasons given there)
   * removed debian/README*: no longer provides useful information
-  * debian/bibledit.lintian-overrides: lintian overrides for the bibledit binary
-  * debian/bibledit-data.lintian-overrides: lintian overrides for the bibledit data
+  * debian/bibledit.lintian-overrides: lintian overrides for the binary
+  * debian/bibledit-data.lintian-overrides: lintian overrides for the data
   * debian/changelog: remove empty entry
 
- -- Teus Benschop <teusjannette@gmail.com>  Fri, 31 Mar 2017 13:16:53 +0200
+ -- Teus Benschop <teusjannette@gmail.com>  Tue, 04 Apr 2017 16:49:42 +0200
 
 bibledit-gtk (4.9-1) unstable; urgency=medium
 

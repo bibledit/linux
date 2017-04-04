@@ -148,7 +148,7 @@ if [ $? -ne 0 ]; then exit; fi
 
 
 echo Do a pedantic lintian check.
-ssh -tt $DEBIANSID "lintian --display-info --pedantic --no-tag-display-limit bibledit*changes"
+ssh -tt $DEBIANSID "lintian --display-info --pedantic --no-tag-display-limit --info bibledit*changes bibledit*deb bibledit*dsc"
 # No checking of exit code because when lintian finds an error,
 # even if the error is overriddden, it exits with 1.
 

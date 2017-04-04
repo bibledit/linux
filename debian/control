@@ -31,3 +31,17 @@ Description: Data for Bibledit
  Contains pictures, icons, lexicons, scripts.
  This is normally not installed manually.
  The Bibledit package will install it automatically.
+
+Package: bibledit-gtk
+Depends: bibledit, ${misc:Depends}
+Architecture: all
+Description: transitional dummy package to bibledit
+bibledit-gtk is a transitional dummy package to bibledit.
+ The name of the software was changed to bibledit by upstream.
+
+Package: bibledit-gtk-data
+Depends: bibledit-data, ${misc:Depends}
+Architecture: all
+Description: transitional dummy package to bibledit-data
+bibledit-gtk-data is a transitional dummy package to bibledit-data.
+ The name of the software was changed to bibledit by upstream.

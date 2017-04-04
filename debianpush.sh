@@ -33,4 +33,4 @@ rsync --archive -v $DEBIANSID:debian ..
 if [ $? -ne 0 ]; then exit; fi
 
 
-echo Run $ git push --tags to update the remote repository.
+echo Run $ git push --all and $ git push --tags to update the remote repository.
