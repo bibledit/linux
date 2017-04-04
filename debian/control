@@ -15,7 +15,7 @@ Vcs-Browser: https://anonscm.debian.org/cgit/pkg-crosswire/bibledit-gtk.git/
 
 Package: bibledit
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
+Depends: bibledit-data, ${shlibs:Depends}, ${misc:Depends}
 Description: Bible editor
  A tool for the Bible translator.
  Translate Bibles.
@@ -43,5 +43,5 @@ Package: bibledit-gtk-data
 Depends: bibledit-data, ${misc:Depends}
 Architecture: all
 Description: transitional dummy package to bibledit-data
-    bibledit-gtk-data is a transitional dummy package to bibledit-data.
+ bibledit-gtk-data is a transitional dummy package to bibledit-data.
  The name of the software was changed to bibledit by upstream.
