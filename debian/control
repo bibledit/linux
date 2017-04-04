@@ -36,12 +36,12 @@ Package: bibledit-gtk
 Depends: bibledit, ${misc:Depends}
 Architecture: all
 Description: transitional dummy package to bibledit
-bibledit-gtk is a transitional dummy package to bibledit.
+ bibledit-gtk is a transitional dummy package to bibledit.
  The name of the software was changed to bibledit by upstream.
 
 Package: bibledit-gtk-data
 Depends: bibledit-data, ${misc:Depends}
 Architecture: all
 Description: transitional dummy package to bibledit-data
-bibledit-gtk-data is a transitional dummy package to bibledit-data.
+    bibledit-gtk-data is a transitional dummy package to bibledit-data.
  The name of the software was changed to bibledit by upstream.
