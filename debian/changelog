@@ -1,11 +1,9 @@
-bibledit (5.0.144-1) experimental; urgency=low
+bibledit (5.0.145-1) experimental; urgency=low
 
-  * new upstream version
-  * removed debian/bibledit-gtk*: no longer provides bibledit-gtk
   * debian/control: updated Build-Depends, Section, Priority, Standards-Version
   * debian/control: bibledit-gtk: transitional dummy package to bibledit
   * debian/control: bibledit-gtk-data: transitional package to bibledit-data
-  * debian/control: updated Description
+  * debian/control: updated Description fields
   * debian/copyright: updated license notices
   * removed debian/m4_ax_cxx_compile_stdcxx_11.m4: no longer needed
   * removed debian/patches/*: no longer needed
@@ -17,7 +15,7 @@ bibledit (5.0.144-1) experimental; urgency=low
   * debian/bibledit-data.lintian-overrides: lintian overrides for the data
   * debian/changelog: remove empty entry
 
- -- Teus Benschop <teusjannette@gmail.com>  Tue, 04 Apr 2017 16:49:42 +0200
+ -- Teus Benschop <teusjannette@gmail.com>  Wed, 05 Apr 2017 08:02:24 +0200
 
 bibledit-gtk (4.9-1) unstable; urgency=medium
 

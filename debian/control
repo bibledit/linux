@@ -16,6 +16,8 @@ Vcs-Browser: https://anonscm.debian.org/cgit/pkg-crosswire/bibledit-gtk.git/
 Package: bibledit
 Architecture: any
 Depends: bibledit-data, ${shlibs:Depends}, ${misc:Depends}
+Replaces: bibledit-gtk (<< 5.0.144-1~)
+Breaks: bibledit-gtk (<< 5.0.144-1~)
 Description: Bible editor
  A tool for the Bible translator.
  Translate Bibles.
@@ -27,6 +29,8 @@ Description: Bible editor
 Package: bibledit-data
 Architecture: all
 Depends: ${shlibs:Depends}, ${misc:Depends}
+Replaces: bibledit-gtk-data (<< 5.0.144-1~)
+Breaks: bibledit-gtk-data (<< 5.0.144-1~)
 Description: Data for bibledit
  Contains pictures, icons, lexicons, scripts.
  This is normally not installed manually.
