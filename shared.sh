@@ -133,17 +133,6 @@ if [ $? -ne 0 ]; then exit; fi
 
 function update_configure_ac_and_makefile_am ()
 {
-# Pass the package data directory to config.h.
-sed -i.bak 's/.*TagA.*/if test "x${prefix}" = "xNONE"; then/g' configure.ac
-if [ $? -ne 0 ]; then exit; fi
-sed -i.bak 's/.*TagB.*/  AC_DEFINE_UNQUOTED(PACKAGE_DATA_DIR, "${ac_default_prefix}\/share\/bibledit", [Package data directory])/g' configure.ac
-if [ $? -ne 0 ]; then exit; fi
-sed -i.bak 's/.*TagC.*/else/g' configure.ac
-if [ $? -ne 0 ]; then exit; fi
-sed -i.bak 's/.*TagD.*/  AC_DEFINE_UNQUOTED(PACKAGE_DATA_DIR, "${prefix}\/share\/bibledit", [Package data directory])/g' configure.ac
-if [ $? -ne 0 ]; then exit; fi
-sed -i.bak 's/.*TagE.*/fi/g' configure.ac
-if [ $? -ne 0 ]; then exit; fi
 # Do not build the unit tests and the generator.
 # Rename binary 'server' to 'bibledit'.
 sed -i.bak 's/server unittest generate/bibledit/g' Makefile.am
