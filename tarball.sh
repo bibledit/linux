@@ -22,18 +22,142 @@
 # It builds a tarball for use on Linux.
 
 
-# Including shared functions.
-source shared.sh
+LINUXSOURCE=`dirname $0`
+cd $LINUXSOURCE
+if [ $? -ne 0 ]; then exit; fi
+LINUXSOURCE=`pwd`
+echo Using source at $LINUXSOURCE
+BIBLEDITLINUX=/tmp/bibledit-linux
+echo Build directory at $BIBLEDITLINUX
+
+
+# Synchronize source code.
+cd $LINUXSOURCE
+if [ $? -ne 0 ]; then exit; fi
+echo Synchronizing relevant source code to $BIBLEDITLINUX
+mkdir -p $BIBLEDITLINUX
+if [ $? -ne 0 ]; then exit; fi
+rsync --archive --delete ../cloud/ $BIBLEDITLINUX/
+if [ $? -ne 0 ]; then exit; fi
+rsync --archive . $BIBLEDITLINUX/
+if [ $? -ne 0 ]; then exit; fi
+echo Done
+
+
+echo Working in $BIBLEDITLINUX
+cd $BIBLEDITLINUX
 if [ $? -ne 0 ]; then exit; fi
 
 
-synchronize_source_code
-change_to_working_directory
-move_linux_gui_sources_into_place
-remove_unwanted_files
-dist_clean_source
-create_package_data_dir_installer
-enable_linux_in_config_h
-update_configure_ac_and_makefile_am
-reconfigure_make_dist
+# Move the Bibledit Linux GUI sources into place.
+mv bibledit.h executable
+if [ $? -ne 0 ]; then exit; fi
+mv bibledit.cpp executable
+if [ $? -ne 0 ]; then exit; fi
 
+
+# Remove unwanted files.
+rm valgrind
+rm bibledit
+rm dev
+rm -rf unittests
+find . -name .DS_Store -delete
+rm -rf .git
+find . -name "*.Po" -delete
+rm -rf autom4te.cache
+rm -rf *.xcodeproj
+rm -rf xcode
+echo Remove macOS extended attributes.
+echo The attributes would make their way into the tarball,
+echo get unpacked within Debian,
+echo and would cause lintian errors.
+xattr -r -c *
+
+
+# Clean source.
+./configure
+if [ $? -ne 0 ]; then exit; fi
+make distclean
+if [ $? -ne 0 ]; then exit; fi
+
+
+# Create file with the directories and files to install in the package data directory.
+# Remove the first character of it.
+find . | cut -c 2- > installdata.txt
+if [ $? -ne 0 ]; then exit; fi
+# Remove blank lines.
+sed -i.bak '/^$/d' installdata.txt
+if [ $? -ne 0 ]; then exit; fi
+# Do not install source files.
+sed -i.bak '/\.cpp$/d' installdata.txt
+if [ $? -ne 0 ]; then exit; fi
+sed -i.bak '/\.c$/d' installdata.txt
+if [ $? -ne 0 ]; then exit; fi
+sed -i.bak '/\.h$/d' installdata.txt
+if [ $? -ne 0 ]; then exit; fi
+sed -i.bak '/\.hpp$/d' installdata.txt
+if [ $? -ne 0 ]; then exit; fi
+# Do not install license files.
+# This fixes the lintian warning:
+# W: bibledit: extra-license-file usr/share/bibledit/COPYING
+# What happens is that running ./reconfigure creates COPYING.
+# That causes the lintian warning.
+# So even if present, it should not be installed.
+sed -i.bak '/COPYING/d' installdata.txt
+if [ $? -ne 0 ]; then exit; fi
+
+
+# Enable the Linux configuration in config.h.
+sed -i.bak 's/ENABLELINUX=no/ENABLELINUX=yes/g' configure.ac
+if [ $? -ne 0 ]; then exit; fi
+sed -i.bak 's/# linux //g' configure.ac
+if [ $? -ne 0 ]; then exit; fi
+sed -i.bak 's/.*Tag8.*/AC_DEFINE([HAVE_LINUX], [1], [Enable installation on Linux])/g' configure.ac
+if [ $? -ne 0 ]; then exit; fi
+
+
+# Do not build the unit tests and the generator.
+# Rename binary 'server' to 'bibledit'.
+sed -i.bak 's/server unittest generate/bibledit/g' Makefile.am
+if [ $? -ne 0 ]; then exit; fi
+sed -i.bak 's/server_/bibledit_/g' Makefile.am
+if [ $? -ne 0 ]; then exit; fi
+sed -i.bak '/unittest/d' Makefile.am
+if [ $? -ne 0 ]; then exit; fi
+sed -i.bak '/generate_/d' Makefile.am
+if [ $? -ne 0 ]; then exit; fi
+# Update what to distribute.
+sed -i.bak 's/bible bibledit/bible/g' Makefile.am
+if [ $? -ne 0 ]; then exit; fi
+sed -i.bak '/EXTRA_DIST/ s/$/ *.desktop *.xpm *.png bibledit.1/' Makefile.am
+if [ $? -ne 0 ]; then exit; fi
+# Do not link with cURL and OpenSSL.
+# Both are not used.
+# As a result, a Debian package finds itself having unsatisfied dependencies.
+# Removing the flags fixes that.
+sed -i.bak '/CURL/d' Makefile.am
+if [ $? -ne 0 ]; then exit; fi
+sed -i.bak '/OPENSSL/d' Makefile.am
+if [ $? -ne 0 ]; then exit; fi
+# Add the additional Makefile.mk fragment for the Linux app.
+echo '' >> Makefile.am
+cat Makefile.mk >> Makefile.am
+# Remove the consecutive blank lines introduced by the above edit operations.
+sed -i.bak '/./,/^$/!d' Makefile.am
+if [ $? -ne 0 ]; then exit; fi
+# Remove .bak files.
+rm *.bak
+
+
+# Create distribution tarball.
+./reconfigure
+if [ $? -ne 0 ]; then exit; fi
+./configure
+if [ $? -ne 0 ]; then exit; fi
+make dist --jobs=24
+if [ $? -ne 0 ]; then exit; fi
+
+
+# Copy the tarball to the Desktop
+cp *.gz ~/Desktop
+if [ $? -ne 0 ]; then exit; fi
