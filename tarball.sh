@@ -81,32 +81,6 @@ make distclean
 if [ $? -ne 0 ]; then exit; fi
 
 
-# Create file with the directories and files to install in the package data directory.
-# Remove the first character of it.
-find . | cut -c 2- > installdata.txt
-if [ $? -ne 0 ]; then exit; fi
-# Remove blank lines.
-sed -i.bak '/^$/d' installdata.txt
-if [ $? -ne 0 ]; then exit; fi
-# Do not install source files.
-sed -i.bak '/\.cpp$/d' installdata.txt
-if [ $? -ne 0 ]; then exit; fi
-sed -i.bak '/\.c$/d' installdata.txt
-if [ $? -ne 0 ]; then exit; fi
-sed -i.bak '/\.h$/d' installdata.txt
-if [ $? -ne 0 ]; then exit; fi
-sed -i.bak '/\.hpp$/d' installdata.txt
-if [ $? -ne 0 ]; then exit; fi
-# Do not install license files.
-# This fixes the lintian warning:
-# W: bibledit: extra-license-file usr/share/bibledit/COPYING
-# What happens is that running ./reconfigure creates COPYING.
-# That causes the lintian warning.
-# So even if present, it should not be installed.
-sed -i.bak '/COPYING/d' installdata.txt
-if [ $? -ne 0 ]; then exit; fi
-
-
 # Enable the Linux configuration in config.h.
 sed -i.bak 's/ENABLELINUX=no/ENABLELINUX=yes/g' configure.ac
 if [ $? -ne 0 ]; then exit; fi
