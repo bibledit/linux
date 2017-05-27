@@ -9,7 +9,6 @@
 /* Begin PBXFileReference section */
 		CA26345B1E4CF9C3005551AB /* COPYING */ = {isa = PBXFileReference; lastKnownFileType = text; path = COPYING; sourceTree = "<group>"; };
 		CA7C433F1B039EFC00FFADCC /* tarball.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; lineEnding = 0; path = tarball.sh; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.sh; };
-		CA80EC121B03C2A0000A2591 /* bibledit.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = bibledit.1; sourceTree = "<group>"; };
 		CA80EC131B03C2EC000A2591 /* bibledit.cpp */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.cpp.cpp; lineEnding = 0; path = bibledit.cpp; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.cpp; };
 		CA80EC141B03C31A000A2591 /* bibledit.desktop */ = {isa = PBXFileReference; lastKnownFileType = text; path = bibledit.desktop; sourceTree = "<group>"; };
 		CA80EC151B03C355000A2591 /* bibledit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = bibledit.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
@@ -23,7 +22,6 @@
 		CA6867431B03997100DB9422 = {
 			isa = PBXGroup;
 			children = (
-				CA80EC121B03C2A0000A2591 /* bibledit.1 */,
 				CA80EC131B03C2EC000A2591 /* bibledit.cpp */,
 				CA80EC141B03C31A000A2591 /* bibledit.desktop */,
 				CA80EC151B03C355000A2591 /* bibledit.h */,

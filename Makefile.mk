@@ -1,5 +1,3 @@
-man_MANS = bibledit.1
-
 applicationdir = $(datadir)/applications
 application_DATA = bibledit.desktop
 
