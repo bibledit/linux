@@ -103,7 +103,7 @@ if [ $? -ne 0 ]; then exit; fi
 # Update what to distribute.
 sed -i.bak 's/bible bibledit/bible/g' Makefile.am
 if [ $? -ne 0 ]; then exit; fi
-sed -i.bak '/EXTRA_DIST/ s/$/ *.desktop *.xpm *.png bibledit.1/' Makefile.am
+sed -i.bak '/EXTRA_DIST/ s/$/ *.desktop *.xpm *.png/' Makefile.am
 if [ $? -ne 0 ]; then exit; fi
 # Do not link with cURL and OpenSSL.
 # Both are not used.
@@ -119,8 +119,22 @@ cat Makefile.mk >> Makefile.am
 # Remove the consecutive blank lines introduced by the above edit operations.
 sed -i.bak '/./,/^$/!d' Makefile.am
 if [ $? -ne 0 ]; then exit; fi
+
+
+# Remove bibledit-cloud man file.
+rm man/bibledit-cloud.1
+if [ $? -ne 0 ]; then exit; fi
+sed -i.bak 's/man\/bibledit-cloud\.1//g' Makefile.am
+
+
+# Update the network port number to a value different from 8080.
+# This enables running Bibledit and Bibledit Cloud simultaneously.
+sed -i.bak 's/8080/9876/g' config/logic.cpp
+if [ $? -ne 0 ]; then exit; fi
+
+
 # Remove .bak files.
-rm *.bak
+find . -name "*.bak" -delete
 
 
 # Create distribution tarball.
@@ -128,10 +142,11 @@ rm *.bak
 if [ $? -ne 0 ]; then exit; fi
 ./configure
 if [ $? -ne 0 ]; then exit; fi
-make dist --jobs=24
+make dist --jobs=12
 if [ $? -ne 0 ]; then exit; fi
 
 
 # Copy the tarball to the Desktop
+rm -f ~/Desktop/bibledit*gz
 cp *.gz ~/Desktop
 if [ $? -ne 0 ]; then exit; fi
