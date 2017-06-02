@@ -128,8 +128,10 @@ void activate (GtkApplication *app)
   WebKitWebContext * context = webkit_web_context_get_default ();
   webkit_web_context_clear_cache (context);
   
-  // Load a web page into the browser instance
-  webkit_web_view_load_uri (webview, "http://localhost:8080");
+  // Load a web page into the browser instance.
+  // The server's port number of this client is intentionally different from the Cloud's server port.
+  // This way both can run on one system simultaneously.
+  webkit_web_view_load_uri (webview, "http://localhost:9876");
   
   // Ensure it will get mouse and keyboard events.
   gtk_widget_grab_focus (GTK_WIDGET (webview));
