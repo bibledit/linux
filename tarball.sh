@@ -19,7 +19,7 @@
 
 # This script runs in a Terminal on macOS.
 # It refreshes and updates the bibledit sources.
-# It builds a tarball for use on Linux.
+# It generates a tarball for a Linux Bibledit client.
 
 
 LINUXSOURCE=`dirname $0`
@@ -88,6 +88,9 @@ sed -i.bak 's/# linux //g' configure.ac
 if [ $? -ne 0 ]; then exit; fi
 sed -i.bak 's/.*Tag8.*/AC_DEFINE([HAVE_LINUX], [1], [Enable installation on Linux])/g' configure.ac
 if [ $? -ne 0 ]; then exit; fi
+# A client should not check for the mimetic library.
+sed -i.bak '/mimetic/d' configure.ac
+if [ $? -ne 0 ]; then exit; fi
 
 
 # Do not build the unit tests and the generator.
@@ -118,6 +121,9 @@ echo '' >> Makefile.am
 cat Makefile.mk >> Makefile.am
 # Remove the consecutive blank lines introduced by the above edit operations.
 sed -i.bak '/./,/^$/!d' Makefile.am
+if [ $? -ne 0 ]; then exit; fi
+# A client does not require the mimetic library.
+sed -i.bak '/mimetic/d' Makefile.am
 if [ $? -ne 0 ]; then exit; fi
 
 
