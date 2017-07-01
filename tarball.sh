@@ -35,9 +35,11 @@ echo Build directory at $BIBLEDITLINUX
 cd $LINUXSOURCE
 if [ $? -ne 0 ]; then exit; fi
 echo Synchronizing relevant source code to $BIBLEDITLINUX
+rm -rf $BIBLEDITLINUX
+if [ $? -ne 0 ]; then exit; fi
 mkdir -p $BIBLEDITLINUX
 if [ $? -ne 0 ]; then exit; fi
-rsync --archive --delete ../cloud/ $BIBLEDITLINUX/
+rsync --archive ../cloud/ $BIBLEDITLINUX/
 if [ $? -ne 0 ]; then exit; fi
 rsync --archive . $BIBLEDITLINUX/
 if [ $? -ne 0 ]; then exit; fi
@@ -88,7 +90,7 @@ sed -i.bak 's/# linux //g' configure.ac
 if [ $? -ne 0 ]; then exit; fi
 sed -i.bak 's/.*Tag8.*/AC_DEFINE([HAVE_LINUX], [1], [Enable installation on Linux])/g' configure.ac
 if [ $? -ne 0 ]; then exit; fi
-# A client should not check for the mimetic library.
+# A client does not use the mimetic library.
 sed -i.bak '/mimetic/d' configure.ac
 if [ $? -ne 0 ]; then exit; fi
 
@@ -134,7 +136,7 @@ sed -i.bak 's/man\/bibledit-cloud\.1//g' Makefile.am
 
 
 # Update the network port number to a value different from 8080.
-# This enables running Bibledit and Bibledit Cloud simultaneously.
+# This enables running Bibledit (client) and Bibledit Cloud simultaneously.
 sed -i.bak 's/8080/9876/g' config/logic.cpp
 if [ $? -ne 0 ]; then exit; fi
 
