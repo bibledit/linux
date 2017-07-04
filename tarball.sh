@@ -93,6 +93,14 @@ if [ $? -ne 0 ]; then exit; fi
 # A client does not use the mimetic library.
 sed -i.bak '/mimetic/d' configure.ac
 if [ $? -ne 0 ]; then exit; fi
+# A client does not need the cURL library.
+sed -i.bak '/curl/d' configure.ac
+if [ $? -ne 0 ]; then exit; fi
+sed -i.bak '/CURL/d' configure.ac
+if [ $? -ne 0 ]; then exit; fi
+# A client does not need the OpenSSL library.
+sed -i.bak '/OPENSSL/d' configure.ac
+if [ $? -ne 0 ]; then exit; fi
 
 
 # Do not build the unit tests and the generator.
