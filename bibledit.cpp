@@ -335,12 +335,18 @@ static void on_download_started (WebKitWebContext *context, WebKitDownload *down
 
 static void on_download_finished (WebKitDownload *download, gpointer user_data)
 {
-  // After download complete, open the file.
+  // After download complete, open the folder.
+  // Before it used to open the saved file.
+  // But that did not always work well, depending on the OS version.
+  // There have been times that the OS failed to open the tarball.
+  // So now: Open the folder.
   const gchar * destination = webkit_download_get_destination (download);
+  gchar * folder = g_path_get_dirname (destination);
   string command = "xdg-open \"";
-  command.append (destination);
+  command.append (folder);
   command.append ("\"");
   int result = system (command.c_str ());
+  g_free (folder);
   // Suppress unused parameter compiler warnings.
   (void) result;
   (void) user_data;
