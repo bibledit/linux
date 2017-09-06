@@ -47,6 +47,7 @@ bool bibledit_window_configured = false;
 // Function declarations.
 static gboolean on_decide_policy (WebKitWebView *web_view, WebKitPolicyDecision *decision, WebKitPolicyDecisionType decision_type, gpointer user_data);
 static void on_download_started (WebKitWebContext *context, WebKitDownload *download, gpointer user_data);
+static gboolean on_decide_destination (WebKitDownload * download, gchar * suggested_filename, gpointer user_data);
 static void on_download_finished (WebKitDownload *download, gpointer user_data);
 
 
@@ -325,11 +326,32 @@ static gboolean on_decide_policy (WebKitWebView *web_view, WebKitPolicyDecision 
 
 static void on_download_started (WebKitWebContext *context, WebKitDownload *download, gpointer user_data)
 {
+  // Listen for decide destination
+  g_signal_connect (download, "decide-destination", G_CALLBACK (on_decide_destination), NULL);
   // Listen for download finished.
   g_signal_connect (download, "finished", G_CALLBACK (on_download_finished), NULL);
   // Suppress unused parameter compiler warnings.
   (void) context;
   (void) user_data;
+}
+
+
+static gboolean on_decide_destination (WebKitDownload * download, gchar * suggested_filename, gpointer user_data)
+{
+  // There is something weird going on when downloading a file.
+  // When downloading for example the notes.tar, it works well for the first time.
+  // The downloaded notes.tar will be saved in the Download directory of the user.
+  // While this notes.tar is there, then downloading the same file again, something weird happens:
+  // It will delete the previously downloaded notes.tar, and leave it at that.
+  // The result is that the user finds nothing downloaded.
+  // To work around this, it here first removes any notes.tar that might have been there.
+  // Then downloading it, it works well.
+  gchar * path = g_build_filename (g_get_user_special_dir (G_USER_DIRECTORY_DOWNLOAD), suggested_filename, NULL);
+  unlink (path);
+  g_free (path);
+  (void) download;
+  (void) user_data;
+  return false;
 }
 
 
