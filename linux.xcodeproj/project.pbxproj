@@ -9,9 +9,8 @@
 /* Begin PBXFileReference section */
 		CA26345B1E4CF9C3005551AB /* COPYING */ = {isa = PBXFileReference; lastKnownFileType = text; path = COPYING; sourceTree = "<group>"; };
 		CA27A5562012151E00131AA0 /* bbe48x48.xpm */ = {isa = PBXFileReference; lastKnownFileType = text; path = bbe48x48.xpm; sourceTree = "<group>"; };
-		CA27A5572012154600131AA0 /* tarball2.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = tarball2.sh; sourceTree = "<group>"; };
+		CA27A5572012154600131AA0 /* tarball.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = tarball.sh; sourceTree = "<group>"; };
 		CA4B84431FEEB85C00E35EFA /* bbe512x512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bbe512x512.png; sourceTree = "<group>"; };
-		CA7C433F1B039EFC00FFADCC /* tarball.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; lineEnding = 0; path = tarball.sh; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.sh; };
 		CA80EC131B03C2EC000A2591 /* bibledit.cpp */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.cpp.cpp; lineEnding = 0; path = bibledit.cpp; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.cpp; };
 		CA80EC141B03C31A000A2591 /* bibledit.desktop */ = {isa = PBXFileReference; lastKnownFileType = text; path = bibledit.desktop; sourceTree = "<group>"; };
 		CA80EC151B03C355000A2591 /* bibledit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = bibledit.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
@@ -31,8 +30,7 @@
 				CA26345B1E4CF9C3005551AB /* COPYING */,
 				CA9347101E37637800DAFC39 /* Makefile.mk */,
 				CA80EC181B03C39C000A2591 /* README.md */,
-				CA7C433F1B039EFC00FFADCC /* tarball.sh */,
-				CA27A5572012154600131AA0 /* tarball2.sh */,
+				CA27A5572012154600131AA0 /* tarball.sh */,
 			);
 			sourceTree = "<group>";
 		};

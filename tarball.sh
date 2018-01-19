@@ -27,27 +27,27 @@ cd $LINUXSOURCE
 if [ $? -ne 0 ]; then exit; fi
 LINUXSOURCE=`pwd`
 echo Using source at $LINUXSOURCE
-BIBLEDITLINUX=/tmp/bibledit-linux
-echo Build directory at $BIBLEDITLINUX
+BUILDDIR=/tmp/bibledit-linux
+echo Build directory at $BUILDDIR
 
 
 # Synchronize source code.
 cd $LINUXSOURCE
 if [ $? -ne 0 ]; then exit; fi
-echo Synchronizing relevant source code to $BIBLEDITLINUX
-rm -rf $BIBLEDITLINUX
+echo Synchronizing relevant source code to $BUILDDIR
+rm -rf $BUILDDIR
 if [ $? -ne 0 ]; then exit; fi
-mkdir -p $BIBLEDITLINUX
+mkdir -p $BUILDDIR
 if [ $? -ne 0 ]; then exit; fi
-rsync --archive ../cloud/ $BIBLEDITLINUX/
+rsync --archive ../cloud/ $BUILDDIR/
 if [ $? -ne 0 ]; then exit; fi
-rsync --archive . $BIBLEDITLINUX/
+rsync --archive . $BUILDDIR/
 if [ $? -ne 0 ]; then exit; fi
 echo Done
 
 
-echo Working in $BIBLEDITLINUX
-cd $BIBLEDITLINUX
+echo Working in $BUILDDIR
+cd $BUILDDIR
 if [ $? -ne 0 ]; then exit; fi
 
 
@@ -135,7 +135,9 @@ if [ $? -ne 0 ]; then exit; fi
 # A client does not require the mimetic library.
 sed -i.bak '/mimetic/d' Makefile.am
 if [ $? -ne 0 ]; then exit; fi
-
+# Do not include "bibledit" in the distribution tarball.
+sed -i.bak '/^EXTRA_DIST/ s/bibledit//' Makefile.am
+if [ $? -ne 0 ]; then exit; fi
 
 # Remove bibledit-cloud man file.
 rm man/bibledit-cloud.1
