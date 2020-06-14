@@ -116,7 +116,7 @@ if [ $? -ne 0 ]; then exit; fi
 # Update what to distribute.
 sed -i.bak 's/bible bibledit/bible/g' Makefile.am
 if [ $? -ne 0 ]; then exit; fi
-sed -i.bak '/EXTRA_DIST/ s/$/ *.desktop *.xpm *.png/' Makefile.am
+sed -i.bak '/EXTRA_DIST/ s/$/ *.desktop *.xpm *.png *.xml/' Makefile.am
 if [ $? -ne 0 ]; then exit; fi
 # Do not link with cURL and OpenSSL.
 # Both are not used.

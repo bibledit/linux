@@ -16,7 +16,7 @@
 		CA80EC151B03C355000A2591 /* bibledit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = bibledit.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		CA80EC181B03C39C000A2591 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		CA9347101E37637800DAFC39 /* Makefile.mk */ = {isa = PBXFileReference; lastKnownFileType = text; path = Makefile.mk; sourceTree = "<group>"; };
-		CAA54604249516C200227263 /* metainfo.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = metainfo.xml; sourceTree = "<group>"; };
+		CAA54604249516C200227263 /* bibledit.appdata.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = bibledit.appdata.xml; sourceTree = "<group>"; };
 		CAA546052495302E00227263 /* screenshot-workspace.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "screenshot-workspace.png"; sourceTree = "<group>"; };
 		CAA546062495302E00227263 /* screenshot-main.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "screenshot-main.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -32,7 +32,7 @@
 				CA80EC151B03C355000A2591 /* bibledit.h */,
 				CA26345B1E4CF9C3005551AB /* COPYING */,
 				CA9347101E37637800DAFC39 /* Makefile.mk */,
-				CAA54604249516C200227263 /* metainfo.xml */,
+				CAA54604249516C200227263 /* bibledit.appdata.xml */,
 				CA80EC181B03C39C000A2591 /* README.md */,
 				CAA546062495302E00227263 /* screenshot-main.png */,
 				CAA546052495302E00227263 /* screenshot-workspace.png */,

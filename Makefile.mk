@@ -12,3 +12,6 @@ icons_DATA = bbe48x48.xpm bbe512x512.png
 pixmapsdir = $(datadir)/pixmaps
 pixmaps_DATA = bbe48x48.xpm bbe512x512.png
 
+appstreamdir = $(datadir)/metainfo/
+appstream_DATA = bibledit.appdata.xml
+
