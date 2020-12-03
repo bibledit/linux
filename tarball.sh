@@ -23,6 +23,7 @@
 # It generates a tarball for a Linux Bibledit client.
 
 
+echo Ubuntu 18.04 production
 IP=192.168.2.14
 
 
