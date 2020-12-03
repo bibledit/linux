@@ -19,6 +19,7 @@
 		CAA54604249516C200227263 /* bibledit.appdata.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = bibledit.appdata.xml; sourceTree = "<group>"; };
 		CAA546052495302E00227263 /* screenshot-workspace.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "screenshot-workspace.png"; sourceTree = "<group>"; };
 		CAA546062495302E00227263 /* screenshot-main.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "screenshot-main.png"; sourceTree = "<group>"; };
+		CADE230525794151003E7581 /* tarball-linux.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "tarball-linux.sh"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -27,15 +28,16 @@
 			children = (
 				CA27A5562012151E00131AA0 /* bbe48x48.xpm */,
 				CA4B84431FEEB85C00E35EFA /* bbe512x512.png */,
+				CAA54604249516C200227263 /* bibledit.appdata.xml */,
 				CA80EC131B03C2EC000A2591 /* bibledit.cpp */,
 				CA80EC141B03C31A000A2591 /* bibledit.desktop */,
 				CA80EC151B03C355000A2591 /* bibledit.h */,
 				CA26345B1E4CF9C3005551AB /* COPYING */,
 				CA9347101E37637800DAFC39 /* Makefile.mk */,
-				CAA54604249516C200227263 /* bibledit.appdata.xml */,
 				CA80EC181B03C39C000A2591 /* README.md */,
 				CAA546062495302E00227263 /* screenshot-main.png */,
 				CAA546052495302E00227263 /* screenshot-workspace.png */,
+				CADE230525794151003E7581 /* tarball-linux.sh */,
 				CA27A5572012154600131AA0 /* tarball.sh */,
 			);
 			sourceTree = "<group>";
