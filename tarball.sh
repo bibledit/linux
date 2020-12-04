@@ -23,8 +23,8 @@
 # It generates a tarball for a Linux Bibledit client.
 
 
-echo Ubuntu 18.04 production
-IP=192.168.2.14
+echo Using Debian sid as builder
+source ~/scr/sid-ip
 
 
 LINUXSOURCE=`dirname $0`
@@ -51,13 +51,14 @@ if [ $? -ne 0 ]; then exit; fi
 echo Done
 
 
-echo Copying $BUILDDIR to $IP and working there
-rsync --archive --delete $BUILDDIR/ $IP:$BUILDDIR/
-scp tarball-linux.sh $IP:.
+echo Copying $BUILDDIR to $DEBIANSID and working there
+rsync --archive --delete $BUILDDIR/ $DEBIANSID:$BUILDDIR/
+scp tarball-linux.sh $DEBIANSID:.
 if [ $? -ne 0 ]; then exit; fi
-ssh $IP "./tarball-linux.sh"
+ssh $DEBIANSID "./tarball-linux.sh"
 if [ $? -ne 0 ]; then exit; fi
 
 echo Copying resulting tarball
-scp $IP:"bibledit*gz" ~/Desktop
+rm -f ~/Desktop/bibledit*gz
+scp $DEBIANSID:"bibledit*gz" ~/Desktop
 
