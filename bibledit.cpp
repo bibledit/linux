@@ -42,6 +42,7 @@ const char * bibledit_window_height_key = "Height";
 const char * bibledit_window_maximized_key = "Maximized";
 const char * bibledit_window_fullscreen_key = "Fullscreen";
 bool bibledit_window_configured = false;
+string port;
 
 
 // Function declarations.
@@ -57,6 +58,8 @@ int main (int argc, char *argv[])
 
   g_signal_connect (application, "activate", G_CALLBACK (activate), NULL);
 
+  port = bibledit_get_network_port ();
+  
   // Derive the webroot from the $HOME environment variable.
   string webroot;
   const char * home = g_getenv ("HOME");
@@ -132,7 +135,8 @@ void activate (GtkApplication *app)
   // Load a web page into the browser instance.
   // The server's port number of this client is intentionally different from the Cloud's server port.
   // This way both can run on one system simultaneously.
-  webkit_web_view_load_uri (webview, "http://localhost:9876");
+  string url = "http://localhost:" + port;
+  webkit_web_view_load_uri (webview, url.c_str());
   
   // Ensure it will get mouse and keyboard events.
   gtk_widget_grab_focus (GTK_WIDGET (webview));

@@ -148,8 +148,9 @@ sed -i.bak 's/man\/bibledit-cloud\.1//g' Makefile.am
 
 # Update the network port number to a value different from 8080.
 # This enables running Bibledit (client) and Bibledit Cloud simultaneously.
-sed -i.bak 's/8080/9876/g' config/logic.cpp
-if [ $? -ne 0 ]; then exit; fi
+# This is no longer needed since Bibledit finds its own free port to run on.
+# sed -i.bak 's/8080/9876/g' config/logic.cpp
+# if [ $? -ne 0 ]; then exit; fi
 
 
 # Remove .bak files.
