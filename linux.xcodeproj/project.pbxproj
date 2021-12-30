@@ -9,7 +9,7 @@
 /* Begin PBXFileReference section */
 		CA26345B1E4CF9C3005551AB /* COPYING */ = {isa = PBXFileReference; lastKnownFileType = text; path = COPYING; sourceTree = "<group>"; };
 		CA27A5562012151E00131AA0 /* bbe48x48.xpm */ = {isa = PBXFileReference; lastKnownFileType = text; path = bbe48x48.xpm; sourceTree = "<group>"; };
-		CA27A5572012154600131AA0 /* tarball.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = tarball.sh; sourceTree = "<group>"; };
+		CA27A5572012154600131AA0 /* tarball-macos.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "tarball-macos.sh"; sourceTree = "<group>"; };
 		CA4B84431FEEB85C00E35EFA /* bbe512x512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bbe512x512.png; sourceTree = "<group>"; };
 		CA80EC131B03C2EC000A2591 /* bibledit.cpp */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.cpp.cpp; lineEnding = 0; path = bibledit.cpp; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.cpp; };
 		CA80EC141B03C31A000A2591 /* bibledit.desktop */ = {isa = PBXFileReference; lastKnownFileType = text; path = bibledit.desktop; sourceTree = "<group>"; };
@@ -38,7 +38,7 @@
 				CAA546062495302E00227263 /* screenshot-main.png */,
 				CAA546052495302E00227263 /* screenshot-workspace.png */,
 				CADE230525794151003E7581 /* tarball-linux.sh */,
-				CA27A5572012154600131AA0 /* tarball.sh */,
+				CA27A5572012154600131AA0 /* tarball-macos.sh */,
 			);
 			sourceTree = "<group>";
 		};
