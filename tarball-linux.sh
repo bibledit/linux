@@ -98,6 +98,11 @@ if [ $? -ne 0 ]; then exit; fi
 # A client does not need the OpenSSL library.
 sed -i.bak '/OPENSSL/d' configure.ac
 if [ $? -ne 0 ]; then exit; fi
+# A client does not need html tidiers.
+sed -i.bak '/GUMBO/d' configure.ac
+if [ $? -ne 0 ]; then exit; fi
+sed -i.bak '/TIDY/d' configure.ac
+if [ $? -ne 0 ]; then exit; fi
 
 
 echo Do not build the unit tests and the generator
