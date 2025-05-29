@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Copyright (©) 2003-2022 Teus Benschop.
+# Copyright (©) 2003-2025 Teus Benschop.
 
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -23,10 +23,13 @@
 # It generates a tarball for a Linux Bibledit client.
 
 
+# Exit on error.
+set -e
+
+
 BUILDDIR=/tmp/bibledit-linux
 echo Build directory at $BUILDDIR
 cd $BUILDDIR
-if [ $? -ne 0 ]; then exit; fi
 
 
 echo Working in $BUILDDIR
@@ -34,10 +37,8 @@ echo Working in $BUILDDIR
 
 echo Move the Bibledit Linux GUI sources into place
 mv bibledit.h executable
-if [ $? -ne 0 ]; then exit; fi
 
 mv bibledit.cpp executable
-if [ $? -ne 0 ]; then exit; fi
 
 
 echo Remove unwanted files
@@ -51,6 +52,7 @@ find . -name "*.Po" -delete
 rm -rf autom4te.cache
 rm -rf *.xcodeproj
 rm -rf xcode
+find . -name "*.sh" -delete
 #echo Remove macOS extended attributes.
 #echo The attributes would make their way into the tarball,
 #echo get unpacked within Debian,
@@ -78,69 +80,48 @@ echo Install build requirements
 
 echo Clean source
 ./configure
-if [ $? -ne 0 ]; then exit; fi
 make distclean
-if [ $? -ne 0 ]; then exit; fi
 
 
 echo Enable the Linux configuration in config.h
 sed -i.bak 's/ENABLELINUX=no/ENABLELINUX=yes/g' configure.ac
-if [ $? -ne 0 ]; then exit; fi
 sed -i.bak 's/# linux //g' configure.ac
-if [ $? -ne 0 ]; then exit; fi
 sed -i.bak 's/.*Tag8.*/AC_DEFINE([HAVE_LINUX], [1], [Enable installation on Linux])/g' configure.ac
-if [ $? -ne 0 ]; then exit; fi
 # A client does not need the cURL library.
 sed -i.bak '/curl/d' configure.ac
-if [ $? -ne 0 ]; then exit; fi
 sed -i.bak '/CURL/d' configure.ac
-if [ $? -ne 0 ]; then exit; fi
 # A client does not need the OpenSSL library.
 sed -i.bak '/OPENSSL/d' configure.ac
-if [ $? -ne 0 ]; then exit; fi
 # A client does not need html tidiers.
 sed -i.bak '/GUMBO/d' configure.ac
-if [ $? -ne 0 ]; then exit; fi
 sed -i.bak '/TIDY/d' configure.ac
-if [ $? -ne 0 ]; then exit; fi
 
 
 echo Do not build the unit tests and the generator
 echo Rename binary 'server' to 'bibledit'
 sed -i.bak 's/server unittest generate/bibledit/g' Makefile.am
-if [ $? -ne 0 ]; then exit; fi
 sed -i.bak 's/server_/bibledit_/g' Makefile.am
-if [ $? -ne 0 ]; then exit; fi
 sed -i.bak '/unittest/d' Makefile.am
-if [ $? -ne 0 ]; then exit; fi
 sed -i.bak '/generate_/d' Makefile.am
-if [ $? -ne 0 ]; then exit; fi
 # Update what to distribute.
 sed -i.bak 's/bible bibledit/bible/g' Makefile.am
-if [ $? -ne 0 ]; then exit; fi
 sed -i.bak '/EXTRA_DIST/ s/$/ *.desktop *.xpm *.png *.xml/' Makefile.am
-if [ $? -ne 0 ]; then exit; fi
 echo Do not link with cURL and OpenSSL
 echo Both are not used
 echo As a result, a Debian package finds itself having unsatisfied dependencies
 echo Removing the flags fixes that
 sed -i.bak '/CURL/d' Makefile.am
-if [ $? -ne 0 ]; then exit; fi
 sed -i.bak '/OPENSSL/d' Makefile.am
-if [ $? -ne 0 ]; then exit; fi
 echo Add the additional Makefile.mk fragment for the Linux app
 echo '' >> Makefile.am
 cat Makefile.mk >> Makefile.am
 echo Remove the consecutive blank lines introduced by the above edit operations
 sed -i.bak '/./,/^$/!d' Makefile.am
-if [ $? -ne 0 ]; then exit; fi
 echo Do not include "bibledit" in the distribution tarball
 sed -i.bak '/^EXTRA_DIST/ s/bibledit//' Makefile.am
-if [ $? -ne 0 ]; then exit; fi
 
 echo Remove bibledit-cloud man file
 rm man/bibledit-cloud.1
-if [ $? -ne 0 ]; then exit; fi
 sed -i.bak 's/man\/bibledit-cloud\.1//g' Makefile.am
 
 
@@ -148,8 +129,7 @@ sed -i.bak 's/man\/bibledit-cloud\.1//g' Makefile.am
 # This enables running Bibledit (client) and Bibledit Cloud simultaneously.
 # This is no longer needed since Bibledit finds its own free port to run on.
 # sed -i.bak 's/8080/9876/g' config/logic.cpp
-# if [ $? -ne 0 ]; then exit; fi
-
+# 
 
 echo Remove .bak files
 find . -name "*.bak" -delete
@@ -157,14 +137,10 @@ find . -name "*.bak" -delete
 
 echo Create distribution tarball
 ./reconfigure
-if [ $? -ne 0 ]; then exit; fi
 ./configure
-if [ $? -ne 0 ]; then exit; fi
 make dist --jobs=2
-if [ $? -ne 0 ]; then exit; fi
 
 
 echo Copy the tarball to the Desktop
 rm -f ~/bibledit*gz
 cp *.gz ~
-if [ $? -ne 0 ]; then exit; fi

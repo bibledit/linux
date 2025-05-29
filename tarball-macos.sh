@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Copyright (©) 2003-2022 Teus Benschop.
+# Copyright (©) 2003-2025 Teus Benschop.
 
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -23,14 +23,16 @@
 # It generates a tarball for a Linux Bibledit client.
 
 
+# Exit on error.
+set -e
+
+
 echo Using Debian sid as builder
 source ~/scr/sid-ip
-if [ $? -ne 0 ]; then exit; fi
 
 
 LINUXSOURCE=`dirname $0`
 cd $LINUXSOURCE
-if [ $? -ne 0 ]; then exit; fi
 LINUXSOURCE=`pwd`
 echo Using source at $LINUXSOURCE
 BUILDDIR=/tmp/bibledit-linux
@@ -39,25 +41,18 @@ echo Build directory at $BUILDDIR
 
 # Synchronize source code.
 cd $LINUXSOURCE
-if [ $? -ne 0 ]; then exit; fi
 echo Synchronizing relevant source code to $BUILDDIR
 rm -rf $BUILDDIR
-if [ $? -ne 0 ]; then exit; fi
 mkdir -p $BUILDDIR
-if [ $? -ne 0 ]; then exit; fi
 rsync --archive ../cloud/ $BUILDDIR/
-if [ $? -ne 0 ]; then exit; fi
 rsync --archive . $BUILDDIR/
-if [ $? -ne 0 ]; then exit; fi
 echo Done
 
 
 echo Copying $BUILDDIR to $DEBIANSID and working there
 rsync --archive --delete $BUILDDIR/ $DEBIANSID:$BUILDDIR/
 scp tarball-linux.sh $DEBIANSID:.
-if [ $? -ne 0 ]; then exit; fi
 ssh $DEBIANSID "./tarball-linux.sh"
-if [ $? -ne 0 ]; then exit; fi
 
 echo Copying resulting tarball
 rm -f ~/Desktop/bibledit*gz
