@@ -52,7 +52,14 @@ find . -name "*.Po" -delete
 rm -rf autom4te.cache
 rm -rf *.xcodeproj
 rm -rf xcode
-find . -name "*.sh" -delete
+rm -f demo/copyright.sh
+rm -f obfuscate/prepare.sh
+rm -f obfuscate/check.sh
+rm -f developer/warnings.sh
+rm -f tarball-macos.sh
+rm -f tarball-linux.sh
+rm -f i18n/i18n.sh
+rm -f help/install.sh
 #echo Remove macOS extended attributes.
 #echo The attributes would make their way into the tarball,
 #echo get unpacked within Debian,
