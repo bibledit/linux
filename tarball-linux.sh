@@ -119,6 +119,9 @@ echo Remove the consecutive blank lines introduced by the above edit operations
 sed -i.bak '/./,/^$/!d' Makefile.am
 echo Do not include "bibledit" in the distribution tarball
 sed -i.bak '/^EXTRA_DIST/ s/bibledit//' Makefile.am
+echo Remove call to removed shell script
+sed -i.bak 's#pkgdata/create.sh#true#g' Makefile.am
+
 
 echo Remove bibledit-cloud man file
 rm man/bibledit-cloud.1
