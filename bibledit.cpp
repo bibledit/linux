@@ -54,7 +54,7 @@ static void on_download_finished (WebKitDownload *download, gpointer user_data);
 
 int main (int argc, char *argv[])
 {
-  application = gtk_application_new ("org.bibledit.linux", G_APPLICATION_FLAGS_NONE);
+  application = gtk_application_new ("org.bibledit.linux", G_APPLICATION_DEFAULT_FLAGS);
 
   g_signal_connect (application, "activate", G_CALLBACK (activate), NULL);
 
